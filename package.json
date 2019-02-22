@@ -1,0 +1,24 @@
+{
+  "name": "mooca",
+  "version": "1.0.0",
+  "description": "mooca",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Wanlipa",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.5",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.2.1",
+    "nodemon": "^1.18.10",
+    "plotly": "^1.0.6"
+  }
+}
