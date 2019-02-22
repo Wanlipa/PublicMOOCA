@@ -14,3 +14,15 @@ exports.getCustomize = (req, res, next) => {
     res.render('customize', { pageTitle: 'Customize', path: '/customize' })
 };
 
+exports.getCourseAnalysis = (req, res, next) => {
+    res.render('courseAnalysis', { pageTitle: 'Courses Clustering', path: '/courseAnalysis' })
+};
+
+exports.getLearnerAnalysis = (req, res, next) => {
+    res.render('learnerAnalysis', { pageTitle: 'Learners Clustering', path: '/learnerAnalysis' })
+};
+
+exports.getRelationship = (req, res, next) => {
+    res.render('relationshipAnalysis', { pageTitle: 'Relationship', path: '/relationship' })
+};
+
