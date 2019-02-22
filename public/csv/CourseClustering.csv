@@ -1,0 +1,29 @@
+CourseName,CourseNumber,effort,totalhours,LengthClustering,remember,understand,apply,analyze,evaluate,create,BloomCustering,BloomCusteringName,Registered
+General Physics I,ku002,9,45,Long,0,91.84,0,8.16,0,0,0,C_B1: Understanding,560
+General Chemistry,ku003,8,45,Long,0,40.97,15.29,39.57,4.18,0,1,"C_B2: Understanding, Applying, and Analyzing",313
+Product Design for Entrepreneur,stou007,2,10,Short,40,36.7,0,0,0,23.3,2,"C_B3: Remembering, Understanding, and Creating",639
+STEM Based Learning for Science,mu003,2,8,Short,12.5,50,22.88,8.38,0,6.25,1,"C_B2: Understanding, Applying, and Analyzing",294
+Fundamental of Computer Programming with Python Language,rmutt013,2,6,Short,0,100,0,0,0,0,0,C_B1: Understanding,701
+MOS Certificate : MS PowerPoint 2013,pkru001,2,9,Short,0,33.33,33.33,33.33,0,0,1,"C_B2: Understanding, Applying, and Analyzing",282
+Infomation Litercy,nrru001,3,24,Medium,12.92,8.75,47.08,0,10.42,0,3,C_B4: Applying,672
+MOS Certificate : MS Word 2013,sct001,3,12,Short,0,20,60,20,0,0,3,C_B4: Applying,283
+Technology and Innovation for Education,su006,8,15,Medium,0,80,0,0,0,0,0,C_B1: Understanding,776
+Cloud Technology Tools for 21st Century Learning,swu003,1,6,Short,0,16.67,83.33,0,0,0,3,C_B4: Applying,311
+IT for the Present and Beyond,wu001,8,15,Medium,0,53.33,33.33,0,0,13.33,1,"C_B2: Understanding, Applying, and Analyzing",516
+LaTeX program for academic documents,nu002,1,10,Short,0,1.7,54.15,0,0,44.16,3,C_B4: Applying,175
+Creative Ideas for Audio Design,rmutsb001,2,10,Short,20,20,10,20,10,20,2,"C_B3: Remembering, Understanding, and Creating",307
+Technology hardware and system software,hu003,1,5,Short,0,0,30,15,15,0,3,C_B4: Applying,478
+Big Data Concept,stou005,2,10,Short,26.67,39.96,6.69,6.69,0,19.98,2,"C_B3: Remembering, Understanding, and Creating",962
+Digital Media Creation Technology,stou006,2,10,Short,0,80,0,0,0,20,0,C_B1: Understanding,743
+Cybersecurity Awareness,bu001,1,6,Short,0,44.5,22.17,0,0,0,1,"C_B2: Understanding, Applying, and Analyzing",1246
+Computer for Speech and Presentations,kmitl003,1,6,Short,0,8.33,41.67,16.67,0,33.33,3,C_B4: Applying,709
+HTML & CSS,cu005,2,10,Short,0,80,10,0,0,10,0,C_B1: Understanding,1203
+MOS Certificate : MS Excel 2013,sru001,3,10,Short,0,25,50,25,0,0,3,C_B4: Applying,423
+The production of Liquid fuel from Plastic Waste,cu004,2,10,Short,0,60,0,0,0,0,0,C_B1: Understanding,237
+The production of solid fuel and activated carbon from agricultural waste,cu003,2,10,Short,0,50,0,50,0,0,1,"C_B2: Understanding, Applying, and Analyzing",229
+Reinforced concrete for earthquake disaster evaluation,mu006,3,10,Short,0,0,20,10,0,0,3,C_B4: Applying,134
+3D Model design & printing for community service,mu007,2,10,Short,25,20,15,0,0,40,2,"C_B3: Remembering, Understanding, and Creating",334
+Digital Circuit Design,mu005,2,8,Short,0,75,0,0,0,25,0,C_B1: Understanding,319
+Mathematics for Computer,sut001,3,24,Medium,20,30,16.67,16.67,0,16.67,2,"C_B3: Remembering, Understanding, and Creating",516
+Mathematical Economics and Econometrics for Business,stou009,2,10,Short,0,70,30,0,0,0,0,C_B1: Understanding,370
+Learning Mathematics using STEM based approach,mu004,2,10,Short,10,40,20,15,0,15,1,"C_B2: Understanding, Applying, and Analyzing",227

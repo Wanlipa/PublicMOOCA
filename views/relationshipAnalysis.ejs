@@ -5,6 +5,136 @@
     <body>
         <%- include('includes/navigation.ejs') %>
 
-        <h1>Relationship</h1>
-        
-<%- include('includes/end.ejs') %>
+            <h1>Learners Clustering</h1>
+            <div id="myDiv"></div>
+            <div id="bloom"></div>
+            <script>
+                Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/alpha_shape.csv', function (err, rows) {
+
+                    function unpack(rows, key) {
+                        return rows.map(function (row) { return row[key]; });
+                    }
+
+                    var data = [{
+                        x: unpack(rows, 'x'),
+                        y: unpack(rows, 'y'),
+                        z: unpack(rows, 'z'),
+                        mode: 'markers',
+                        type: 'scatter3d',
+                        marker: {
+                            color: 'rgb(23, 190, 207)',
+                            size: 2
+                        }
+                    }, {
+                        alphahull: 7,
+                        opacity: 0.1,
+                        type: 'mesh3d',
+                        x: unpack(rows, 'x'),
+                        y: unpack(rows, 'y'),
+                        z: unpack(rows, 'z')
+                    }];
+
+                    var layout = {
+                        autosize: true,
+                        height: 480,
+                        scene: {
+                            aspectratio: {
+                                x: 1,
+                                y: 1,
+                                z: 1
+                            },
+                            camera: {
+                                center: {
+                                    x: 0,
+                                    y: 0,
+                                    z: 0
+                                },
+                                eye: {
+                                    x: 1.25,
+                                    y: 1.25,
+                                    z: 1.25
+                                },
+                                up: {
+                                    x: 0,
+                                    y: 0,
+                                    z: 1
+                                }
+                            },
+                            xaxis: {
+                                type: 'linear',
+                                zeroline: false
+                            },
+                            yaxis: {
+                                type: 'linear',
+                                zeroline: false
+                            },
+                            zaxis: {
+                                type: 'linear',
+                                zeroline: false
+                            }
+                        },
+                        title: '3d point clustering',
+                        width: 477
+                    };
+
+                    Plotly.newPlot('myDiv', data, layout);
+
+                });
+
+                Plotly.d3.csv('csv/iris-id.csv', function (err, rows) {
+
+                    function unpack(rows, key) {
+                        return rows.map(function (row) {
+                            return row[key];
+                        });
+                    }
+
+                    var data = [{
+                        type: 'parcoords',
+                        pad: [80, 80, 80, 80],
+                        line: {
+                            color: unpack(rows, 'species_id'),
+                            colorscale: [[0, 'red'], [0.5, 'green'], [1, 'blue']]
+                        },
+
+                        dimensions: [{
+                            range: [2, 4.5],
+                            label: 'sepal_width',
+                            values: unpack(rows, 'sepal_width')
+                        }, {
+                            constraintrange: [5, 6],
+                            range: [4, 8],
+                            label: 'sepal_length',
+                            values: unpack(rows, 'sepal_length')
+                        }, {
+                            label: 'petal_width',
+                            range: [0, 2.5],
+                            values: unpack(rows, 'petal_width')
+                        }, {
+                            label: 'petal_length',
+                            range: [1, 7],
+                            values: unpack(rows, 'petal_length')
+                        }]
+                    }];
+
+                    var layout = {
+                        width: 800,
+                        annotations: [
+                            {
+                                showarrow: false,
+                                text: 'Higher sepal width',
+                                x: 0, y: 1, xref: 'paper', yref: 'paper'
+                            },
+                            {
+                                showarrow: false,
+                                text: 'Lower petal width and length',
+                                x: 0.9, y: .25, xref: 'paper', yref: 'paper'
+                            }]
+                    };
+
+                    Plotly.plot('bloom', data, layout);
+
+                });
+            </script>
+
+            <%- include('includes/end.ejs') %>

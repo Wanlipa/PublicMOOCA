@@ -2,9 +2,120 @@
 
     </head>
 
+
     <body>
         <%- include('includes/navigation.ejs') %>
+            <br>
+            <div class="container">
+                <h3>Course Length Clustering</h3>
+                <div id="length"></div>
+                <h3>Course Bloom's Taxonomy</h3>
+                <div id="bloom"></div>
+            </div>
+            <script>
 
-        <h1>Course Clustering</h1>
-        
-<%- include('includes/end.ejs') %>
+                // Get data from csv
+                Plotly.d3.csv("csv/CourseClustering.csv", function (err, rows) {
+
+                    function unpack(rows, key) {
+                        return rows.map(function (row) { return row[key]; });
+                    }
+                    // Course Length Clustering
+                    var data = [{
+                        type: 'scatter',
+                        mode: 'markers',
+                        x: unpack(rows, 'effort'),
+                        y: unpack(rows, 'totalhours'),
+                        text: unpack(rows, 'LengthClustering'),
+                        marker: {
+                            size: unpack(rows, 'Registered'),
+                            sizemode: "area"
+                        },
+                        transforms: [
+                            {
+                                type: 'groupby',
+                                groups: unpack(rows, 'LengthClustering'),
+                                styles: [
+                                    { target: 'Long', value: { marker: { color: 'red', symbol: 'square' } } },
+                                    { target: 'Medium', value: { marker: { color: 'blue', symbol: 'triangle-up' } } },
+                                    { target: 'Short', value: { marker: { color: 'green', symbol: 'circle' } } }
+                                ]
+                            }]
+                    }]
+
+                    var layout = {
+                        yaxis: {
+                            type: 'log',
+                            title: 'Total Hours'
+                        },
+                        xaxis: {
+                            title: 'Effort (hour/week)'
+                        }
+                    }
+
+                     var data2 = [{
+                        type: 'parcoords',
+                        pad: [80, 80, 80, 80],
+                        line: {
+                            color: unpack(rows, 'BloomCustering'),
+                            colorscale: 'Jet'
+                            // colorscale: [[0, 'rgb(160, 160, 160)'], [0.5, 'green'], [1, 'blue'], [0,'purple']]
+                        },
+
+                        dimensions: [{
+                            range: [0, 100],
+                            label: 'remember',
+                            values: unpack(rows, 'remember')
+                        }, {
+                            constraintrange: [0, 100],
+                            range: [0, 100],
+                            label: 'understand',
+                            values: unpack(rows, 'understand')
+                        }, {
+                            label: 'apply',
+                            range: [0, 100],
+                            values: unpack(rows, 'apply')
+                        }, {
+                            label: 'analyze',
+                            range: [0, 100],
+                            values: unpack(rows, 'analyze')
+                        }, {
+                            label: 'evaluate',
+                            range: [0, 100],
+                            values: unpack(rows, 'evaluate')
+                        }, {
+                            label: 'create',
+                            range: [0, 100],
+                            values: unpack(rows, 'create')
+                        }]
+                    }];
+
+                    var layout2 = {
+                        width: 800,
+                        annotations: [
+                            {
+                                showarrow: false,
+                                text: 'Higher sepal width',
+                                x: 0, y: 1, xref: 'paper', yref: 'paper'
+                            },
+                            {
+                                showarrow: false,
+                                text: 'Lower petal width and length',
+                                x: 0.9, y: .25, xref: 'paper', yref: 'paper'
+                            }]
+                    };
+
+                    // Plot Graph
+                    Plotly.plot('length', data, layout)
+
+                    Plotly.plot('bloom', data2, layout);
+
+             
+                });
+
+               
+
+
+
+            </script>
+            <%- include('includes/end.ejs') %>

@@ -2,9 +2,66 @@
 
     </head>
 
+
     <body>
         <%- include('includes/navigation.ejs') %>
+            <br>
+            <div class="container">
+                <h3>Learners Clustering</h3>
+                <div id="learner"></div>
+                
 
-        <h1>Learners Clustering</h1>
-        
-<%- include('includes/end.ejs') %>
+            </div>
+            <script>
+
+                // Get data from csv
+                Plotly.d3.csv("csv/learner_cluster.csv", function (err, rows) {
+
+                    function unpack(rows, key) {
+                        return rows.map(function (row) { return row[key]; });
+                    }
+                    // Learners Clustering
+                    var data = [{
+                        type: 'scatter',
+                        mode: 'markers',
+                        x: unpack(rows, 'Grade'),
+                        y: unpack(rows, 'Attempt'),
+                        text: unpack(rows, 'learner cluster'),
+                        marker: {
+                            size: 8,
+                            sizemode: "area"
+                        },
+                        transforms: [
+                            {
+                                type: 'groupby',
+                                groups: unpack(rows, 'learner cluster'),
+                                styles: [
+                                    { target: '0', value: { marker: { color: 'red' ,symbol: 'square'},name: 'Sampling Learners' } },
+                                    { target: '1', value: { marker: { color: 'blue' ,symbol: 'triangle-up'},name: 'Targeting Learners' } },
+                                    { target: '2', value: { marker: { color: 'green' ,symbol: 'circle'},name: 'Comprehensive Learners' } }
+                                ]
+                            }]
+                    }]
+
+                    var layout = {
+                        yaxis: {
+                            type: 'log',
+                            title: 'Attempt'
+                        },
+                        xaxis: {
+                            title: 'Grade'
+                        }
+                    }
+                    
+                    // Plot Graph
+                    Plotly.plot('learner', data, layout)
+
+                });
+
+
+
+
+               
+
+            </script>
+            <%- include('includes/end.ejs') %>

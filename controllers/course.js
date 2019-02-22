@@ -1,4 +1,5 @@
 const Course = require('../models/course');
+var d3 = require("d3");
 
 exports.getCourse = (req, res, next) => {
     let courseId = 1;
