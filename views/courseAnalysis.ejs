@@ -15,7 +15,7 @@
             <script>
 
                 // Get data from csv
-                Plotly.d3.csv("csv/CourseClustering.csv", function (err, rows) {
+                Plotly.d3.csv("data/CourseClustering.csv", function (err, rows) {
 
                     function unpack(rows, key) {
                         return rows.map(function (row) { return row[key]; });

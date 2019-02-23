@@ -15,7 +15,7 @@
             <script>
 
                 // Get data from csv
-                Plotly.d3.csv("csv/learner_cluster.csv", function (err, rows) {
+                Plotly.d3.csv("data/LearnerClustering.csv", function (err, rows) {
 
                     function unpack(rows, key) {
                         return rows.map(function (row) { return row[key]; });
@@ -36,9 +36,9 @@
                                 type: 'groupby',
                                 groups: unpack(rows, 'learner cluster'),
                                 styles: [
-                                    { target: '0', value: { marker: { color: 'red' ,symbol: 'square'},name: 'Sampling Learners' } },
-                                    { target: '1', value: { marker: { color: 'blue' ,symbol: 'triangle-up'},name: 'Targeting Learners' } },
-                                    { target: '2', value: { marker: { color: 'green' ,symbol: 'circle'},name: 'Comprehensive Learners' } }
+                                    { target: '0', value: { marker: { color: 'red' ,symbol: 'circle'},name: 'Sampling Learners' } },
+                                    { target: '1', value: { marker: { color: 'green' ,symbol: 'square'},name: 'Targeting Learners' } },
+                                    { target: '2', value: { marker: { color: 'blue' ,symbol: 'triangle-up'},name: 'Comprehensive Learners' } }
                                 ]
                             }]
                     }]

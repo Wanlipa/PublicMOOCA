@@ -12,6 +12,7 @@
 
         <div id="structure"></div>
         <div id="learners"></div>
+
         <!-- information -->
         <div>
           <!-- Nav tabs -->
@@ -30,8 +31,9 @@
               <a class="nav-link" id="learner-tab" data-toggle="tab" href="#learner" role="tab" aria-controls="learner" aria-selected="false">learner</a>
             </li>
 
-            
+
           </ul>
+
 
           <!-- Tab panes -->
           <div class="tab-content">
@@ -69,7 +71,7 @@
               <p>Problems: </p>
               <p>Discussion: </p>
             </div>
-            
+
             <div class="tab-pane" id="learner" role="tabpanel" aria-labelledby="learner-tab">
               <p>learner</p>
             </div>
@@ -78,6 +80,9 @@
       </div>
 
       <script>
+
+        // Get data from csv
+
         // Course Structure
         var trace1 = {
           x: [1, 3, 6, 8, 14, 34, 36, 38, 50, 65, 67, 69, 89, 93, 95, 97],
@@ -149,25 +154,36 @@
         Plotly.newPlot('structure', data, layout);
 
         // Learners
-        var learner1 = {
-          x: ['Pre-test', 'Exercise1', 'Exercise2', 'Exercise3', 'Exercise4', 'Exercise5', 'Post-test'],
-          y: [663, 956, 958, 1013, 1016, 1030, 1015],
-          name: 'Not Attempted',
-          type: 'bar'
-        };
 
-        var learner2 = {
-          x: ['Pre-test', 'Exercise1', 'Exercise2', 'Exercise3', 'Exercise4', 'Exercise5', 'Post-test'],
-          y: [540, 247, 245, 190, 187, 173, 188],
-          name: 'Attempted',
-          type: 'bar'
-        };
+        Plotly.d3.csv("data/problem_attempted.csv", function (err, rows) {
+          function unpack(rows, key) {
+            return rows.map(function (row) { return row[key]; });
+          }
+          var learner1 = {
+            x: unpack(rows, 'name'),
+            y: unpack(rows, 'not attempted'),
+            name: 'Not Attempted',
+            text: unpack(rows, 'not attempted %'),
+            type: 'bar'
+          };
 
-        var data2 = [learner1, learner2];
+          var learner2 = {
+            x: unpack(rows, 'name'),
+            y: unpack(rows, 'attempted'),
+            name: 'Attempted',
+            text: unpack(rows, 'attempted %'),
+            
+            type: 'bar'
+          };
 
-        var layout = { barmode: 'stack' };
+          var data2 = [learner1, learner2];
 
-        Plotly.newPlot('learners', data2, layout);
+          var layout = { barmode: 'stack' };
+
+          Plotly.newPlot('learners', data2, layout);
+        });
+
+
 
       </script>
 

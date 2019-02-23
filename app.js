@@ -21,6 +21,7 @@ const courseRoutes = require('./routes/course');
 // Middleware set body parser to get image
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/data',express.static(path.join(__dirname, 'data')));
 
 app.use(mainRoutes);
 app.use(courseRoutes);
