@@ -4,135 +4,221 @@
 
     <body>
         <%- include('includes/navigation.ejs') %>
+            <br>
+            <div class="container">
+                <h1>Relationship</h1>
+                &nbsp;
 
-            <h1>Learners Clustering</h1>
-            <div id="myDiv"></div>
-            <div id="bloom"></div>
+
+
+                 <!-- information -->
+        <div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="courseinfo-tab" data-toggle="tab" href="#courseinfo" role="tab" aria-controls="courseinfo"
+                  aria-selected="true">Course Length</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="analysis-tab" data-toggle="tab" href="#analysis" role="tab" aria-controls="analysis" aria-selected="false">Bloom's Taxonomy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="components-tab" data-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="false">Times Components</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="learner-tab" data-toggle="tab" href="#learner" role="tab" aria-controls="learner" aria-selected="false">Sequence Components</a>
+              </li>
+  
+  
+            </ul>
+  
+  
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane active" id="courseinfo" role="tabpanel" aria-labelledby="courseinfo-tab">
+                <div id="long"></div>
+                <div id="medium"></div>
+                <div id="short"></div>
+              </div>
+              <div class="tab-pane" id="analysis" role="tabpanel" aria-labelledby="analysis-tab">
+               <p>Bloom's Taxonomy</p>
+              </div>
+              <div class="tab-pane" id="components" role="tabpanel" aria-labelledby="components-tab">
+                <p>Time Components</p>
+              </div>
+  
+              <div class="tab-pane" id="learner" role="tabpanel" aria-labelledby="learner-tab">
+                <p>Sequence Components</p>
+              </div>
+            </div>
+          </div>
+        </div>
+                
+                
+
+
+
+            </div>
             <script>
-                Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/alpha_shape.csv', function (err, rows) {
+                // Get data from csv
+                Plotly.d3.csv("data/long_length.csv", function (err, rows) {
 
                     function unpack(rows, key) {
                         return rows.map(function (row) { return row[key]; });
                     }
-
+                    // Learners Clustering
                     var data = [{
-                        x: unpack(rows, 'x'),
-                        y: unpack(rows, 'y'),
-                        z: unpack(rows, 'z'),
+                        type: 'scatter',
                         mode: 'markers',
-                        type: 'scatter3d',
+                        x: unpack(rows, 'Grade'),
+                        y: unpack(rows, 'Attempt'),
+                        text: unpack(rows, 'Learner Type'),
                         marker: {
-                            color: 'rgb(23, 190, 207)',
-                            size: 2
-                        }
-                    }, {
-                        alphahull: 7,
-                        opacity: 0.1,
-                        type: 'mesh3d',
-                        x: unpack(rows, 'x'),
-                        y: unpack(rows, 'y'),
-                        z: unpack(rows, 'z')
-                    }];
+                            size: 8,
+                            sizemode: "area"
+                        },
+                        transforms: [
+                            {
+                                type: 'groupby',
+                                groups: unpack(rows, 'Learner Type'),
+                                styles: [
+                                    { target: '0: Sampling', value: { marker: { color: 'red', symbol: 'circle' }, name: 'Sampling Learners' } },
+                                    { target: '1: Comprehensive', value: { marker: { color: 'green', symbol: 'square' }, name: 'Comprehensive Learners' } },
+                                    { target: '2: Targeting', value: { marker: { color: 'blue', symbol: 'triangle-up' }, name: 'Targeting Learners' } }
+                                ]
+                            }]
+                    }]
 
                     var layout = {
-                        autosize: true,
-                        height: 480,
-                        scene: {
-                            aspectratio: {
-                                x: 1,
-                                y: 1,
-                                z: 1
+                        title: {
+                            text: 'Lerners in Long Course',
+                            font: {
+                                family: 'Courier New, monospace',
+                                size: 20
                             },
-                            camera: {
-                                center: {
-                                    x: 0,
-                                    y: 0,
-                                    z: 0
-                                },
-                                eye: {
-                                    x: 1.25,
-                                    y: 1.25,
-                                    z: 1.25
-                                },
-                                up: {
-                                    x: 0,
-                                    y: 0,
-                                    z: 1
-                                }
-                            },
-                            xaxis: {
-                                type: 'linear',
-                                zeroline: false
-                            },
-                            yaxis: {
-                                type: 'linear',
-                                zeroline: false
-                            },
-                            zaxis: {
-                                type: 'linear',
-                                zeroline: false
-                            }
+                            xref: 'paper',
+                            x: 0.05,
                         },
-                        title: '3d point clustering',
-                        width: 477
-                    };
+                        yaxis: {
+                            type: 'log',
+                            title: 'Attempt'
+                        },
+                        xaxis: {
+                            title: 'Grade'
+                        }
 
-                    Plotly.newPlot('myDiv', data, layout);
+                    }
+
+                    // Plot Graph
+                    Plotly.plot('long', data, layout)
 
                 });
 
-                Plotly.d3.csv('csv/iris-id.csv', function (err, rows) {
+                // Get data from csv
+                Plotly.d3.csv("data/middle_length.csv", function (err, rows) {
 
                     function unpack(rows, key) {
-                        return rows.map(function (row) {
-                            return row[key];
-                        });
+                        return rows.map(function (row) { return row[key]; });
                     }
-
+                    // Learners Clustering
                     var data = [{
-                        type: 'parcoords',
-                        pad: [80, 80, 80, 80],
-                        line: {
-                            color: unpack(rows, 'species_id'),
-                            colorscale: [[0, 'red'], [0.5, 'green'], [1, 'blue']]
+                        type: 'scatter',
+                        mode: 'markers',
+                        x: unpack(rows, 'Grade'),
+                        y: unpack(rows, 'Attempt'),
+                        text: unpack(rows, 'Learner Type'),
+                        marker: {
+                            size: 8,
+                            sizemode: "area"
                         },
-
-                        dimensions: [{
-                            range: [2, 4.5],
-                            label: 'sepal_width',
-                            values: unpack(rows, 'sepal_width')
-                        }, {
-                            constraintrange: [5, 6],
-                            range: [4, 8],
-                            label: 'sepal_length',
-                            values: unpack(rows, 'sepal_length')
-                        }, {
-                            label: 'petal_width',
-                            range: [0, 2.5],
-                            values: unpack(rows, 'petal_width')
-                        }, {
-                            label: 'petal_length',
-                            range: [1, 7],
-                            values: unpack(rows, 'petal_length')
-                        }]
-                    }];
+                        transforms: [
+                            {
+                                type: 'groupby',
+                                groups: unpack(rows, 'Learner Type'),
+                                styles: [
+                                    { target: '0: Sampling', value: { marker: { color: 'red', symbol: 'circle' }, name: 'Sampling Learners' } },
+                                    { target: '1: Comprehensive', value: { marker: { color: 'green', symbol: 'square' }, name: 'Comprehensive Learners' } },
+                                    { target: '2: Targeting', value: { marker: { color: 'blue', symbol: 'triangle-up' }, name: 'Targeting Learners' } }
+                                ]
+                            }]
+                    }]
 
                     var layout = {
-                        width: 800,
-                        annotations: [
-                            {
-                                showarrow: false,
-                                text: 'Higher sepal width',
-                                x: 0, y: 1, xref: 'paper', yref: 'paper'
+                        title: {
+                            text: 'Lerners in Medium Course',
+                            font: {
+                                family: 'Courier New, monospace',
+                                size: 20
                             },
-                            {
-                                showarrow: false,
-                                text: 'Lower petal width and length',
-                                x: 0.9, y: .25, xref: 'paper', yref: 'paper'
-                            }]
-                    };
+                            xref: 'paper',
+                            x: 0.05,
+                        },
+                        yaxis: {
+                            type: 'log',
+                            title: 'Attempt'
+                        },
+                        xaxis: {
+                            title: 'Grade'
+                        }
 
-                    Plotly.plot('bloom', data, layout);
+                    }
+
+                    // Plot Graph
+                    Plotly.plot('medium', data, layout)
+
+                });
+
+                // Get data from csv
+                Plotly.d3.csv("data/short_length.csv", function (err, rows) {
+
+                    function unpack(rows, key) {
+                        return rows.map(function (row) { return row[key]; });
+                    }
+                    // Learners Clustering
+                    var data = [{
+                        type: 'scatter',
+                        mode: 'markers',
+                        x: unpack(rows, 'Grade'),
+                        y: unpack(rows, 'Attempt'),
+                        text: unpack(rows, 'Learner Type'),
+                        marker: {
+                            size: 8,
+                            sizemode: "area"
+                        },
+                        transforms: [
+                            {
+                                type: 'groupby',
+                                groups: unpack(rows, 'Learner Type'),
+                                styles: [
+                                    { target: '0: Sampling', value: { marker: { color: 'red', symbol: 'circle' }, name: 'Sampling Learners' } },
+                                    { target: '1: Comprehensive', value: { marker: { color: 'green', symbol: 'square' }, name: 'Comprehensive Learners' } },
+                                    { target: '2: Targeting', value: { marker: { color: 'blue', symbol: 'triangle-up' }, name: 'Targeting Learners' } }
+                                ]
+                            }]
+                    }]
+
+                    var layout = {
+                        title: {
+                            text: 'Lerners in Short Course',
+                            font: {
+                                family: 'Courier New, monospace',
+                                size: 20
+                            },
+                            xref: 'paper',
+                            x: 0.05,
+                        },
+                        yaxis: {
+                            type: 'log',
+                            title: 'Attempt'
+                        },
+                        xaxis: {
+                            title: 'Grade'
+                        }
+
+                    }
+
+                    // Plot Graph
+                    Plotly.plot('short', data, layout)
 
                 });
             </script>
