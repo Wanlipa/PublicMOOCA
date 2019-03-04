@@ -9,8 +9,76 @@
             <div class="container">
                 <h3>Course Length Clustering</h3>
                 <div id="length"></div>
+                <!-- Table Course Length -->
+                <table class="table table-hover">
+                    <thead style="text-align: center" class=" bg-info text-light">
+                        <tr>
+                            <th scope="col">Cluster</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Number of Courses</th>
+                            <th scope="col">Number of Registered Learners</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center">
+                        <tr>
+                            <th scope="row">C_L1</th>
+                            <td>Long Courses</td>
+                            <td>2</td>
+                            <td>873</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">C_L2</th>
+                            <td>Medium Courses</td>
+                            <td>4</td>
+                            <td>2480</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">C_L3</th>
+                            <td>Short Courses</td>
+                            <td>22</td>
+                            <td>8745</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <h3>Course Bloom's Taxonomy</h3>
                 <div id="bloom"></div>
+                <!-- Table Bloom's Taxonomy -->
+                <table class="table table-hover">
+                    <thead style="text-align: center" class=" bg-info text-light">
+                        <tr>
+                            <th scope="col">Cluster</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Number of Courses</th>
+                            <th scope="col">Number of Registered Learners</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center">
+                        <tr>
+                            <th scope="row">C_B1</th>
+                            <td>Understanding-focus</td>
+                            <td>8</td>
+                            <td>4672</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">C_B2</th>
+                            <td>Understanding, Applying, and Analyzing-focus</td>
+                            <td>7</td>
+                            <td>2075</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">C_B3</th>
+                            <td>Remembering, Understanding, and Creating-focus</td>
+                            <td>5</td>
+                            <td>2758</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">C_B4</th>
+                            <td>Applying-focus</td>
+                            <td>8</td>
+                            <td>2593</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <script>
 
@@ -53,7 +121,7 @@
                         }
                     }
 
-                     var data2 = [{
+                    var data2 = [{
                         type: 'parcoords',
                         pad: [80, 80, 80, 80],
                         line: {
@@ -110,10 +178,10 @@
 
                     Plotly.plot('bloom', data2, layout);
 
-             
+
                 });
 
-               
+
 
 
 

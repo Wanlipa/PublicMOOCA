@@ -1,7 +1,9 @@
+// const Import = require('../models/import');
+
 exports.getIndex = (req, res, next) => {
-    res.render('index', {pageTitle: 'Main',path: '/'});
+    res.render('index', { pageTitle: 'Main', path: '/' });
 };
 
 exports.getImport = (req, res, next) => {
-    res.render('import', {pageTitle: 'Import', path: '/import'});
+    res.render('import', { pageTitle: 'Import', path: '/import' });
 };

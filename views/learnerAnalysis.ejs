@@ -9,7 +9,37 @@
             <div class="container">
                 <h3>Learners Clustering</h3>
                 <div id="learner"></div>
-                
+                <!-- Table Learners -->
+                <table class="table table-hover">
+                        <thead style="text-align: center" class=" bg-info text-light">
+                            <tr>
+                                <th scope="col">Cluster</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Number of Learners</th>
+                                <th scope="col">Learners Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody style="text-align: center">
+                            <tr>
+                                <th scope="row">C_E1</th>
+                                <td>Sampling Learners</td>
+                                <td>8558</td>
+                                <td>70%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">C_E2</th>
+                                <td>Targeting Learners</td>
+                                <td>833</td>
+                                <td>7%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">C_E3</th>
+                                <td>Comprehensive Learners</td>
+                                <td>2707</td>
+                                <td>23%</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
             </div>
             <script>
@@ -37,8 +67,8 @@
                                 groups: unpack(rows, 'learner cluster'),
                                 styles: [
                                     { target: '0', value: { marker: { color: 'red' ,symbol: 'circle'},name: 'Sampling Learners' } },
-                                    { target: '1', value: { marker: { color: 'green' ,symbol: 'square'},name: 'Targeting Learners' } },
-                                    { target: '2', value: { marker: { color: 'blue' ,symbol: 'triangle-up'},name: 'Comprehensive Learners' } }
+                                    { target: '1', value: { marker: { color: 'green' ,symbol: 'square'},name: 'Comprehensive Learners' } },
+                                    { target: '2', value: { marker: { color: 'blue' ,symbol: 'triangle-up'},name: 'Targeting Learners' } }
                                 ]
                             }]
                     }]

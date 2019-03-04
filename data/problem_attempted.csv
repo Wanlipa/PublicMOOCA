@@ -1,8 +1,0 @@
-,name,type,indx,indy,coursenumber,attempted,not attempted,attempted %,not attempted %,score average,score std,score max,score min
-0,แบบทดสอบก่อนเรียน,Multiple Choice Problem,7,1,cu005,540,663,44.89,55.11,0.56,0.32,1.0,0.0
-1,Exercise 1 : แบบทดสอบหลังเรียนที่ 1,Multiple Choice Problem,35,1,cu005,247,956,20.53,79.47,0.56,0.38,1.0,0.0
-2,Exercise 2 : แบบทดสอบหลังเรียนที่ 2,Multiple Choice Problem,37,1,cu005,245,958,20.37,79.63,0.91,0.19,1.0,0.0
-3,Exercise 3 : แบบทดสอบหลังเรียนที่ 3,Multiple Choice Problem,66,1,cu005,190,1013,15.79,84.21,0.94,0.15,1.0,0.0
-4,Exercise 4 : แบบทดสอบหลังเรียนที่ 4,Multiple Choice Problem,68,1,cu005,187,1016,15.54,84.46,0.73,0.28,1.0,0.0
-5,Exercise 5 : แบบทดสอบหลังเรียนที่ 4,Checkbox Problem,94,1,cu005,173,1030,14.38,85.62,0.5,0.45,1.0,0.0
-6,แบบทดสอบหลังเรียน,Multiple Choice Problem,96,1,cu005,188,1015,15.63,84.37,0.66,0.23,1.0,0.1

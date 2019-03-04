@@ -4,7 +4,25 @@
 
     <body>
         <%- include('includes/navigation.ejs') %>
+            <br>
+            <div class="container">
+                <div class="card">
+                    <h3 class="card-header bg-light text-info"><i class="fas fa-upload text-info"></i> Import Course </h3>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-       <h1>Import Page</h1>
-        
-<%- include('includes/end.ejs') %>
+
+            </div>
+
+
+            <%- include('includes/end.ejs') %>

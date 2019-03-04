@@ -8,106 +8,159 @@
             <div class="container">
                 <br>
                 <div class="card">
-                    <h3 class="card-header bg-light">Customize Course</h3>
+                    <h3 class="card-header bg-light text-primary">
+                        <i class="fas fa-edit text-primary"></i> Course Design
+                        <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Description">
+                            <i class="fas fa-angle-down text-primary"></i>
+                        </a>
+                    </h3>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            Teachers and Course Designers can design their future courses. The system will show the insights and recommendations.
+                        </div>
+                    </div>
                     <div class="card-body">
                         <form>
                             <div class="form-group row">
-                                    <label for="courseName" class="col-sm-2 col-form-label">Course Name</label>                                    
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="courseName" aria-describedby="courseName" placeholder="HTML & CSS">
-                                    </div>
-                                    <label for="courseName" class="col-sm-2 col-form-label">Course Number</label>                                     
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="courseNumber" aria-describedby="courseNumber" placeholder="CU005">
-                                    </div>                                
+                                <label for="courseName" class="col-sm-2 col-form-label">Course Name</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="courseName" aria-describedby="courseName" placeholder="HTML & CSS">
+                                </div>
+                                <label for="courseName" class="col-sm-2 col-form-label">Course Number</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="courseNumber" aria-describedby="courseNumber" placeholder="CU005">
+                                </div>
                             </div>
-                            
-                            <h5>Length</h5>
+                            <!-- Course Length -->
+                            <h5>
+                                <i class="far fa-clock"></i> Length
+                                <a data-toggle="collapse" href="#length" aria-expanded="false" aria-controls="length" title="Description">
+                                    <i class="fas fa-angle-down text-dark"></i>
+                                </a>
+                            </h5>
+                            <div class="collapse" id="length">
+                                <div class="card card-body">
+                                    Length section is lead to Course Lenght Clustering.
+                                </div>
+                            </div>
                             <hr>
                             <div class="form-group row">
-                                    <label for="totalHour" class="col-sm-2 col-form-label">Total Hour</label>                                    
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="totalHour" aria-describedby="totalHour" placeholder="10">
-                                    </div>
-                                    <label for="effort" class="col-sm-2 col-form-label">Effort</label>                                     
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="effort" aria-describedby="effort" placeholder="2">
-                                    </div>                                
+                                <label for="totalHour" class="col-sm-2 col-form-label">Total Hour</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="totalHour" aria-describedby="totalHour" placeholder="10">
+                                </div>
+                                <label for="effort" class="col-sm-2 col-form-label">Effort(hrs/week)</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="effort" aria-describedby="effort" placeholder="2">
+                                </div>
                             </div>
-                            <h5>Bloom's Taxonomy related with effort (%)</h5>
+                            <!-- Bloom's Taxonomy -->
+                            <h5>
+                                <i class="fas fa-chart-line"></i> Bloom's Taxonomy related with effort (%)
+                                <a data-toggle="collapse" href="#bloom" aria-expanded="false" aria-controls="bloom" title="Description">
+                                    <i class="fas fa-angle-down text-dark"></i>
+                                </a>
+                            </h5>
+                            <div class="collapse" id="bloom">
+                                <div class="card card-body">
+                                    Bloom's Taxonomy section is lead to Bloom's Taxonomy Clustering.
+                                </div>
+                            </div>
                             <hr>
                             <div class="form-group row">
-                                    <label for="remember" class="col-sm-2 col-form-label">Remember</label>                                    
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="remember" aria-describedby="remember" placeholder="20">
-                                    </div>
-                                    <label for="analyze" class="col-sm-2 col-form-label">Analyze</label>                                     
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="analyze" aria-describedby="analyze" placeholder="20">
-                                    </div>                                
+                                <label for="remember" class="col-sm-2 col-form-label">Remember</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="remember" aria-describedby="remember" placeholder="20">
+                                </div>
+                                <label for="analyze" class="col-sm-2 col-form-label">Analyze</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="analyze" aria-describedby="analyze" placeholder="20">
+                                </div>
                             </div>
                             <div class="form-group row">
-                                    <label for="understand" class="col-sm-2 col-form-label">Understand</label>                                    
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="understand" aria-describedby="understand" placeholder="10">
-                                    </div>
-                                    <label for="evaluate" class="col-sm-2 col-form-label">Evaluate</label>                                     
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="evaluate" aria-describedby="evaluate" placeholder="15">
-                                    </div>                                
+                                <label for="understand" class="col-sm-2 col-form-label">Understand</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="understand" aria-describedby="understand" placeholder="10">
+                                </div>
+                                <label for="evaluate" class="col-sm-2 col-form-label">Evaluate</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="evaluate" aria-describedby="evaluate" placeholder="15">
+                                </div>
                             </div>
                             <div class="form-group row">
-                                    <label for="apply" class="col-sm-2 col-form-label">Apply</label>                                    
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="apply" aria-describedby="apply" placeholder="10">
-                                    </div>
-                                    <label for="create" class="col-sm-2 col-form-label">Create</label>                                     
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="create" aria-describedby="create" placeholder="15">
-                                    </div>                                
+                                <label for="apply" class="col-sm-2 col-form-label">Apply</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="apply" aria-describedby="apply" placeholder="10">
+                                </div>
+                                <label for="create" class="col-sm-2 col-form-label">Create</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="create" aria-describedby="create" placeholder="15">
+                                </div>
                             </div>
-                            <h5>Number of Components</h5>
+                            <!-- Times Components -->
+                            <h5>
+                                <i class="fas fa-project-diagram"></i> Number of Components
+                                <a data-toggle="collapse" href="#times" aria-expanded="false" aria-controls="times" title="Description">
+                                    <i class="fas fa-angle-down text-dark"></i>
+                                </a>
+                            </h5>
+                            <div class="collapse" id="times">
+                                <div class="card card-body">
+                                    Number of Components section is lead to Times Components Clustering.
+                                </div>
+                            </div>
                             <hr>
                             <div class="form-group row">
-                                    <label for="chapter" class="col-sm-2 col-form-label">Chapter</label>                                    
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="chapter" aria-describedby="chapter" placeholder="12">
-                                    </div>
-                                    <label for="video" class="col-sm-2 col-form-label">Video</label>                                     
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="video" aria-describedby="video" placeholder="115">
-                                    </div>                                
+                                <label for="chapter" class="col-sm-2 col-form-label">Chapter</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="chapter" aria-describedby="chapter" placeholder="12">
+                                </div>
+                                <label for="video" class="col-sm-2 col-form-label">Video</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="video" aria-describedby="video" placeholder="115">
+                                </div>
                             </div>
                             <div class="form-group row">
-                                    <label for="html" class="col-sm-2 col-form-label">HTML</label>                                    
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="html" aria-describedby="html" placeholder="50">
-                                    </div>
-                                    <label for="discussion" class="col-sm-2 col-form-label">Discussion</label>                                     
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="discussion" aria-describedby="discussion" placeholder="5">
-                                    </div>                                
+                                <label for="html" class="col-sm-2 col-form-label">HTML</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="html" aria-describedby="html" placeholder="50">
+                                </div>
+                                <label for="discussion" class="col-sm-2 col-form-label">Discussion</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="discussion" aria-describedby="discussion" placeholder="5">
+                                </div>
                             </div>
                             <div class="form-group row">
-                                    <label for="problem" class="col-sm-2 col-form-label">Problem</label>                                    
-                                    <div class="col-sm-4">
-                                        <input type="number" step=any class="form-control" id="problem" aria-describedby="problem" placeholder="10">
-                                    </div>
-                                                                
+                                <label for="problem" class="col-sm-2 col-form-label">Problem</label>
+                                <div class="col-sm-4">
+                                    <input type="number" step=any class="form-control" id="problem" aria-describedby="problem" placeholder="10">
+                                </div>
+
                             </div>
-                            <h5>Sequence Components</h5>
+                            <!-- Sequenc Components -->
+                            <h5>
+                                <i class="fas fa-sort-amount-down"></i> Sequence Components
+                                <a data-toggle="collapse" href="#sequence" aria-expanded="false" aria-controls="sequence" title="Description">
+                                    <i class="fas fa-angle-down text-dark"></i>
+                                </a>
+                            </h5>
+                            <div class="collapse" id="sequence">
+                                <div class="card card-body">
+                                    Sequence Components section is lead to Sequence Components Clustering.
+                                </div>
+                            </div>
                             <hr>
                             <div class="form-group row">
-                                    <label for="transition" class="col-sm-2 col-form-label">Transition</label>                                    
-                                    <div class="col-sm-10">
-                                        <textarea class="form-control" id="transition" aria-describedby="transition" placeholder="[Chapter, Video, Video, HTML, Problem, ...]"></textarea>
-                                    </div>
-                                                                
+                                <label for="transition" class="col-sm-2 col-form-label">Transition</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" id="transition" aria-describedby="transition" placeholder="[Chapter, Video, Video, HTML, Problem, ...]"></textarea>
+                                </div>
+
                             </div>
 
 
 
-                            
+
                             <button type="submit" class="btn btn-primary">Analyze</button>
                         </form>
                     </div>

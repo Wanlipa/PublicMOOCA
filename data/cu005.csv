@@ -1,0 +1,148 @@
+chapter_name,chapter_indx,chapter_indy,video_name,name,length,video_indx,video_indy,html_name,html_indx,html_indy,discussion_name,discussion_indx,discussion_indy,problem_name,name,type,problem_indx,problem_indy
+แนะนำ THAI MOOC,1,1,"Name: แนะนำ THAI MOOC<br>
+Video Length: 105 sec",แนะนำ THAI MOOC,105,2,1,เนื้อหาวิชา,5,1,Hello World,13,1,"Name: แบบทดสอบก่อนเรียน<br>
+Problem Type: Multiple Choice Problem",แบบทดสอบก่อนเรียน,Multiple Choice Problem,7,1
+เริ่มต้นก่อนเรียนรู้,3,1,"Name: แนะนำบทเรียน<br>
+Video Length: 100 sec",แนะนำบทเรียน,100,4,1,Hello World,13,1,,,,"Name: Exercise 1 : แบบทดสอบหลังเรียนที่ 1<br>
+Problem Type: Multiple Choice Problem",Exercise 1 : แบบทดสอบหลังเรียนที่ 1,Multiple Choice Problem,35,1
+แบบทดสอบก่อนเรียน,6,1,"Name: เกริ่นนำ พื้นฐานการทำงานของเว็บไซต์บนเครือข่ายอินเทอร์เน็ต<br>
+Video Length: 69 sec",เกริ่นนำ พื้นฐานการทำงานของเว็บไซต์บนเครือข่ายอินเทอร์เน็ต,69,9,1,แบบสำรวจหลังเรียนออนไลน์ในระบบไทยมูค (ThaiMOOC),98,1,,,,"Name: Exercise 2 : แบบทดสอบหลังเรียนที่ 2<br>
+Problem Type: Multiple Choice Problem",Exercise 2 : แบบทดสอบหลังเรียนที่ 2,Multiple Choice Problem,37,1
+พื้นฐานการทำงานของเว็บไซต์บนเครือข่ายอินเทอร์เน็ต,8,1,"Name: พื้นฐานของ World Wide Web<br>
+Video Length: 348 sec",พื้นฐานของ World Wide Web,348,10,1,,,,,,,"Name: Exercise 3 : แบบทดสอบหลังเรียนที่ 3<br>
+Problem Type: Multiple Choice Problem",Exercise 3 : แบบทดสอบหลังเรียนที่ 3,Multiple Choice Problem,66,1
+มาตรฐาน HTML,14,1,"Name: การเตรียมเครื่องมือ<br>
+Video Length: 292 sec",การเตรียมเครื่องมือ,292,11,1,,,,,,,"Name: Exercise 4 : แบบทดสอบหลังเรียนที่ 4<br>
+Problem Type: Multiple Choice Problem",Exercise 4 : แบบทดสอบหลังเรียนที่ 4,Multiple Choice Problem,68,1
+Exercise 1 : แบบทดสอบหลังเรียนที่ 1,34,1,"Name: สรุป พื้นฐานการทำงานของเว็บไซต์บนเครือข่ายอินเทอร์เน็ต<br>
+Video Length: 46 sec",สรุป พื้นฐานการทำงานของเว็บไซต์บนเครือข่ายอินเทอร์เน็ต,46,12,1,,,,,,,"Name: Exercise 5 : แบบทดสอบหลังเรียนที่ 4<br>
+Problem Type: Checkbox Problem",Exercise 5 : แบบทดสอบหลังเรียนที่ 4,Checkbox Problem,94,1
+Exercise 2 : แบบทดสอบหลังเรียนที่ 2,36,1,"Name: เกริ่นนำ มาตรฐาน HTML<br>
+Video Length: 50 sec",เกริ่นนำ มาตรฐาน HTML,50,15,1,,,,,,,"Name: แบบทดสอบหลังเรียน<br>
+Problem Type: Multiple Choice Problem",แบบทดสอบหลังเรียน,Multiple Choice Problem,96,1
+มาตรฐาน CSS,38,1,"Name: โครงสร้างเอกสารและไวยากรณ์ HTML (1)<br>
+Video Length: 508 sec",โครงสร้างเอกสารและไวยากรณ์ HTML (1),508,16,1,,,,,,,,,,,
+Style,50,1,"Name: โครงสร้างเอกสารและไวยากรณ์ HTML (2)<br>
+Video Length: 506 sec",โครงสร้างเอกสารและไวยากรณ์ HTML (2),506,17,1,,,,,,,,,,,
+Exercise 3 : แบบทดสอบหลังเรียนที่ 3,65,1,"Name: Encoding ของอักขระใน Web Page<br>
+Video Length: 450 sec",Encoding ของอักขระใน Web Page,450,18,1,,,,,,,,,,,
+Exercise 4 : แบบทดสอบหลังเรียนที่ 4,67,1,"Name: ทบทวน : โครงสร้างและไวยากรณ์<br>
+Video Length: 190 sec",ทบทวน : โครงสร้างและไวยากรณ์,190,19,1,,,,,,,,,,,
+การสร้างหน้าเว็บด้วย HTML และ CSS ผ่านการลงมือทำปฏิบัติการ,69,1,"Name: ลำดับชั้นของหัวข้อย่อย<br>
+Video Length: 304 sec",ลำดับชั้นของหัวข้อย่อย,304,20,1,,,,,,,,,,,
+ความรู้อื่น ๆ ที่จำเป็นเพื่อพัฒนาตนเองไปสู่การเป็นนักพัฒนาเว็บเต็มรูปแบบ,89,1,"Name: เนื้อหาประเภทรายการ<br>
+Video Length: 514 sec",เนื้อหาประเภทรายการ,514,21,1,,,,,,,,,,,
+Exercise 5 : แบบทดสอบหลังเรียนที่ 5,93,1,"Name: การแทรกรูปภาพ<br>
+Video Length: 669 sec",การแทรกรูปภาพ,669,22,1,,,,,,,,,,,
+แบบทดสอบหลังเรียน,95,1,"Name: HTML Entities<br>
+Video Length: 197 sec",HTML Entities,197,23,1,,,,,,,,,,,
+แบบสำรวจหลังเรียนออนไลน์ในระบบไทยมูค (ThaiMOOC),97,1,"Name: การแทรกเสียงและวิดีโอ<br>
+Video Length: 407 sec",การแทรกเสียงและวิดีโอ,407,24,1,,,,,,,,,,,
+,,,"Name: ตาราง (1)<br>
+Video Length: 504 sec",ตาราง (1),504,25,1,,,,,,,,,,,
+,,,"Name: ตาราง (2)<br>
+Video Length: 197 sec",ตาราง (2),197,26,1,,,,,,,,,,,
+,,,"Name: แบบฟอร์ม (1)<br>
+Video Length: 499 sec",แบบฟอร์ม (1),499,27,1,,,,,,,,,,,
+,,,"Name: แบบฟอร์ม (2)<br>
+Video Length: 549 sec",แบบฟอร์ม (2),549,28,1,,,,,,,,,,,
+,,,"Name: การแทรกเอกสาร HTML ลงในหน้าเว็บ<br>
+Video Length: 257 sec",การแทรกเอกสาร HTML ลงในหน้าเว็บ,257,29,1,,,,,,,,,,,
+,,,"Name: HTML Element อื่น ๆ<br>
+Video Length: 185 sec",HTML Element อื่น ๆ,185,30,1,,,,,,,,,,,
+,,,"Name: DOM Tree<br>
+Video Length: 239 sec",DOM Tree,239,31,1,,,,,,,,,,,
+,,,"Name: การกำหนดการแสดงผล HTML Element ด้วย Style Attribute<br>
+Video Length: 384 sec",การกำหนดการแสดงผล HTML Element ด้วย Style Attribute,384,32,1,,,,,,,,,,,
+,,,"Name: สรุป มาตรฐาน HTML<br>
+Video Length: 63 sec",สรุป มาตรฐาน HTML,63,33,1,,,,,,,,,,,
+,,,"Name: วิธีการกำหนด Style<br>
+Video Length: 344 sec",วิธีการกำหนด Style,344,40,1,,,,,,,,,,,
+,,,"Name: เปรียบเทียบวิธีการกำหนด Style ทั้งสาม<br>
+Video Length: 458 sec",เปรียบเทียบวิธีการกำหนด Style ทั้งสาม,458,41,1,,,,,,,,,,,
+,,,"Name: <div> และ <span><br>
+Video Length: 203 sec",<div> และ <span>,203,42,1,,,,,,,,,,,
+,,,"Name: ไวยากรณ์ของ CSS<br>
+Video Length: 104 sec",ไวยากรณ์ของ CSS,104,43,1,,,,,,,,,,,
+,,,"Name: CSS Selector พื้นฐาน<br>
+Video Length: 432 sec",CSS Selector พื้นฐาน,432,44,1,,,,,,,,,,,
+,,,"Name: การใช้ CSS Selector เลือก Element จาก Class<br>
+Video Length: 284 sec",การใช้ CSS Selector เลือก Element จาก Class,284,45,1,,,,,,,,,,,
+,,,"Name: การใช้ CSS Selector เลือก Element จากตำแหน่งสัมพัทธ์ใน DOM Tree<br>
+Video Length: 623 sec",การใช้ CSS Selector เลือก Element จากตำแหน่งสัมพัทธ์ใน DOM Tree,623,46,1,,,,,,,,,,,
+,,,"Name: การใช้ CSS Selector เลือก Element จากค่าของ Attribute<br>
+Video Length: 439 sec",การใช้ CSS Selector เลือก Element จากค่าของ Attribute,439,47,1,,,,,,,,,,,
+,,,"Name: CSS Selectors อื่น ๆ (1)<br>
+Video Length: 350 sec",CSS Selectors อื่น ๆ (1),350,48,1,,,,,,,,,,,
+,,,"Name: CSS Selectors อื่น ๆ<br>
+Video Length: 335 sec",CSS Selectors อื่น ๆ,335,49,1,,,,,,,,,,,
+,,,"Name: ลำดับความสำคัญของสไตล์<br>
+Video Length: 501 sec",ลำดับความสำคัญของสไตล์,501,51,1,,,,,,,,,,,
+,,,"Name: การระบุสีใน CSS<br>
+Video Length: 486 sec",การระบุสีใน CSS,486,52,1,,,,,,,,,,,
+,,,"Name: การกำหนด Font<br>
+Video Length: 555 sec",การกำหนด Font,555,53,1,,,,,,,,,,,
+,,,"Name: CSS Box Model<br>
+Video Length: 198 sec",CSS Box Model,198,54,1,,,,,,,,,,,
+,,,"Name: การแสดงผลแบบ “block” และ “inline” (1)<br>
+Video Length: 278 sec",การแสดงผลแบบ “block” และ “inline” (1),278,55,1,,,,,,,,,,,
+,,,"Name: การวางตำแหน่งด้วย CSS (1)<br>
+Video Length: 368 sec",การวางตำแหน่งด้วย CSS (1),368,57,1,,,,,,,,,,,
+,,,"Name: การวางตำแหน่งด้วย CSS (2)<br>
+Video Length: 390 sec",การวางตำแหน่งด้วย CSS (2),390,58,1,,,,,,,,,,,
+,,,"Name: การวางตำแหน่งแบบ absolute<br>
+Video Length: 622 sec",การวางตำแหน่งแบบ absolute,622,59,1,,,,,,,,,,,
+,,,"Name: การวางตำแหน่งด้วย float และ clear (1)<br>
+Video Length: 317 sec",การวางตำแหน่งด้วย float และ clear (1),317,60,1,,,,,,,,,,,
+,,,"Name: การวางตำแหน่งด้วย float และ clear (2)<br>
+Video Length: 432 sec",การวางตำแหน่งด้วย float และ clear (2),432,61,1,,,,,,,,,,,
+,,,"Name: ตัวอย่าง: เลย์เอาท์แบบมีแถบข้าง (Sidebar) (1)<br>
+Video Length: 609 sec",ตัวอย่าง: เลย์เอาท์แบบมีแถบข้าง (Sidebar) (1),609,62,1,,,,,,,,,,,
+,,,"Name: ตัวอย่าง: เลย์เอาท์แบบมีแถบข้าง (Sidebar) (2)<br>
+Video Length: 655 sec",ตัวอย่าง: เลย์เอาท์แบบมีแถบข้าง (Sidebar) (2),655,63,1,,,,,,,,,,,
+,,,"Name: สรุป มาตรฐาน CSS<br>
+Video Length: 86 sec",สรุป มาตรฐาน CSS,86,64,1,,,,,,,,,,,
+,,,"Name: เกริ่นนำ การสร้างหน้าเว็บด้วย HTML และ CSS ผ่านการลงมือทำปฏิบัติการ<br>
+Video Length: 50 sec",เกริ่นนำ การสร้างหน้าเว็บด้วย HTML และ CSS ผ่านการลงมือทำปฏิบัติการ,50,70,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (1)<br>
+Video Length: 391 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (1),391,71,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (2)<br>
+Video Length: 514 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (2),514,72,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (3)<br>
+Video Length: 435 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (3),435,73,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (4)<br>
+Video Length: 303 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (4),303,74,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (5)<br>
+Video Length: 543 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (5),543,75,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (6)<br>
+Video Length: 296 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (6),296,76,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (7)<br>
+Video Length: 516 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (7),516,77,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (8)<br>
+Video Length: 552 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (8),552,78,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (9)<br>
+Video Length: 650 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (9),650,79,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (10)<br>
+Video Length: 376 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (10),376,80,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (11)<br>
+Video Length: 576 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (11),576,81,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (12)<br>
+Video Length: 511 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (12),511,82,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (13)<br>
+Video Length: 424 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (13),424,83,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (14)<br>
+Video Length: 592 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (14),592,84,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (15)<br>
+Video Length: 435 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (15),435,85,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (16)<br>
+Video Length: 691 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (16),691,86,1,,,,,,,,,,,
+,,,"Name: ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (17)<br>
+Video Length: 294 sec",ตัวอย่างการสร้างหน้าเว็บด้วย HTML และ CSS (17),294,87,1,,,,,,,,,,,
+,,,"Name: สรุป การสร้างหน้าเว็บด้วย HTML และ CSS ผ่านการลงมือทำปฏิบัติการ<br>
+Video Length: 68 sec",สรุป การสร้างหน้าเว็บด้วย HTML และ CSS ผ่านการลงมือทำปฏิบัติการ,68,88,1,,,,,,,,,,,
+,,,"Name: เกริ่นนำ ความรู้อื่น ๆ ที่จำเป็นเพื่อพัฒนาตนเองไปสู่การเป็นนักพัฒนาเว็บเต็มรูปแบบ<br>
+Video Length: 50 sec",เกริ่นนำ ความรู้อื่น ๆ ที่จำเป็นเพื่อพัฒนาตนเองไปสู่การเป็นนักพัฒนาเว็บเต็มรูปแบบ,50,90,1,,,,,,,,,,,
+,,,"Name: ก้าวต่อไปสู่การเป็นนักพัฒนาเว็บ:การเขียนโปรแกรม Front-End และ Back-End<br>
+Video Length: 599 sec",ก้าวต่อไปสู่การเป็นนักพัฒนาเว็บ:การเขียนโปรแกรม Front-End และ Back-End,599,91,1,,,,,,,,,,,
+,,,"Name: สรุป ความรู้อื่น ๆ ที่จำเป็นเพื่อพัฒนาตนเองไปสู่การเป็นนักพัฒนาเว็บเต็มรูปแบบ<br>
+Video Length: 101 sec",สรุป ความรู้อื่น ๆ ที่จำเป็นเพื่อพัฒนาตนเองไปสู่การเป็นนักพัฒนาเว็บเต็มรูปแบบ,101,92,1,,,,,,,,,,,
