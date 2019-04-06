@@ -1,450 +1,102 @@
 <!-- Resource: https://codepen.io/denjn5/pen/bwwoAy , https://observablehq.com/@d3/zoomable-sunburst -->
+
 <%- include('includes/head.ejs') %>
+<script src="https://d3js.org/d3.v4.min.js"></script>
     <style>
-        path {
-            stroke: #fff;
-            fill-rule: evenodd;
+        .node {
+            cursor: pointer;
         }
 
-        text {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
+        .node:hover {
+            stroke: #000;
+            stroke-width: 1.5px;
         }
 
-        svg {
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: auto;
-            bottom: 0;
+        .node--leaf {
+            fill: white;
+        }
+
+        .label {
+            font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-anchor: middle;
+            text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+        }
+
+        .label,
+        .node--root,
+        .node--leaf {
+            pointer-events: none;
         }
     </style>
+   
     </head>
 
     <body>
         <%- include('includes/navigation.ejs') %>
 
 
-            <nav id="navbar-example2" class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">
-                    <h4 class="text-default">
-                        <i class="fas fa-chart-pie text-default"></i> Course Clustering</h4>
-                </a>
-            </nav>
-            <br>
-            <div class="row">
-                <div class="col-md-6"></div>
-                <div class="col-md-6">
-                    <div id="accordion">
-                        <div class="card">
-                            <div class="card-header " id="headingOne">
-                                <h5 class="mb-0 ">
-                                    <button class="btn btn-link text-dark font-weight-bold" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                        aria-controls="collapseOne">
-                                        Course Length and Effort
-                                        <i class="fas fa-angle-down"></i>
-                                    </button>
-                                </h5>
-                            </div>
+            <h1>bubble chart</h1>
 
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                <div class="card-body">
-                                    <div id="length"></div>
-                                    <!-- Table Course Length -->
-                                    <table class="table table-hover">
-                                        <thead style="text-align: center" class=" bg-info text-light">
-                                            <tr>
-                                                <th scope="col">Cluster</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">Number of Courses</th>
-                                                <th scope="col">Number of Registered Learners</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody style="text-align: center">
-                                            <tr>
-                                                <th scope="row">C_L1</th>
-                                                <td>Long Courses</td>
-                                                <td>2 (7%)</td>
-                                                <td>873</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">C_L2</th>
-                                                <td>Medium Courses</td>
-                                                <td>4 (14%)</td>
-                                                <td>2480</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">C_L3</th>
-                                                <td>Short Courses</td>
-                                                <td>22 (79%)</td>
-                                                <td>8745</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed text-dark font-weight-bold" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo">
-                                        Bloom's Taxonomy
-                                        <i class="fas fa-angle-down"></i>
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                <div class="card-body">
-                                    <div id="bloom"></div>
-                                    <!-- Table Bloom's Taxonomy -->
-                                    <table class="table table-hover">
-                                        <thead style="text-align: center" class=" bg-info text-light">
-                                            <tr>
-                                                <th scope="col">Cluster</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">Number of Courses</th>
-                                                <th scope="col">Number of Registered Learners</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody style="text-align: center">
-                                            <tr>
-                                                <th scope="row">C_B1</th>
-                                                <td>Understanding-focus</td>
-                                                <td>8 (29%)</td>
-                                                <td>4672</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">C_B2</th>
-                                                <td>Understanding, Applying, and Analyzing-focus</td>
-                                                <td>7 (25%)</td>
-                                                <td>2075</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">C_B3</th>
-                                                <td>Remembering, Understanding, and Creating-focus</td>
-                                                <td>5 (17%)</td>
-                                                <td>2758</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">C_B4</th>
-                                                <td>Applying-focus</td>
-                                                <td>8 (29%)</td>
-                                                <td>2593</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed text-dark font-weight-bold" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        Number of Components <i class="fas fa-angle-down"></i>
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
-                                    3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                    shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                                    accusamus labore sustainable VHS.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingFour">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed text-dark font-weight-bold" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true"
-                                        aria-controls="collapseFour">
-                                        Sequence Components <i class="fas fa-angle-down"></i>
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
-                                    3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                    shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                                    accusamus labore sustainable VHS.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
+            <svg width="750" height="750"></svg>
             <script>
-                // From http://jsfiddle.net/Karimjaafreh/thm9m6t4/ which was from 
-                //   http://blog.luzid.com/2013/extending-the-d3-zoomable-sunburst-with-labels/
-
-                // 500, 500
-                var width = 960,
-                    height = 700,
-                    radius = Math.min(width, height) / 2;
-
-                var x = d3.scale.linear().range([0, 2 * Math.PI]);
-                var y = d3.scale.sqrt().range([0, radius]);
-                var color = d3.scale.category20();
-
-                var svg = d3.select("body").append("svg")
-                    .attr("width", width)
-                    .attr("height", height)
-                    .append("g").attr("transform", "translate(" + width / 2 + "," + (height / 2 + 10) + ") rotate(-90 0 0)");
-
-                var partition = d3.layout.partition()
-                    .value(function (d) { return d.size; });
-
-                var arc = d3.svg.arc()
-                    .startAngle(function (d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x))); })
-                    .endAngle(function (d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))); })
-                    .innerRadius(function (d) { return Math.max(0, y(d.y)); })
-                    .outerRadius(function (d) { return Math.max(0, y(d.y + d.dy)); });
-
-                //d3.json("/d/4063550/flare.json", function(error, root) {
-                var root = getData();
-
-                var g = svg.selectAll("g")
-                    .data(partition.nodes(root)).enter().append("g");
-
-                var path = g.append("path").attr("d", arc)
-                    .style("fill", function (d) { return color((d.children ? d : d.parent).name); })
-                    .on("click", click);
-
-                //.append("text")
-                var text = g.append("text").attr("x", function (d) { return y(d.y); })
-                    .attr("dx", "6") // margin
-                    .attr("dy", ".35em") // vertical-align
-                    .attr("transform", function (d) { return "rotate(" + computeTextRotation(d) + ")"; })
-                    .text(function (d) { return d.name; })
-                    .style("fill", "black");
-
-                function computeTextRotation(d) {
-                    var angle = x(d.x + d.dx / 2) - Math.PI / 2;
-                    return angle / Math.PI * 180;
-
-                }
-
-                function click(d) {
-                    // fade out all text elements
-                    if (d.size !== undefined) {
-                        d.size += 100;
-                    };
-                    text.transition().attr("opacity", 0);
-
-                    path.transition().duration(750)
-                        .attrTween("d", arcTween(d))
-                        .each("end", function (e, i) {
-                            // check if the animated element's data e lies within the visible angle span given in d
-                            if (e.x >= d.x && e.x < (d.x + d.dx)) {
-                                // get a selection of the associated text element
-                                var arcText = d3.select(this.parentNode).select("text");
-                                // fade in the text element and recalculate positions
-                                arcText.transition().duration(750)
-                                    .attr("opacity", 1)
-                                    .attr("transform", function () { return "rotate(" + computeTextRotation(e) + ")" })
-                                    .attr("x", function (d) { return y(d.y); });
-                            }
-                        });
-                }
-
-                // Word wrap!
-                var insertLinebreaks = function (t, d, width) {
-                    alert(0)
-                    var el = d3.select(t);
-                    var p = d3.select(t.parentNode);
-                    p.append("g").attr("x", function (d) { return y(d.y); })
-                        .attr("transform", function (d) { return "rotate(" + computeTextRotation(d) + ")"; })
-                        .append("foreignObject")
-                        .attr('x', -width / 2)
-                        .attr("width", width).attr("height", 200)
-                        .append("xhtml:p").attr('style', 'word-wrap: break-word; text-align:center;')
-                        .html(d.name);
-                    alert(1)
-                    el.remove();
-                    alert(2);
-                };
-
-
-                d3.select(self.frameElement).style("height", height + "px");
-
-                // Interpolate the scales!
-                function arcTween(d) {
-                    var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
-                        yd = d3.interpolate(y.domain(), [d.y, 1]),
-                        yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
-                    return function (d, i) {
-                        return i ? function (t) {
-                            return arc(d);
-                        } : function (t) {
-                            x.domain(xd(t));
-                            y.domain(yd(t)).range(yr(t));
-                            return arc(d);
-                        };
-                    };
-                }
-
-                function getData() {
-
-                    data = {
-                        "name": "Course Clustering",
-                        "children": [
-                            {
-                                "name": "Course Length and Effort",
-                                "children": [
-                                    { "name": "C_L1", "size": 7 },
-                                    { "name": "C_L2", "size": 14 },
-                                    { "name": "C_L3", "size": 79 }
-                                ]
-                            },
-                            {
-                                "name": "Bloom's Taxonomy",
-                                "children": [
-                                    { "name": "C_B1", "size": 29 },
-                                    { "name": "C_B2", "size": 25 },
-                                    { "name": "C_B3", "size": 17 },
-                                    { "name": "C_B4", "size": 29 }
-
-                                ]
-                            },
-                            {
-                                "name": "Number of Components",
-                                "children": [
-                                    { "name": "C_N1", "size": 32 },
-                                    { "name": "C_N2", "size": 39 },
-                                    { "name": "C_N3", "size": 29 }
-
-
-                                ]
-                            },
-                            {
-                                "name": "Seqence Components",
-                                "children": [
-                                    { "name": "C_S1", "size": 25 },
-                                    { "name": "C_S2", "size": 43 },
-                                    { "name": "C_S3", "size": 32 }
-
-
-                                ]
-                            }
-                        ]
+                var svg = d3.select("svg"),
+                    margin = 20,
+                    diameter = +svg.attr("width"),
+                    g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+                var color = d3.scaleLinear()
+                    .domain([-1, 5])
+                    .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+                    .interpolate(d3.interpolateHcl);
+                var pack = d3.pack()
+                    .size([diameter - margin, diameter - margin])
+                    .padding(2);
+                d3.json("data/Relationship.json", function (error, root) {
+                    if (error) throw error;
+                    root = d3.hierarchy(root)
+                        .sum(function (d) { return d.size; })
+                        .sort(function (a, b) { return b.value - a.value; });
+                    var focus = root,
+                        nodes = pack(root).descendants(),
+                        view;
+                    var circle = g.selectAll("circle")
+                        .data(nodes)
+                        .enter().append("circle")
+                        .attr("class", function (d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+                        .style("fill", function (d) { return d.children ? color(d.depth) : null; })
+                        .on("click", function (d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+                    var text = g.selectAll("text")
+                        .data(nodes)
+                        .enter().append("text")
+                        .attr("class", "label")
+                        .style("fill-opacity", function (d) { return d.parent === root ? 1 : 0; })
+                        .style("display", function (d) { return d.parent === root ? "inline" : "none"; })
+                        .text(function (d) { return d.data.name; });
+                    var node = g.selectAll("circle,text");
+                    svg
+                        .style("background", color(-1))
+                        .on("click", function () { zoom(root); });
+                    zoomTo([root.x, root.y, root.r * 2 + margin]);
+                    function zoom(d) {
+                        var focus0 = focus; focus = d;
+                        var transition = d3.transition()
+                            .duration(d3.event.altKey ? 7500 : 750)
+                            .tween("zoom", function (d) {
+                                var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+                                return function (t) { zoomTo(i(t)); };
+                            });
+                        transition.selectAll("text")
+                            .filter(function (d) { return d.parent === focus || this.style.display === "inline"; })
+                            .style("fill-opacity", function (d) { return d.parent === focus ? 1 : 0; })
+                            .on("start", function (d) { if (d.parent === focus) this.style.display = "inline"; })
+                            .on("end", function (d) { if (d.parent !== focus) this.style.display = "none"; });
                     }
-
-
-
-                    return data
-                };
-
-
-                // Get data from csv
-                Plotly.d3.csv("data/CSV/CourseClustering.csv", function (err, rows) {
-
-                    function unpack(rows, key) {
-                        return rows.map(function (row) { return row[key]; });
+                    function zoomTo(v) {
+                        var k = diameter / v[2]; view = v;
+                        node.attr("transform", function (d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
+                        circle.attr("r", function (d) { return d.r * k; });
                     }
-                    // Course Length Clustering
-                    var data = [{
-                        type: 'scatter',
-                        mode: 'markers',
-                        x: unpack(rows, 'effort'),
-                        y: unpack(rows, 'totalhours'),
-                        text: unpack(rows, 'LengthClustering'),
-                        marker: {
-                            size: unpack(rows, 'Registered'),
-                            sizemode: "area"
-                        },
-                        transforms: [
-                            {
-                                type: 'groupby',
-                                groups: unpack(rows, 'LengthClustering'),
-                                styles: [
-                                    { target: 'Long', value: { marker: { color: 'red', symbol: 'square' } } },
-                                    { target: 'Medium', value: { marker: { color: 'blue', symbol: 'triangle-up' } } },
-                                    { target: 'Short', value: { marker: { color: 'green', symbol: 'circle' } } }
-                                ]
-                            }]
-                    }]
-
-                    var layout = {
-                        yaxis: {
-                            type: 'log',
-                            title: 'Total Hours'
-                        },
-                        xaxis: {
-                            title: 'Effort (hour/week)'
-                        }
-                    }
-
-                    var data2 = [{
-                        type: 'parcoords',
-                        pad: [80, 80, 80, 80],
-                        line: {
-                            color: unpack(rows, 'BloomCustering'),
-                            colorscale: 'Jet'
-                            // colorscale: [[0, 'rgb(160, 160, 160)'], [0.5, 'green'], [1, 'blue'], [0,'purple']]
-                        },
-
-                        dimensions: [{
-                            range: [0, 100],
-                            label: 'remember',
-                            values: unpack(rows, 'remember')
-                        }, {
-                            constraintrange: [0, 100],
-                            range: [0, 100],
-                            label: 'understand',
-                            values: unpack(rows, 'understand')
-                        }, {
-                            label: 'apply',
-                            range: [0, 100],
-                            values: unpack(rows, 'apply')
-                        }, {
-                            label: 'analyze',
-                            range: [0, 100],
-                            values: unpack(rows, 'analyze')
-                        }, {
-                            label: 'evaluate',
-                            range: [0, 100],
-                            values: unpack(rows, 'evaluate')
-                        }, {
-                            label: 'create',
-                            range: [0, 100],
-                            values: unpack(rows, 'create')
-                        }]
-                    }];
-
-                    var layout2 = {
-                        width: 800,
-                        annotations: [
-                            {
-                                showarrow: false,
-                                text: 'Higher sepal width',
-                                x: 0, y: 1, xref: 'paper', yref: 'paper'
-                            },
-                            {
-                                showarrow: false,
-                                text: 'Lower petal width and length',
-                                x: 0.9, y: .25, xref: 'paper', yref: 'paper'
-                            }]
-                    };
-
-                    // Plot Graph
-                    Plotly.plot('length', data, layout)
-
-                    Plotly.plot('bloom', data2, layout);
-
-
                 });
+
 
             </script>
 

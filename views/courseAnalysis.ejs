@@ -28,7 +28,7 @@
             <nav id="navbar-example2" class="navbar navbar-light bg-light">
                 <a class="navbar-brand" href="#">
                     <h4 class="text-default">
-                            <i class="fas fa-book-open"></i> Course Clustering</h4>
+                        <i class="fas fa-book-open"></i> Course Clustering</h4>
                 </a>
             </nav>
             <br>
@@ -142,43 +142,45 @@
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed text-dark font-weight-bold" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
-                                        Number of Components <i class="fas fa-angle-down"></i>
+                                        Number of Components
+                                        <i class="fas fa-angle-down"></i>
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                 <div class="card-body">
+                                    <div id="ncomponent"></div>
                                     <!-- Table Number of Component -->
                                     <table class="table table-hover">
-                                            <thead style="text-align: center" class=" bg-info text-light">
-                                                <tr>
-                                                    <th scope="col">Cluster</th>
-                                                    <th scope="col">Description</th>
-                                                    <th scope="col">Number of Courses</th>
-                                                    <th scope="col">Number of Registered Learners</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody style="text-align: center">
-                                                <tr>
-                                                    <th scope="row">C_N1</th>
-                                                    <td>HTML-focus</td>
-                                                    <td>9 (32%)</td>
-                                                    <td>4406</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">C_N2</th>
-                                                    <td>Video and HTML-focus</td>
-                                                    <td>11 (39%)</td>
-                                                    <td>4055</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">C_N3</th>
-                                                    <td>Video-focus</td>
-                                                    <td>8 (29%)</td>
-                                                    <td>3637</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <thead style="text-align: center" class=" bg-info text-light">
+                                            <tr>
+                                                <th scope="col">Cluster</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Number of Courses</th>
+                                                <th scope="col">Number of Registered Learners</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="text-align: center">
+                                            <tr>
+                                                <th scope="row">C_N1</th>
+                                                <td>HTML-focus</td>
+                                                <td>9 (32%)</td>
+                                                <td>4406</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">C_N2</th>
+                                                <td>Video and HTML-focus</td>
+                                                <td>11 (39%)</td>
+                                                <td>4055</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">C_N3</th>
+                                                <td>Video-focus</td>
+                                                <td>8 (29%)</td>
+                                                <td>3637</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +189,8 @@
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed text-dark font-weight-bold" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true"
                                         aria-controls="collapseFour">
-                                        Sequence Components <i class="fas fa-angle-down"></i>
+                                        Sequence Components
+                                        <i class="fas fa-angle-down"></i>
                                     </button>
                                 </h5>
                             </div>
@@ -196,35 +199,35 @@
                                 <div class="card-body">
                                     <!-- Table Sequence Component -->
                                     <table class="table table-hover">
-                                            <thead style="text-align: center" class=" bg-info text-light">
-                                                <tr>
-                                                    <th scope="col">Cluster</th>
-                                                    <th scope="col">Description</th>
-                                                    <th scope="col">Number of Courses</th>
-                                                    <th scope="col">Number of Registered Learners</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody style="text-align: center">
-                                                <tr>
-                                                    <th scope="row">C_N1</th>
-                                                    <td>discussion-chapter and video-videofocus</td>
-                                                    <td>7 (25%)</td>
-                                                    <td>3917</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">C_N2</th>
-                                                    <td>chapter-html and problem-chapter focus</td>
-                                                    <td>12 (43%)</td>
-                                                    <td>4546</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">C_N3</th>
-                                                    <td>discussion-html and video-html focus</td>
-                                                    <td>9 (32%)</td>
-                                                    <td>3635</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <thead style="text-align: center" class=" bg-info text-light">
+                                            <tr>
+                                                <th scope="col">Cluster</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Number of Courses</th>
+                                                <th scope="col">Number of Registered Learners</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="text-align: center">
+                                            <tr>
+                                                <th scope="row">C_S1</th>
+                                                <td>discussion-chapter and video-videofocus</td>
+                                                <td>7 (25%)</td>
+                                                <td>3917</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">C_S2</th>
+                                                <td>chapter-html and problem-chapter focus</td>
+                                                <td>12 (43%)</td>
+                                                <td>4546</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">C_S3</th>
+                                                <td>discussion-html and video-html focus</td>
+                                                <td>9 (32%)</td>
+                                                <td>3635</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -486,10 +489,60 @@
                             }]
                     };
 
+                    var data3 = [{
+                        type: 'parcoords',
+                        pad: [80, 80, 80, 80],
+                        line: {
+                            color: unpack(rows, 'NComCustering'),
+                            colorscale: 'Jet'
+                            // colorscale: [[0, 'rgb(160, 160, 160)'], [0.5, 'green'], [1, 'blue'], [0,'purple']]
+                        },
+
+                        dimensions: [{
+                            range: [0, 100],
+                            label: 'Chapters',
+                            values: unpack(rows, 'Chapters')
+                        }, {
+                            constraintrange: [0, 100],
+                            range: [0, 100],
+                            label: 'Videos',
+                            values: unpack(rows, 'Videos')
+                        }, {
+                            label: 'HTML',
+                            range: [0, 100],
+                            values: unpack(rows, 'HTML')
+                        }, {
+                            label: 'Problems',
+                            range: [0, 100],
+                            values: unpack(rows, 'Problems')
+                        }, {
+                            label: 'Discussions',
+                            range: [0, 100],
+                            values: unpack(rows, 'Discussions')
+                        }]
+                    }];
+
+                    var layout3 = {
+                        width: 800,
+                        annotations: [
+                            {
+                                showarrow: false,
+                                text: 'Higher sepal width',
+                                x: 0, y: 1, xref: 'paper', yref: 'paper'
+                            },
+                            {
+                                showarrow: false,
+                                text: 'Lower petal width and length',
+                                x: 0.9, y: .25, xref: 'paper', yref: 'paper'
+                            }]
+                    };
+
                     // Plot Graph
                     Plotly.plot('length', data, layout)
 
                     Plotly.plot('bloom', data2, layout);
+
+                    Plotly.plot('ncomponent', data3, layout);
 
 
                 });
