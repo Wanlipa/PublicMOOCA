@@ -8,6 +8,10 @@ exports.getImport = (req, res, next) => {
     res.render('import', { pageTitle: 'Import', path: '/import' });
 };
 
+exports.getVisualize = (req, res, next) => {
+    res.render('visualize', { pageTitle: 'visualize', path: '/visualize' })
+};
+
 exports.postImport = (req, res, next) => {
     // const title = req.body.title;
     // const csvfile = req.body.csvfile;

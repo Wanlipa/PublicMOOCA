@@ -28,7 +28,7 @@
             <nav id="navbar-example2" class="navbar navbar-light bg-light">
                 <a class="navbar-brand" href="#">
                     <h4 class="text-default">
-                            <i class="fas fa-book-open"></i> Course Clustering</h4>
+                        <i class="fas fa-chart-pie text-default"></i> Course Clustering</h4>
                 </a>
             </nav>
             <br>
@@ -148,37 +148,13 @@
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                 <div class="card-body">
-                                    <!-- Table Number of Component -->
-                                    <table class="table table-hover">
-                                            <thead style="text-align: center" class=" bg-info text-light">
-                                                <tr>
-                                                    <th scope="col">Cluster</th>
-                                                    <th scope="col">Description</th>
-                                                    <th scope="col">Number of Courses</th>
-                                                    <th scope="col">Number of Registered Learners</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody style="text-align: center">
-                                                <tr>
-                                                    <th scope="row">C_N1</th>
-                                                    <td>HTML-focus</td>
-                                                    <td>9 (32%)</td>
-                                                    <td>4406</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">C_N2</th>
-                                                    <td>Video and HTML-focus</td>
-                                                    <td>11 (39%)</td>
-                                                    <td>4055</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">C_N3</th>
-                                                    <td>Video-focus</td>
-                                                    <td>8 (29%)</td>
-                                                    <td>3637</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+                                    3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                    shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                    accusamus labore sustainable VHS.
                                 </div>
                             </div>
                         </div>
@@ -194,37 +170,13 @@
 
                             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                                 <div class="card-body">
-                                    <!-- Table Sequence Component -->
-                                    <table class="table table-hover">
-                                            <thead style="text-align: center" class=" bg-info text-light">
-                                                <tr>
-                                                    <th scope="col">Cluster</th>
-                                                    <th scope="col">Description</th>
-                                                    <th scope="col">Number of Courses</th>
-                                                    <th scope="col">Number of Registered Learners</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody style="text-align: center">
-                                                <tr>
-                                                    <th scope="row">C_N1</th>
-                                                    <td>discussion-chapter and video-videofocus</td>
-                                                    <td>7 (25%)</td>
-                                                    <td>3917</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">C_N2</th>
-                                                    <td>chapter-html and problem-chapter focus</td>
-                                                    <td>12 (43%)</td>
-                                                    <td>4546</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">C_N3</th>
-                                                    <td>discussion-html and video-html focus</td>
-                                                    <td>9 (32%)</td>
-                                                    <td>3635</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                                    non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+                                    3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                    shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                    accusamus labore sustainable VHS.
                                 </div>
                             </div>
                         </div>
@@ -237,7 +189,7 @@
                 // From http://jsfiddle.net/Karimjaafreh/thm9m6t4/ which was from 
                 //   http://blog.luzid.com/2013/extending-the-d3-zoomable-sunburst-with-labels/
 
-                // ========== Sunburst Chart ==========
+                // 500, 500
                 var width = 960,
                     height = 700,
                     radius = Math.min(width, height) / 2;
@@ -394,7 +346,7 @@
                     return data
                 };
 
-                // ========== Detail Chart ==========
+
                 // Get data from csv
                 Plotly.d3.csv("data/CSV/CourseClustering.csv", function (err, rows) {
 

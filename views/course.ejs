@@ -126,7 +126,7 @@
       <script>
 
         // Course Structure
-        Plotly.d3.csv("data/cu005.csv", function (err, rows) {
+        Plotly.d3.csv("data/CSV/cu005.csv", function (err, rows) {
           function unpack(rows, key) {
             return rows.map(function (row) { return row[key]; });
           }
@@ -198,7 +198,7 @@
 
         // Learners
 
-        Plotly.d3.csv("data/cu005_problemAttempt.csv", function (err, rows) {
+        Plotly.d3.csv("data/CSV/cu005_problemAttempt.csv", function (err, rows) {
           function unpack(rows, key) {
             return rows.map(function (row) { return row[key]; });
           }
