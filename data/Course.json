@@ -16,7 +16,6 @@
                 { "name": "C_B2", "size": 25 },
                 { "name": "C_B3", "size": 17 },
                 { "name": "C_B4", "size": 29 }
-
             ]
         },
         {
@@ -25,8 +24,6 @@
                 { "name": "C_N1", "size": 32 },
                 { "name": "C_N2", "size": 39 },
                 { "name": "C_N3", "size": 29 }
-
-
             ]
         },
         {
@@ -35,8 +32,6 @@
                 { "name": "C_S1", "size": 25 },
                 { "name": "C_S2", "size": 43 },
                 { "name": "C_S3", "size": 32 }
-
-
             ]
         }
     ]

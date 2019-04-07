@@ -1,0 +1,162 @@
+[
+    {
+        "Course": "ku002",
+        "cluster": {
+            "Sampling": 403,
+            "Targeting": 147,
+            "Comprehensive": 10
+        }
+    },
+    {
+        "Course": "ku003",
+        "cluster": {
+            "Sampling": 301,
+            "Targeting": 9,
+            "Comprehensive": 3
+        }
+    },
+    {
+        "Course": "stou007",
+        "cluster": {
+            "Sampling": 550,
+            "Targeting": 34,
+            "Comprehensive": 55
+        }
+    },
+    {
+        "Course": "rmutt013",
+        "cluster": {
+            "Sampling": 346,
+            "Targeting": 33,
+            "Comprehensive": 322
+        }
+    },
+    {
+        "Course": "nrru001",
+        "cluster": {
+            "Sampling": 540,
+            "Targeting": 18,
+            "Comprehensive": 114
+        }
+    },
+    {
+        "Course": "su006",
+        "cluster": {
+            "Sampling": 426,
+            "Targeting": 45,
+            "Comprehensive": 305
+        }
+    },
+    {
+        "Course": "swu003",
+        "cluster": {
+            "Sampling": 262,
+            "Targeting": 11,
+            "Comprehensive": 38
+        }
+    },
+    {
+        "Course": "wu001",
+        "cluster": {
+            "Sampling": 327,
+            "Targeting": 97,
+            "Comprehensive": 92
+        }
+    },
+    {
+        "Course": "rmutsb001",
+        "cluster": {
+            "Sampling": 206,
+            "Targeting": 9,
+            "Comprehensive": 92
+        }
+    },
+    {
+        "Course": "hu003",
+        "cluster": {
+            "Sampling": 318,
+            "Targeting": 18,
+            "Comprehensive": 142
+        }
+    },
+    {
+        "Course": "stou005",
+        "cluster": {
+            "Sampling": 793,
+            "Targeting": 83,
+            "Comprehensive": 86
+        }
+    },
+    {
+        "Course": "stou006",
+        "cluster": {
+            "Sampling": 556,
+            "Targeting": 47,
+            "Comprehensive": 140
+        }
+    },
+    {
+        "Course": "bu001",
+        "cluster": {
+            "Sampling": 799,
+            "Targeting": 48,
+            "Comprehensive": 399
+        }
+    },
+    {
+        "Course": "kmitl003",
+        "cluster": {
+            "Sampling": 487,
+            "Targeting": 22,
+            "Comprehensive": 200
+        }
+    },
+    {
+        "Course": "cu005",
+        "cluster": {
+            "Sampling": 945,
+            "Targeting": 88,
+            "Comprehensive": 170
+        }
+    },
+    {
+        "Course": "sru001",
+        "cluster": {
+            "Sampling": 203,
+            "Targeting": 10,
+            "Comprehensive": 210
+        }
+    },
+    {
+        "Course": "mu007",
+        "cluster": {
+            "Sampling": 260,
+            "Targeting": 31,
+            "Comprehensive": 43
+        }
+    },
+    {
+        "Course": "mu005",
+        "cluster": {
+            "Sampling": 282,
+            "Targeting": 26,
+            "Comprehensive": 11
+        }
+    },
+    {
+        "Course": "sut001",
+        "cluster": {
+            "Sampling": 303,
+            "Targeting": 32,
+            "Comprehensive": 181
+        }
+    },
+    {
+        "Course": "stou009",
+        "cluster": {
+            "Sampling": 251,
+            "Targeting": 25,
+            "Comprehensive": 94
+        }
+    }
+]
