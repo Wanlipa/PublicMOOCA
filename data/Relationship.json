@@ -8,37 +8,32 @@
                     "name": "Long Courses",
                     "children": [
                         {
-                            "name": "AgglomerativeCluster",
+                            "name": "Learners' Performance",
                             "children": [
                                 {
-                                    "name": "Learners' Performance",
-                                    "children": [
-                                        {
-                                            "name": "Pass (2.06%)",
-                                            "size": 18
-                                        },
-                                        {
-                                            "name": "Fail (97.94%)",
-                                            "size": 855
-                                        }
-                                    ]
+                                    "name": "Pass (2.06%)",
+                                    "size": 18
                                 },
                                 {
-                                    "name": "Learners' Engagement",
-                                    "children": [
-                                        {
-                                            "name": "Sampling (80.64%)",
-                                            "size": 704
-                                        },
-                                        {
-                                            "name": "Targeting (17.87%)",
-                                            "size": 156
-                                        },
-                                        {
-                                            "name": "Comprehension (1.49%)",
-                                            "size": 13
-                                        }
-                                    ]
+                                    "name": "Fail (97.94%)",
+                                    "size": 855
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (80.64%)",
+                                    "size": 704
+                                },
+                                {
+                                    "name": "Targeting (17.87%)",
+                                    "size": 156
+                                },
+                                {
+                                    "name": "Comprehension (1.49%)",
+                                    "size": 13
                                 }
                             ]
                         }
@@ -48,24 +43,34 @@
                     "name": "Medium Courses",
                     "children": [
                         {
-                            "name": "BetweennessCentrality",
-                            "size": 3534
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (27.22%)",
+                                    "size": 675
+                                },
+                                {
+                                    "name": "Fail (72.78%)",
+                                    "size": 1805
+                                }
+                            ]
                         },
                         {
-                            "name": "LinkDistance",
-                            "size": 5731
-                        },
-                        {
-                            "name": "MaxFlowMinCut",
-                            "size": 7840
-                        },
-                        {
-                            "name": "ShortestPaths",
-                            "size": 5914
-                        },
-                        {
-                            "name": "SpanningTree",
-                            "size": 3416
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (64.35%)",
+                                    "size": 1596
+                                },
+                                {
+                                    "name": "Targeting (7.74%)",
+                                    "size": 192
+                                },
+                                {
+                                    "name": "Comprehension (27.90%)",
+                                    "size": 692
+                                }
+                            ]
                         }
                     ]
                 },
@@ -73,207 +78,401 @@
                     "name": "Short Courses",
                     "children": [
                         {
-                            "name": "BetweennessCentrality",
-                            "size": 3534
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (21.02%)",
+                                    "size": 1838
+                                },
+                                {
+                                    "name": "Fail (78.98%)",
+                                    "size": 6907
+                                }
+                            ]
                         },
                         {
-                            "name": "LinkDistance",
-                            "size": 5731
-                        },
-                        {
-                            "name": "MaxFlowMinCut",
-                            "size": 7840
-                        },
-                        {
-                            "name": "ShortestPaths",
-                            "size": 5914
-                        },
-                        {
-                            "name": "SpanningTree",
-                            "size": 3416
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (71.56%)",
+                                    "size": 6258
+                                },
+                                {
+                                    "name": "Targeting (5.55%)",
+                                    "size": 485
+                                },
+                                {
+                                    "name": "Comprehension (22.89%)",
+                                    "size": 2002
+                                }
+                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "name": "animate",
+            "name": "Bloom's Taxonomy",
             "children": [
                 {
-                    "name": "Easing",
-                    "size": 17010
-                },
-                {
-                    "name": "FunctionSequence",
-                    "size": 5842
-                },
-                {
-                    "name": "interpolate",
+                    "name": "Understanding-focus",
                     "children": [
                         {
-                            "name": "ArrayInterpolator",
-                            "size": 1983
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (20.74%)",
+                                    "size": 969
+                                },
+                                {
+                                    "name": "Fail (79.26%)",
+                                    "size": 3703
+                                }
+                            ]
                         },
                         {
-                            "name": "ColorInterpolator",
-                            "size": 2047
-                        },
-                        {
-                            "name": "DateInterpolator",
-                            "size": 1375
-                        },
-                        {
-                            "name": "Interpolator",
-                            "size": 8746
-                        },
-                        {
-                            "name": "MatrixInterpolator",
-                            "size": 2202
-                        },
-                        {
-                            "name": "NumberInterpolator",
-                            "size": 1382
-                        },
-                        {
-                            "name": "ObjectInterpolator",
-                            "size": 1629
-                        },
-                        {
-                            "name": "PointInterpolator",
-                            "size": 1675
-                        },
-                        {
-                            "name": "RectangleInterpolator",
-                            "size": 2042
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (68.69%)",
+                                    "size": 3209
+                                },
+                                {
+                                    "name": "Targeting (8.80%)",
+                                    "size": 411
+                                },
+                                {
+                                    "name": "Comprehension (22.52%)",
+                                    "size": 1052
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "name": "ISchedulable",
-                    "size": 1041
-                },
-                {
-                    "name": "Parallel",
-                    "size": 5176
-                },
-                {
-                    "name": "Pause",
-                    "size": 449
-                },
-                {
-                    "name": "Scheduler",
-                    "size": 5593
-                },
-                {
-                    "name": "Sequence",
-                    "size": 5534
-                },
-                {
-                    "name": "Transition",
-                    "size": 9201
-                },
-                {
-                    "name": "Transitioner",
-                    "size": 19975
-                },
-                {
-                    "name": "TransitionEvent",
-                    "size": 1116
-                },
-                {
-                    "name": "Tween",
-                    "size": 6006
-                }
-            ]
-        },
-        {
-            "name": "data",
-            "children": [
-                {
-                    "name": "converters",
+                    "name": "Understanding, Applying and Analyzing-focus",
                     "children": [
                         {
-                            "name": "Converters",
-                            "size": 721
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (24.34%)",
+                                    "size": 505
+                                },
+                                {
+                                    "name": "Fail (75.66%)",
+                                    "size": 1570
+                                }
+                            ]
                         },
                         {
-                            "name": "DelimitedTextConverter",
-                            "size": 4294
-                        },
-                        {
-                            "name": "GraphMLConverter",
-                            "size": 9800
-                        },
-                        {
-                            "name": "IDataConverter",
-                            "size": 1314
-                        },
-                        {
-                            "name": "JSONConverter",
-                            "size": 2220
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (68.69%)",
+                                    "size": 1427
+                                },
+                                {
+                                    "name": "Targeting (7.42%)",
+                                    "size": 154
+                                },
+                                {
+                                    "name": "Comprehension (23.81%)",
+                                    "size": 494
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "name": "DataField",
-                    "size": 1759
+                    "name": "Remembering, Understanding and Creating-focus",
+                    "children": [
+                        {
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (13.63%)",
+                                    "size": 376
+                                },
+                                {
+                                    "name": "Fail (86.37%)",
+                                    "size": 2382
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (76.58%)",
+                                    "size": 2112
+                                },
+                                {
+                                    "name": "Targeting (6.85%)",
+                                    "size": 189
+                                },
+                                {
+                                    "name": "Comprehension (16.57%)",
+                                    "size": 457
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "name": "DataSchema",
-                    "size": 2165
-                },
-                {
-                    "name": "DataSet",
-                    "size": 586
-                },
-                {
-                    "name": "DataSource",
-                    "size": 3331
-                },
-                {
-                    "name": "DataTable",
-                    "size": 772
-                },
-                {
-                    "name": "DataUtil",
-                    "size": 3322
+                    "name": "Applying-focus",
+                    "children": [
+                        {
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (26.26%)",
+                                    "size": 681
+                                },
+                                {
+                                    "name": "Fail (73.74%)",
+                                    "size": 1912
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (69.80%)",
+                                    "size": 1810
+                                },
+                                {
+                                    "name": "Targeting (3.05%)",
+                                    "size": 79
+                                },
+                                {
+                                    "name": "Comprehension (27.15%)",
+                                    "size": 704
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
         {
-            "name": "physics",
+            "name": "Number of Components",
             "children": [
                 {
-                    "name": "DragForce",
-                    "size": 1082
+                    "name": "HTML-focus",
+                    "children": [
+                        {
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (22.42%)",
+                                    "size": 988
+                                },
+                                {
+                                    "name": "Fail (77.58%)",
+                                    "size": 3418
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (67.16%)",
+                                    "size": 2959
+                                },
+                                {
+                                    "name": "Targeting (9.58%)",
+                                    "size": 422
+                                },
+                                {
+                                    "name": "Comprehension (23.26%)",
+                                    "size": 1025
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "name": "GravityForce",
-                    "size": 1336
+                    "name": "Video and HTML-focus",
+                    "children": [
+                        {
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (17.88%)",
+                                    "size": 725
+                                },
+                                {
+                                    "name": "Fail (82.12%)",
+                                    "size": 3330
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (74.28%)",
+                                    "size": 3012
+                                },
+                                {
+                                    "name": "Targeting (5.55%)",
+                                    "size": 225
+                                },
+                                {
+                                    "name": "Comprehension (20.17%)",
+                                    "size": 818
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "name": "IForce",
-                    "size": 319
+                    "name": "Video-focus",
+                    "children": [
+                        {
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (22.49%)",
+                                    "size": 818
+                                },
+                                {
+                                    "name": "Fail (77.51%)",
+                                    "size": 2819
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (71.13%)",
+                                    "size": 2587
+                                },
+                                {
+                                    "name": "Targeting (5.11%)",
+                                    "size": 186
+                                },
+                                {
+                                    "name": "Comprehension (23.76%)",
+                                    "size": 864
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Sequence Component",
+            "children": [
+                {
+                    "name": "discussion-chapter and video-video focus",
+                    "children": [
+                        {
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (11.00%)",
+                                    "size": 431
+                                },
+                                {
+                                    "name": "Fail (89.00%)",
+                                    "size": 3486
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (79.01%)",
+                                    "size": 3095
+                                },
+                                {
+                                    "name": "Targeting (7.07%)",
+                                    "size": 277
+                                },
+                                {
+                                    "name": "Comprehension (13.91%)",
+                                    "size": 545
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "name": "NBodyForce",
-                    "size": 10498
+                    "name": "chapter-html and problem-chapter focus",
+                    "children": [
+                        {
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (24.92%)",
+                                    "size": 1133
+                                },
+                                {
+                                    "name": "Fail (75.08%)",
+                                    "size": 3413
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (67.93%)",
+                                    "size": 3088
+                                },
+                                {
+                                    "name": "Targeting (5.92%)",
+                                    "size": 269
+                                },
+                                {
+                                    "name": "Comprehension (26.15%)",
+                                    "size": 1189
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "name": "Particle",
-                    "size": 2822
-                },
-                {
-                    "name": "Simulation",
-                    "size": 9983
-                },
-                {
-                    "name": "Spring",
-                    "size": 2213
-                },
-                {
-                    "name": "SpringForce",
-                    "size": 1681
+                    "name": "discussion-html and video-html focus",
+                    "children": [
+                        {
+                            "name": "Learners' Performance",
+                            "children": [
+                                {
+                                    "name": "Pass (26.60%)",
+                                    "size": 967
+                                },
+                                {
+                                    "name": "Fail (73.40%)",
+                                    "size": 2668
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Learners' Engagement",
+                            "children": [
+                                {
+                                    "name": "Sampling (65.34%)",
+                                    "size": 2375
+                                },
+                                {
+                                    "name": "Targeting (7.90%)",
+                                    "size": 287
+                                },
+                                {
+                                    "name": "Comprehension (26.77%)",
+                                    "size": 973
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
