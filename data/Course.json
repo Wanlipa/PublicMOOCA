@@ -1,0 +1,43 @@
+{
+    "name": "Course Clustering",
+    "children": [
+        {
+            "name": "Course Length and Effort",
+            "children": [
+                { "name": "C_L1", "size": 7 },
+                { "name": "C_L2", "size": 14 },
+                { "name": "C_L3", "size": 79 }
+            ]
+        },
+        {
+            "name": "Bloom's Taxonomy",
+            "children": [
+                { "name": "C_B1", "size": 29 },
+                { "name": "C_B2", "size": 25 },
+                { "name": "C_B3", "size": 17 },
+                { "name": "C_B4", "size": 29 }
+
+            ]
+        },
+        {
+            "name": "Number of Components",
+            "children": [
+                { "name": "C_N1", "size": 32 },
+                { "name": "C_N2", "size": 39 },
+                { "name": "C_N3", "size": 29 }
+
+
+            ]
+        },
+        {
+            "name": "Seqence Components",
+            "children": [
+                { "name": "C_S1", "size": 25 },
+                { "name": "C_S2", "size": 43 },
+                { "name": "C_S3", "size": 32 }
+
+
+            ]
+        }
+    ]
+}

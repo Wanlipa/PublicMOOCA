@@ -5,18 +5,17 @@
   <body>
     <%- include('includes/navigation.ejs') %>
 
+      <nav id="navbar-example2" class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <h3 class="text-default">
+            <i class="fas fa-chart-pie text-default"></i> Course Visualization</h3>
+        </a>
 
-      <div class="container">
-        <br>
-        <nav id="navbar-example2" class="navbar navbar-light bg-light">
-          <a class="navbar-brand" href="#">
-            <h2 class="text-default"><i class="fas fa-chart-pie text-default"></i> Course Visualization</h2>            
-          </a>
-          
-          <ul class="nav nav-pills">
-            <li class="nav-item">
-              <div class="dropdown">
-              <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <div class="dropdown">
+              <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 Select Course
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -25,35 +24,41 @@
                 <button class="dropdown-item" type="button">Big Data</button>
               </div>
             </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#cs" title="Course Structure">
-                <i class="fas fa-chalkboard-teacher fa-2x text-info"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#le" title="Learners' Engagement">
-                <i class="fas fa-user-graduate fa-2x text-success"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#ci" title="Course Information">
-                  <i class="fas fa-list-ul fa-2x text-light"></i>
-              </a>
-            </li>
-          </ul>
-        </nav>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cs" title="Course Structure">
+              <i class="fas fa-chalkboard-teacher fa-2x text-info"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#le" title="Learners' Engagement">
+              <i class="fas fa-user-graduate fa-2x text-success"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ci" title="Course Information">
+              <i class="fas fa-list-ul fa-2x text-light"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="container">
+
+
         <br>
         <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-          
-          <h4 id="cs" class="text-info"><i class="fas fa-chalkboard-teacher fa-1x text-info"></i> Course Structure</h4>
+
+          <h4 id="cs" class="text-info">
+            <i class="fas fa-chalkboard-teacher fa-1x text-info"></i> Course Structure</h4>
           <div id="structure"></div>
-                  
-          <h4 id="le" class="text-success"><i class="fas fa-user-graduate fa-1x text-success"></i> Learners' Engagement</h4>
+
+          <h4 id="le" class="text-success">
+            <i class="fas fa-user-graduate fa-1x text-success"></i> Learners' Engagement</h4>
           <div id="learners"></div>
           <br>
-          <h4 id="ci" class="text-primary"><i class="fas fa-list-ul fa-1x text-primary"></i> Course Information</h4>
-          <br>  
+          <h4 id="ci" class="text-primary">
+            <i class="fas fa-list-ul fa-1x text-primary"></i> Course Information</h4>
+          <br>
           <!-- information -->
           <div>
             <!-- Nav tabs -->
@@ -75,45 +80,83 @@
 
             <!-- Tab panes -->
             <div class="tab-content">
-              <div class="tab-pane active" id="courseinfo" role="tabpanel" aria-labelledby="courseinfo-tab">                  
-                  <ul class="list-group">
-                      <li class="list-group-item"><b>Course Name: </b> <%= course.courseName %></li>
-                      <li class="list-group-item"><b>Course Number: </b><%= course.courseNumber %></li>
-                      <li class="list-group-item"><b>Course Description: </b><%= course.description %></li>
-                      <li class="list-group-item"><b>Pass Rate: </b><%= course.passRate %></li>
-                      <li class="list-group-item"><b>Subject Area: </b><%= course.subjectArea %></li>
-                      <li class="list-group-item"><b>Registered: </b><%= course.registered %></li>
-                  </ul>
+              <div class="tab-pane active" id="courseinfo" role="tabpanel" aria-labelledby="courseinfo-tab">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <b>Course Name: </b>
+                    <%= course.courseName %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Course Number: </b>
+                    <%= course.courseNumber %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Course Description: </b>
+                    <%= course.description %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Pass Rate: </b>
+                    <%= course.passRate %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Subject Area: </b>
+                    <%= course.subjectArea %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Registered: </b>
+                    <%= course.registered %>
+                  </li>
+                </ul>
               </div>
               <div class="tab-pane" id="analysis" role="tabpanel" aria-labelledby="analysis-tab">
-                  <ul class="list-group">
-                      <li class="list-group-item"><b>Course Length Clustering: </b> C_L3 <%= course.cLength %></li>
-                      <li class="list-group-item"><b>Course Bloom's Taxonomy Clustering: </b> C_B1 <%= course.cBloom %></li>
-                      <li class="list-group-item"><b>Times Conponents Clustering: </b> C_T1 Videos</li>
-                      <li class="list-group-item"><b>Sequence Conponents Clustering: </b> C_S1 discussion->chapter, video->video</li>
-                  </ul>
-                
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <b>Course Length Clustering: </b> C_L3
+                    <%= course.cLength %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Course Bloom's Taxonomy Clustering: </b> C_B1
+                    <%= course.cBloom %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Times Conponents Clustering: </b> C_T1 Videos</li>
+                  <li class="list-group-item">
+                    <b>Sequence Conponents Clustering: </b> C_S1 discussion->chapter, video->video</li>
+                </ul>
+
               </div>
               <div class="tab-pane" id="components" role="tabpanel" aria-labelledby="components-tab">
-                  <ul class="list-group">
-                      <li class="list-group-item"><b>Chapter: </b> 16 (16.16%)</li>
-                      <li class="list-group-item"><b>Video: </b> 72 (72.73%)</li>
-                      <li class="list-group-item"><b>HTML: </b> 3 (3.03%)</li>
-                      <li class="list-group-item"><b>Discussion: </b> 7 (7.07%)</li>
-                      <li class="list-group-item"><b>Problem: </b> 1 (1.01%)</li>
-                      <li class="list-group-item"><b>Total Components: </b> 99</li>
-                  </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <b>Chapter: </b> 16 (16.16%)</li>
+                  <li class="list-group-item">
+                    <b>Video: </b> 72 (72.73%)</li>
+                  <li class="list-group-item">
+                    <b>HTML: </b> 3 (3.03%)</li>
+                  <li class="list-group-item">
+                    <b>Discussion: </b> 7 (7.07%)</li>
+                  <li class="list-group-item">
+                    <b>Problem: </b> 1 (1.01%)</li>
+                  <li class="list-group-item">
+                    <b>Total Components: </b> 99</li>
+                </ul>
               </div>
 
               <div class="tab-pane" id="learner" role="tabpanel" aria-labelledby="learner-tab">
-                  <ul class="list-group">
-                      <li class="list-group-item"><b>Passing Learners: </b> 154 (12.68%)</li>
-                      <li class="list-group-item"><b>Not Passing Learners: </b> 1049 (87.20%)</li>
-                      <li class="list-group-item"><b>Sampling Learners: </b> 945 (78.55%)</li>
-                      <li class="list-group-item"><b>Targeting Learners: </b> 88 (7.32%)</li>
-                      <li class="list-group-item"><b>Comprehensive Learners: </b> 170 (14.13%)</li>
-                      <li class="list-group-item"><b>Total Learners: </b> 1203</li>
-                  </ul>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <b>Passing Learners: </b> 154 (12.68%)</li>
+                  <li class="list-group-item">
+                    <b>Not Passing Learners: </b> 1049 (87.20%)</li>
+                  <li class="list-group-item">
+                    <b>Sampling Learners: </b> 945 (78.55%)</li>
+                  <li class="list-group-item">
+                    <b>Targeting Learners: </b> 88 (7.32%)</li>
+                  <li class="list-group-item">
+                    <b>Comprehensive Learners: </b> 170 (14.13%)</li>
+                  <li class="list-group-item">
+                    <b>Total Learners: </b> 1203</li>
+                </ul>
               </div>
             </div>
           </div>

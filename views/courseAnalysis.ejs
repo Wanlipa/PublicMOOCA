@@ -23,12 +23,10 @@
 
     <body>
         <%- include('includes/navigation.ejs') %>
-
-
             <nav id="navbar-example2" class="navbar navbar-light bg-light">
                 <a class="navbar-brand" href="#">
-                    <h4 class="text-primary">
-                        <i class="fas fa-book-open"></i> Course Clustering</h4>
+                    <h3 class="text-primary">
+                        <i class="fas fa-book-open"></i> Course Clustering</h3>
                 </a>
             </nav>
             <br>
@@ -241,8 +239,8 @@
                 //   http://blog.luzid.com/2013/extending-the-d3-zoomable-sunburst-with-labels/
 
                 // ========== Sunburst Chart ==========
-                var width = 960,
-                    height = 700,
+                var width = 950,
+                    height = 750,
                     radius = Math.min(width, height) / 2;
 
                 var x = d3.scale.linear().range([0, 2 * Math.PI]);
@@ -263,53 +261,54 @@
                     .innerRadius(function (d) { return Math.max(0, y(d.y)); })
                     .outerRadius(function (d) { return Math.max(0, y(d.y + d.dy)); });
 
-                //d3.json("/d/4063550/flare.json", function(error, root) {
-                var root = getData();
+                //get data from json file
+                d3.json("data/Course.json", function(error, root) {
+                    // var root = getData();
 
-                var g = svg.selectAll("g")
-                    .data(partition.nodes(root)).enter().append("g");
+                    var g = svg.selectAll("g")
+                        .data(partition.nodes(root)).enter().append("g");
 
-                var path = g.append("path").attr("d", arc)
-                    .style("fill", function (d) { return color((d.children ? d : d.parent).name); })
-                    .on("click", click);
+                    var path = g.append("path").attr("d", arc)
+                        .style("fill", function (d) { return color((d.children ? d : d.parent).name); })
+                        .on("click", click);
 
-                //.append("text")
-                var text = g.append("text").attr("x", function (d) { return y(d.y); })
-                    .attr("dx", "6") // margin
-                    .attr("dy", ".35em") // vertical-align
-                    .attr("transform", function (d) { return "rotate(" + computeTextRotation(d) + ")"; })
-                    .text(function (d) { return d.name; })
-                    .style("fill", "black");
+                    //.append("text")
+                    var text = g.append("text").attr("x", function (d) { return y(d.y); })
+                        .attr("dx", "6") // margin
+                        .attr("dy", ".35em") // vertical-align
+                        .attr("transform", function (d) { return "rotate(" + computeTextRotation(d) + ")"; })
+                        .text(function (d) { return d.name; })
+                        .style("fill", "black");
 
-                function computeTextRotation(d) {
-                    var angle = x(d.x + d.dx / 2) - Math.PI / 2;
-                    return angle / Math.PI * 180;
+                    function computeTextRotation(d) {
+                        var angle = x(d.x + d.dx / 2) - Math.PI / 2;
+                        return angle / Math.PI * 180;
 
-                }
+                    }
 
-                function click(d) {
-                    // fade out all text elements
-                    if (d.size !== undefined) {
-                        d.size += 100;
-                    };
-                    text.transition().attr("opacity", 0);
+                    function click(d) {
+                        // fade out all text elements
+                        if (d.size !== undefined) {
+                            d.size += 100;
+                        };
+                        text.transition().attr("opacity", 0);
 
-                    path.transition().duration(750)
-                        .attrTween("d", arcTween(d))
-                        .each("end", function (e, i) {
-                            // check if the animated element's data e lies within the visible angle span given in d
-                            if (e.x >= d.x && e.x < (d.x + d.dx)) {
-                                // get a selection of the associated text element
-                                var arcText = d3.select(this.parentNode).select("text");
-                                // fade in the text element and recalculate positions
-                                arcText.transition().duration(750)
-                                    .attr("opacity", 1)
-                                    .attr("transform", function () { return "rotate(" + computeTextRotation(e) + ")" })
-                                    .attr("x", function (d) { return y(d.y); });
-                            }
-                        });
-                }
-
+                        path.transition().duration(750)
+                            .attrTween("d", arcTween(d))
+                            .each("end", function (e, i) {
+                                // check if the animated element's data e lies within the visible angle span given in d
+                                if (e.x >= d.x && e.x < (d.x + d.dx)) {
+                                    // get a selection of the associated text element
+                                    var arcText = d3.select(this.parentNode).select("text");
+                                    // fade in the text element and recalculate positions
+                                    arcText.transition().duration(750)
+                                        .attr("opacity", 1)
+                                        .attr("transform", function () { return "rotate(" + computeTextRotation(e) + ")" })
+                                        .attr("x", function (d) { return y(d.y); });
+                                }
+                            });
+                    }
+                });
                 // Word wrap!
                 var insertLinebreaks = function (t, d, width) {
                     alert(0)
@@ -346,56 +345,48 @@
                     };
                 }
 
-                function getData() {
+                // function getData() {
 
-                    data = {
-                        "name": "Course Clustering",
-                        "children": [
-                            {
-                                "name": "Course Length and Effort",
-                                "children": [
-                                    { "name": "C_L1", "size": 7 },
-                                    { "name": "C_L2", "size": 14 },
-                                    { "name": "C_L3", "size": 79 }
-                                ]
-                            },
-                            {
-                                "name": "Bloom's Taxonomy",
-                                "children": [
-                                    { "name": "C_B1", "size": 29 },
-                                    { "name": "C_B2", "size": 25 },
-                                    { "name": "C_B3", "size": 17 },
-                                    { "name": "C_B4", "size": 29 }
-
-                                ]
-                            },
-                            {
-                                "name": "Number of Components",
-                                "children": [
-                                    { "name": "C_N1", "size": 32 },
-                                    { "name": "C_N2", "size": 39 },
-                                    { "name": "C_N3", "size": 29 }
-
-
-                                ]
-                            },
-                            {
-                                "name": "Seqence Components",
-                                "children": [
-                                    { "name": "C_S1", "size": 25 },
-                                    { "name": "C_S2", "size": 43 },
-                                    { "name": "C_S3", "size": 32 }
-
-
-                                ]
-                            }
-                        ]
-                    }
-
-
-
-                    return data
-                };
+                //     data = {
+                //         "name": "Course Clustering",
+                //         "children": [
+                //             {
+                //                 "name": "Course Length and Effort",
+                //                 "children": [
+                //                     { "name": "C_L1", "size": 7 },
+                //                     { "name": "C_L2", "size": 14 },
+                //                     { "name": "C_L3", "size": 79 }
+                //                 ]
+                //             },
+                //             {
+                //                 "name": "Bloom's Taxonomy",
+                //                 "children": [
+                //                     { "name": "C_B1", "size": 29 },
+                //                     { "name": "C_B2", "size": 25 },
+                //                     { "name": "C_B3", "size": 17 },
+                //                     { "name": "C_B4", "size": 29 }
+                //                 ]
+                //             },
+                //             {
+                //                 "name": "Number of Components",
+                //                 "children": [
+                //                     { "name": "C_N1", "size": 32 },
+                //                     { "name": "C_N2", "size": 39 },
+                //                     { "name": "C_N3", "size": 29 }
+                //                 ]
+                //             },
+                //             {
+                //                 "name": "Seqence Components",
+                //                 "children": [
+                //                     { "name": "C_S1", "size": 25 },
+                //                     { "name": "C_S2", "size": 43 },
+                //                     { "name": "C_S3", "size": 32 }
+                //                 ]
+                //             }
+                //         ]
+                //     }
+                //     return data
+                // };
 
                 // ========== Detail Chart ==========
                 // Get data from csv
