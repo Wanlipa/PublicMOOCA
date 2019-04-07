@@ -1,4 +1,4 @@
-<!-- Resource bar+pie: http://bl.ocks.org/Jverma/887877fc5c2c2d99be10, http://bl.ocks.org/Jverma/887877fc5c2c2d99be10 -->
+<!-- Resource bar+pie: http://bl.ocks.org/NPashaP/96447623ef4d342ee09b, http://bl.ocks.org/Jverma/887877fc5c2c2d99be10 -->
 <%- include('includes/head.ejs') %>
     <style>
         path {
@@ -62,8 +62,116 @@
                 <a class="navbar-brand" href="#">
                     <h3 class="text-primary">
                         <i class="fas fa-user-graduate"></i> Learner Clustering</h3>
+                    <!-- Large modal -->
+                    <a data-toggle="modal" data-target=".bd-example-modal-lg" title="Information">
+                        <i class="fas fa-info-circle fa-2x text-danger"></i>
+                    </a>
                 </a>
             </nav>
+
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <h5>These courses are the most popular courses in the STEM subject area according to a number of registered learners Top 20.</h5>
+                        <!-- Table Learners -->
+                        <table class="table table-hover">
+                            <thead style="text-align: center" class=" bg-success text-light">
+                                <tr>
+                                    <th scope="col">Course Number</th>
+                                    <th scope="col">Course Name</th>
+
+                                </tr>
+                            </thead>
+                            <tbody style="text-align: center">
+                                <tr>
+                                    <th scope="row">ku002</th>
+                                    <td>General Physics I</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ku003</th>
+                                    <td>General Chemistry</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">stou007</th>
+                                    <td>Product Design for Entrepreneur</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">rmutt013</th>
+                                    <td>Fundamental of Computer Programming with Python Language</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">nrru001</th>
+                                    <td>Infomation Litercy</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">su006</th>
+                                    <td>Technology and Innovation for Education</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">swu003</th>
+                                    <td>Cloud Technology Tools for 21st Century Learning</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">wu001</th>
+                                    <td>IT for the Present and Beyond</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">rmutsb001</th>
+                                    <td>Creative Ideas for Audio Design</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">hu003</th>
+                                    <td>Technology hardware and system software</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">stou005</th>
+                                    <td>Big Data Concept</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">stou006</th>
+                                    <td>Digital Media Creation Technology</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">bu001</th>
+                                    <td>Cybersecurity Awareness</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">kmitl003</th>
+                                    <td>Computer for Speech and Presentations</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">cu005</th>
+                                    <td>HTML and CSS</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">sru001</th>
+                                    <td>MOS Certificate : MS Excel 2013</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">mu007</th>
+                                    <td>3D Model design and printing for community service</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">mu005</th>
+                                    <td>Digital Circuit Design</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">sut001</th>
+                                    <td>Mathematics for Computer</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">stou009</th>
+                                    <td>Mathematical Economics and Econometrics for Business</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
             <div id='dashboard'></div>
 
             <script>
