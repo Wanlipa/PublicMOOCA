@@ -32,8 +32,8 @@ app.use(courseRoutes);
 app.use(errorController.get404);
 
 sequelize
-    // .sync({ force: true })
-    .sync()
+    .sync({ force: true })
+    // .sync()
     .then(result => {
         console.log(result => {
             console.log(result);

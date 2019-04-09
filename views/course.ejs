@@ -68,10 +68,17 @@
                   aria-selected="true">Course Information</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="analysis-tab" data-toggle="tab" href="#analysis" role="tab" aria-controls="analysis" aria-selected="false">Analysis</a>
+                <a class="nav-link" id="courselength-tab" data-toggle="tab" href="#courselength" role="tab" aria-controls="courselength"
+                  aria-selected="false">Course Length</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="bloom-tab" data-toggle="tab" href="#bloom" role="tab" aria-controls="bloom" aria-selected="false">Bloom's Taxonomy</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="components-tab" data-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="false">Components</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="analysis-tab" data-toggle="tab" href="#analysis" role="tab" aria-controls="analysis" aria-selected="false">Analysis</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="learner-tab" data-toggle="tab" href="#learner" role="tab" aria-controls="learner" aria-selected="false">Learner</a>
@@ -83,19 +90,15 @@
               <div class="tab-pane active" id="courseinfo" role="tabpanel" aria-labelledby="courseinfo-tab">
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <b>Course Name: </b>
-                    <%= course.courseName %>
-                  </li>
-                  <li class="list-group-item">
                     <b>Course Number: </b>
                     <%= course.courseNumber %>
                   </li>
                   <li class="list-group-item">
-                    <b>Course Description: </b>
-                    <%= course.description %>
+                    <b>Course Name: </b>
+                    <%= course.courseName %>
                   </li>
                   <li class="list-group-item">
-                    <b>Pass Rate: </b>
+                    <b>Passing Rate(%): </b>
                     <%= course.passRate %>
                   </li>
                   <li class="list-group-item">
@@ -103,59 +106,116 @@
                     <%= course.subjectArea %>
                   </li>
                   <li class="list-group-item">
-                    <b>Registered: </b>
+                    <b>Registered Learners: </b>
                     <%= course.registered %>
                   </li>
+                  <li class="list-group-item">
+                  </li>
+                </ul>
+              </div>
+
+              <div class="tab-pane" id="courselength" role="tabpanel" aria-labelledby="courselength-tab">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <b>Total Hours: </b>
+                    <%= course.totalHour %> Hours
+                  </li>
+                  <li class="list-group-item">
+                    <b>Effort: </b>
+                    <%= course.effort %> Hours/Week
+                  </li>
+                  <li class="list-group-item">
+                  </li>
+                </ul>
+              </div>
+
+
+              <div class="tab-pane" id="bloom" role="tabpanel" aria-labelledby="bloom-tab">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <b>remember(%): </b>
+                    <%= course.remember %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>understand(%): </b>
+                    <%= course.understand %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>apply(%): </b>
+                    <%= course.apply %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>analyze(%): </b>
+                    <%= course.analyze %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>evaluate(%): </b>
+                    <%= course.evaluate %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>create(%): </b>
+                    <%= course.create %>
+                  </li>
+                  <li class="list-group-item">
+
+                </ul>
+              </div>
+              <div class="tab-pane" id="components" role="tabpanel" aria-labelledby="components-tab">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <b>Chapter(%): </b>
+                    <%= course.chapter %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Video(%): </b>
+                    <%= course.video %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>HTML(%): </b>
+                    <%= course.html %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Discussion(%): </b>
+                    <%= course.discussion %>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Problem(%): </b>
+                    <%= course.problem %>
+                  </li>
+                  <li class="list-group-item">
+
                 </ul>
               </div>
               <div class="tab-pane" id="analysis" role="tabpanel" aria-labelledby="analysis-tab">
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <b>Course Length Clustering: </b> C_L3
+                    <b>Course Length Clustering: </b>
                     <%= course.cLength %>
                   </li>
                   <li class="list-group-item">
-                    <b>Course Bloom's Taxonomy Clustering: </b> C_B1
+                    <b>Course Bloom's Taxonomy Clustering: </b>
                     <%= course.cBloom %>
                   </li>
                   <li class="list-group-item">
-                    <b>Times Conponents Clustering: </b> C_T1 Videos</li>
+                    <b>Number of Conponents Clustering: </b>
+                    <%= course.cNumCom %>
+                  </li>
                   <li class="list-group-item">
-                    <b>Sequence Conponents Clustering: </b> C_S1 discussion->chapter, video->video</li>
+                    <b>Sequence Conponents Clustering: </b>
+                    <%= course.cSeqCom %>
+                  </li>
+                  <li class="list-group-item">
+                  </li>
                 </ul>
 
               </div>
-              <div class="tab-pane" id="components" role="tabpanel" aria-labelledby="components-tab">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <b>Chapter: </b> 16 (16.16%)</li>
-                  <li class="list-group-item">
-                    <b>Video: </b> 72 (72.73%)</li>
-                  <li class="list-group-item">
-                    <b>HTML: </b> 3 (3.03%)</li>
-                  <li class="list-group-item">
-                    <b>Discussion: </b> 7 (7.07%)</li>
-                  <li class="list-group-item">
-                    <b>Problem: </b> 1 (1.01%)</li>
-                  <li class="list-group-item">
-                    <b>Total Components: </b> 99</li>
-                </ul>
-              </div>
-
               <div class="tab-pane" id="learner" role="tabpanel" aria-labelledby="learner-tab">
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <b>Passing Learners: </b> 154 (12.68%)</li>
+                    <b>Passing Learners: </b> <%= course.passLearner %> </li>
                   <li class="list-group-item">
-                    <b>Not Passing Learners: </b> 1049 (87.20%)</li>
-                  <li class="list-group-item">
-                    <b>Sampling Learners: </b> 945 (78.55%)</li>
-                  <li class="list-group-item">
-                    <b>Targeting Learners: </b> 88 (7.32%)</li>
-                  <li class="list-group-item">
-                    <b>Comprehensive Learners: </b> 170 (14.13%)</li>
-                  <li class="list-group-item">
-                    <b>Total Learners: </b> 1203</li>
+                    <b>Fail Learners: </b>  <%= course.failLearner %></li>
+
                 </ul>
               </div>
             </div>

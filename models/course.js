@@ -11,7 +11,6 @@ const Course = sequelize.define('course', {
     },
     courseNumber: Sequelize.STRING,
     courseName: Sequelize.STRING,
-    description: Sequelize.STRING,
     passRate: Sequelize.DOUBLE,
     subjectArea: Sequelize.STRING,
     registered: Sequelize.INTEGER,
@@ -25,8 +24,16 @@ const Course = sequelize.define('course', {
     evaluate: Sequelize.DOUBLE,
     create: Sequelize.DOUBLE,
     cBloom: Sequelize.STRING,
-    section: Sequelize.INTEGER,
-    sequence: Sequelize.STRING
+    chapter: Sequelize.DOUBLE,
+    video: Sequelize.DOUBLE,
+    html: Sequelize.DOUBLE,
+    problem: Sequelize.DOUBLE,
+    discussion: Sequelize.DOUBLE,
+    cNumCom: Sequelize.STRING,
+    sequence: Sequelize.STRING,
+    cSeqCom: Sequelize.STRING,
+    passLearner: Sequelize.INTEGER,
+    failLearner: Sequelize.INTEGER
 });
 
 module.exports = Course;
