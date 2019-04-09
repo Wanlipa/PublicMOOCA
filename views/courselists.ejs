@@ -1,0 +1,89 @@
+<%- include('includes/head.ejs') %>
+
+    </head>
+
+    <body>
+        <%- include('includes/navigation.ejs') %>
+
+            <nav id="navbar-example2" class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <h3 class="text-default">
+                        <i class="fas fa-book-open"></i> Course Lists</h3>
+                </a>
+                <a href="/admin/add-course/" title="Add Course">
+                    <i class="fas fa-plus-circle fa-lg text-success"> Add Course</i>
+                </a>
+
+            </nav>
+            <% if (cous.length > 0) {%>
+                <!-- Table Course Length -->
+                <table class="table table-hover">
+                    <thead style="text-align: center" class=" bg-primary text-light">
+                        <tr>
+                            <th scope="col">Course Number</th>
+                            <th scope="col">Course Name</th>
+                            <th scope="col">Subject Area</th>
+                            <th scope="col">Passing Criteria</th>
+                            <th scope="col">Registered Learners</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center">
+                        <% for (let course of cous) { %>
+
+                            <tr>
+                                <th scope="row">
+                                    <%= course.courseNumber %>
+                                </th>
+                                <td>
+                                    <%= course.courseName %>
+                                </td>
+                                <td>
+                                    <%= course.subjectArea %>
+                                </td>
+                                <td>
+                                    <%= course.passRate %>
+                                </td>
+                                <td>
+                                    <%= course.registered %>
+                                </td>
+
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="/course/<%= course.id %>" title="Details">
+                                                <i class="fas fa-chart-pie fa-lg text-info"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="/admin/edit-course/<%= course.id %>?edit=true" title="Edit">
+                                                <i class="fas fa-edit fa-lg text-warning"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <form action="/admin/delete-course" method="POST">
+                                                <input type="hidden" value="<%= course.id %>" name="courseId">
+                                                <button class="btn bg-light" type="submit" title="Delete">
+                                                    <i class="fas fa-trash-alt fa-lg text-danger"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                            <% } %>
+                    </tbody>
+                </table>
+
+                <% } else { %>
+                    <h1>No Course Found!</h1>
+                    <% } %>
+
+
+
+
+
+
+                        <%- include('includes/end.ejs') %>

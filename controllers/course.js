@@ -1,9 +1,21 @@
 const Course = require('../models/course');
 var d3 = require("d3");
 
+exports.getCourseLists = (req, res, next) => {
+    Course.findAll().then(courses => {
+        res.render('courselists', {
+            cous: courses,
+            pageTitle: 'Course Lists',
+            path: '/courselists'
+        });
+    }).catch(err => {
+        console.log(err);
+    });
+};
+
 exports.getCourse = (req, res, next) => {
-    let courseId = 1;
-    Course.findById(courseId)
+    const cousId = req.params.courseId;
+    Course.findById(cousId)
         .then((course) => {
             res.render('course', { course: course, pageTitle: 'Course', path: '/course' });
         })
@@ -27,3 +39,6 @@ exports.getRelationship = (req, res, next) => {
     res.render('relationshipAnalysis', { pageTitle: 'Relationship', path: '/relationship' })
 };
 
+exports.getAddCourse = (req, res, next) => {
+    res.render('addcourse', { pageTitle: 'Add Course', path: '/addcourse' })
+};

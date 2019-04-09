@@ -19,6 +19,7 @@ app.set('views', 'views');
 const mainRoutes = require('./routes/index');
 const courseRoutes = require('./routes/course');
 
+
 // Middleware set body parser to get image
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(multer({dest: '/import'}).single('import'));

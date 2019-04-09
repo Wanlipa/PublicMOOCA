@@ -7,29 +7,29 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home
-                        <span class="sr-only">(current)</span>
+                <li class="nav-item">
+                    <a class="nav-link <%= path === '/' ? 'active' : '' %>" href="/">Home
+                        <!-- <span class="sr-only">(current)</span> -->
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/course">Course</a>
+                    <a class="nav-link <%= path === '/courselists' ? 'active' : '' %>" href="/courselists">Courses</a>
                 </li>      
                 <li class="nav-item">
-                    <a class="nav-link" href="/customize">Customize</a>
+                    <a class="nav-link <%= path === '/customize' ? 'active' : '' %>" href="/customize">Customize</a>
                 </li>               
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Analysis
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/courseAnalysis">Courses Clustering</a>
-                        <a class="dropdown-item" href="/learnerAnalysis">Learners Clustering</a>
-                        <a class="dropdown-item" href="/relationship">Relationship</a>
+                        <a class="dropdown-item <%= path === '/courseAnalysis' ? 'active' : '' %>" href="/courseAnalysis">Courses Clustering</a>
+                        <a class="dropdown-item <%= path === '/learnerAnalysis' ? 'active' : '' %>" href="/learnerAnalysis">Learners Clustering</a>
+                        <a class="dropdown-item <%= path === '/relationship' ? 'active' : '' %>" href="/relationship">Relationship</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/import">Import</a>
+                    <a class="nav-link <%= path === '/import' ? 'active' : '' %>" href="/import">Import</a>
                 </li>
             </ul>
         </div>
