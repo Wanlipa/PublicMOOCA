@@ -81,7 +81,7 @@
                 <a class="nav-link" id="analysis-tab" data-toggle="tab" href="#analysis" role="tab" aria-controls="analysis" aria-selected="false">Analysis</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="learner-tab" data-toggle="tab" href="#learner" role="tab" aria-controls="learner" aria-selected="false">Learner</a>
+                <a class="nav-link" id="learner-tab" data-toggle="tab" href="#learner" role="tab" aria-controls="learner" aria-selected="false">Learners</a>
               </li>
             </ul>
 
@@ -98,8 +98,8 @@
                     <%= course.courseName %>
                   </li>
                   <li class="list-group-item">
-                    <b>Passing Rate(%): </b>
-                    <%= course.passRate %>
+                    <b>Passing Rate: </b>
+                    <%= course.passRate %> %
                   </li>
                   <li class="list-group-item">
                     <b>Subject Area: </b>
@@ -133,28 +133,28 @@
               <div class="tab-pane" id="bloom" role="tabpanel" aria-labelledby="bloom-tab">
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <b>remember(%): </b>
-                    <%= course.remember %>
+                    <b>remember: </b>
+                    <%= course.remember %> %
                   </li>
                   <li class="list-group-item">
-                    <b>understand(%): </b>
-                    <%= course.understand %>
+                    <b>understand: </b>
+                    <%= course.understand %> %
                   </li>
                   <li class="list-group-item">
-                    <b>apply(%): </b>
-                    <%= course.apply %>
+                    <b>apply: </b>
+                    <%= course.apply %> %
                   </li>
                   <li class="list-group-item">
-                    <b>analyze(%): </b>
-                    <%= course.analyze %>
+                    <b>analyze: </b>
+                    <%= course.analyze %> %
                   </li>
                   <li class="list-group-item">
-                    <b>evaluate(%): </b>
-                    <%= course.evaluate %>
+                    <b>evaluate: </b>
+                    <%= course.evaluate %> %
                   </li>
                   <li class="list-group-item">
-                    <b>create(%): </b>
-                    <%= course.create %>
+                    <b>create: </b>
+                    <%= course.create %> %
                   </li>
                   <li class="list-group-item">
 
@@ -163,24 +163,24 @@
               <div class="tab-pane" id="components" role="tabpanel" aria-labelledby="components-tab">
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <b>Chapter(%): </b>
-                    <%= course.chapter %>
+                    <b>Chapter: </b>
+                    <%= course.chapter %> %
                   </li>
                   <li class="list-group-item">
-                    <b>Video(%): </b>
-                    <%= course.video %>
+                    <b>Video: </b>
+                    <%= course.video %> %
                   </li>
                   <li class="list-group-item">
-                    <b>HTML(%): </b>
-                    <%= course.html %>
+                    <b>HTML: </b>
+                    <%= course.html %> %
                   </li>
                   <li class="list-group-item">
-                    <b>Discussion(%): </b>
-                    <%= course.discussion %>
+                    <b>Discussion: </b>
+                    <%= course.discussion %> %
                   </li>
                   <li class="list-group-item">
-                    <b>Problem(%): </b>
-                    <%= course.problem %>
+                    <b>Problem: </b>
+                    <%= course.problem %> %
                   </li>
                   <li class="list-group-item">
 
@@ -188,6 +188,12 @@
               </div>
               <div class="tab-pane" id="analysis" role="tabpanel" aria-labelledby="analysis-tab">
                 <ul class="list-group">
+                  <li class="list-group-item">
+                    <!-- Large modal -->
+                    <a class="text-success" data-toggle="modal" data-target=".bd-example-modal-lg">
+                      <i class="fas fa-info-circle fa-lg text-success"></i> Cluster Name
+                    </a>
+                  </li>
                   <li class="list-group-item">
                     <b>Course Length Clustering: </b>
                     <%= course.cLength %>
@@ -212,9 +218,13 @@
               <div class="tab-pane" id="learner" role="tabpanel" aria-labelledby="learner-tab">
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <b>Passing Learners: </b> <%= course.passLearner %> </li>
+                    <b>Passing Learners: </b>
+                    <%= course.passLearner %>
+                  </li>
                   <li class="list-group-item">
-                    <b>Fail Learners: </b>  <%= course.failLearner %></li>
+                    <b>Fail Learners: </b>
+                    <%= course.failLearner %>
+                  </li>
 
                 </ul>
               </div>
@@ -222,7 +232,13 @@
           </div>
 
         </div>
-
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              ...
+            </div>
+          </div>
+        </div>
 
       </div>
 
