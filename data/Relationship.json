@@ -260,18 +260,18 @@
             "name": "Number of Components",
             "children": [
                 {
-                    "name": "HTML-focus",
+                    "name": "Video-focus",
                     "children": [
                         {
                             "name": "Learners' Performance",
                             "children": [
                                 {
-                                    "name": "Pass (22.42%)",
-                                    "size": 988
+                                    "name": "Pass (18.80%)",
+                                    "size": 1255
                                 },
                                 {
-                                    "name": "Fail (77.58%)",
-                                    "size": 3418
+                                    "name": "Fail (81.20%)",
+                                    "size": 5421
                                 }
                             ]
                         },
@@ -279,16 +279,16 @@
                             "name": "Learners' Engagement",
                             "children": [
                                 {
-                                    "name": "Sampling (67.16%)",
-                                    "size": 2959
+                                    "name": "Sampling (73.49%)",
+                                    "size": 4906
                                 },
                                 {
-                                    "name": "Targeting (9.58%)",
-                                    "size": 422
+                                    "name": "Targeting (5.69%)",
+                                    "size": 380
                                 },
                                 {
-                                    "name": "Comprehension (23.26%)",
-                                    "size": 1025
+                                    "name": "Comprehension (20.82%)",
+                                    "size": 1390
                                 }
                             ]
                         }
@@ -301,12 +301,12 @@
                             "name": "Learners' Performance",
                             "children": [
                                 {
-                                    "name": "Pass (17.88%)",
-                                    "size": 725
+                                    "name": "Pass (23.53%)",
+                                    "size": 1276
                                 },
                                 {
-                                    "name": "Fail (82.12%)",
-                                    "size": 3330
+                                    "name": "Fail (76.47%)",
+                                    "size": 4146
                                 }
                             ]
                         },
@@ -314,56 +314,22 @@
                             "name": "Learners' Engagement",
                             "children": [
                                 {
-                                    "name": "Sampling (74.28%)",
-                                    "size": 3012
+                                    "name": "Sampling (67.36%)",
+                                    "size": 3652
                                 },
                                 {
-                                    "name": "Targeting (5.55%)",
-                                    "size": 225
+                                    "name": "Targeting (8.35%)",
+                                    "size": 453
                                 },
                                 {
-                                    "name": "Comprehension (20.17%)",
-                                    "size": 818
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "Video-focus",
-                    "children": [
-                        {
-                            "name": "Learners' Performance",
-                            "children": [
-                                {
-                                    "name": "Pass (22.49%)",
-                                    "size": 818
-                                },
-                                {
-                                    "name": "Fail (77.51%)",
-                                    "size": 2819
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Learners' Engagement",
-                            "children": [
-                                {
-                                    "name": "Sampling (71.13%)",
-                                    "size": 2587
-                                },
-                                {
-                                    "name": "Targeting (5.11%)",
-                                    "size": 186
-                                },
-                                {
-                                    "name": "Comprehension (23.76%)",
-                                    "size": 864
+                                    "name": "Comprehension (24.29%)",
+                                    "size": 1317
                                 }
                             ]
                         }
                     ]
                 }
+                
             ]
         },
         {

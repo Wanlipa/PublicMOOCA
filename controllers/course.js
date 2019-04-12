@@ -40,5 +40,19 @@ exports.getRelationship = (req, res, next) => {
 };
 
 exports.getAddCourse = (req, res, next) => {
-    res.render('addcourse', { pageTitle: 'Add Course', path: '/addcourse' })
+    res.render('add-course', { pageTitle: 'Add Course', path: '/add-course', editing: false })
+};
+
+exports.postAddCourse = (req, res, next) => {
+    const courseNumber = req.body.courseNumber;
+    Course.create({
+        courseNumber: courseNumber
+    }).then(result => {
+        // console.log(result);
+        console.log('Created Course!');
+        res.redirect('/courselists');
+    }).catch(err => {
+        console.log(err);
+    });
+
 };

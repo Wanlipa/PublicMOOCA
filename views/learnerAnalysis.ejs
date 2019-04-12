@@ -73,7 +73,8 @@
             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                        <h5>These courses are the most popular courses in the STEM subject area according to a number of registered learners Top 20.</h5>
+                        <h5>These courses are the most popular courses in the STEM subject area according to a number of registered
+                            learners Top 20.</h5>
                         <!-- Table Learners -->
                         <table class="table table-hover">
                             <thead style="text-align: center" class=" bg-success text-light">
@@ -170,10 +171,44 @@
                     </div>
                 </div>
             </div>
-
-
+            <!-- Bar and Pie Chart -->
             <div id='dashboard'></div>
 
+            <div class="container">
+                <div id="learner"></div>
+                <!-- Table Learners -->
+                <table class="table table-hover">
+                    <thead style="text-align: center" class=" bg-info text-light">
+                        <tr>
+                            <th scope="col">Cluster</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Number of Learners</th>
+                            <th scope="col">Learners Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center">
+                        <tr>
+                            <th scope="row">C_E1</th>
+                            <td>Sampling Learners</td>
+                            <td>8558</td>
+                            <td>71%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">C_E2</th>
+                            <td>Targeting Learners</td>
+                            <td>833</td>
+                            <td>7%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">C_E3</th>
+                            <td>Comprehensive Learners</td>
+                            <td>2707</td>
+                            <td>22%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
             <script>
                 // load the data
                 d3.json("data/Learner.json", function (error, clusterData) {
@@ -378,6 +413,51 @@
                         pC = pieChart(tF), // create the pie-chart.
                         leg = legend(tF);  // create the legend.
                 }
+
+
+                // Learner Clustering 
+                Plotly.d3.csv("data/CSV/LearnerClustering.csv", function (err, rows) {
+
+                    function unpack(rows, key) {
+                        return rows.map(function (row) { return row[key]; });
+                    }
+                    // Learners Clustering
+                    var data = [{
+                        type: 'scatter',
+                        mode: 'markers',
+                        x: unpack(rows, 'Grade'),
+                        y: unpack(rows, 'Attempt'),
+                        text: unpack(rows, 'learner cluster'),
+                        marker: {
+                            size: 8,
+                            sizemode: "area"
+                        },
+                        transforms: [
+                            {
+                                type: 'groupby',
+                                groups: unpack(rows, 'learner cluster'),
+                                styles: [
+                                    { target: '0', value: { marker: { color: 'red', symbol: 'circle' }, name: 'Sampling Learners' } },
+                                    { target: '1', value: { marker: { color: 'green', symbol: 'square' }, name: 'Comprehensive Learners' } },
+                                    { target: '2', value: { marker: { color: 'blue', symbol: 'triangle-up' }, name: 'Targeting Learners' } }
+                                ]
+                            }]
+                    }]
+
+                    var layout = {
+                        yaxis: {
+                            type: 'log',
+                            title: 'Attempt'
+                        },
+                        xaxis: {
+                            title: 'Grade'
+                        }
+                    }
+
+                    // Plot Graph
+                    Plotly.plot('learner', data, layout)
+
+                });
             </script>
 
             <%- include('includes/end.ejs') %>

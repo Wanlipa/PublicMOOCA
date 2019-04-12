@@ -1,0 +1,49 @@
+<%- include('includes/head.ejs') %>
+
+    </head>
+
+    <body>
+        <%- include('includes/navigation.ejs') %>
+            <div class="container">
+                <div class="card">
+                    <h3 class="card-header bg-light text-success">
+                        <i class="fas fa-edit text-success"></i> Add New Course
+                        <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Description">
+                            <i class="fas fa-angle-down text-success"></i>
+                        </a>
+                    </h3>
+
+                    <form class="course-form" action="<% if (editing) { %>edit-course<% } else { %>add-course<% } %>" method="POST">
+                        <div class="form-control">
+                            <label for="title">Course Number : </label>
+                            <input type="text" name="courseNumber" id="courseNumber" value="<% if (editing) { %><%=course.courseNumber%><% } %>">
+                        </div>
+
+                        <!-- <div class="form-control">
+                            <label for="imageUrl">Image URL</label>
+                            <input type="text" name="imageUrl" id="imageUrl" value="<% if (editing) { %><%=product.imageUrl %><% } %>">
+                        </div>
+
+                        <div class="form-control">
+                            <label for="price">Price</label>
+                            <input type="number" name="price" id="price" step="0.01" value="<% if (editing) { %><%=product.price%><% } %>">
+                        </div>
+
+                        <div class="form-control">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" rows="5"><% if (editing) { %><%=product.description%><% } %></textarea>
+                        </div>
+                    -->
+                        <% if (editing) { %>
+                            <input type="hidden" value="<%= course.id %>" name="courseId">
+                            <% } %>
+
+                                <button class="btn" type="submit">
+                                    <% if (editing) { %> Update Product
+                                        <%} else {%> Add Product
+                                            <%}%>
+                                </button> 
+                    </form>
+                </div>
+            </div>
+            <%- include('includes/end.ejs') %>
