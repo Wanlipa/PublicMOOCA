@@ -13,4 +13,6 @@ router.get('/learnerAnalysis', courseController.getLearnerAnalysis);
 router.get('/relationship', courseController.getRelationship);
 router.get('/add-course', courseController.getAddCourse);
 router.post('/add-course', courseController.postAddCourse);
+router.get('/edit-course/:courseId', courseController.getEditCourse);
+router.post('/edit-course', courseController.postEditCourse);
 module.exports = router;

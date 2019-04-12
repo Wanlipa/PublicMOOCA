@@ -56,12 +56,12 @@
                                             </a>
                                         </div>
                                         <div class="col-md-4">
-                                            <a href="/admin/edit-course/<%= course.id %>?edit=true" title="Edit">
+                                            <a href="/edit-course/<%= course.id %>?edit=true" title="Edit">
                                                 <i class="fas fa-edit fa-lg text-warning"></i>
                                             </a>
                                         </div>
                                         <div class="col-md-4">
-                                            <form action="/admin/delete-course" method="POST">
+                                            <form action="/delete-course" method="POST">
                                                 <input type="hidden" value="<%= course.id %>" name="courseId">
                                                 <button class="btn bg-light" type="submit" title="Delete">
                                                     <i class="fas fa-trash-alt fa-lg text-danger"></i>
@@ -81,9 +81,4 @@
                     <h1>No Course Found!</h1>
                     <% } %>
 
-
-
-
-
-
-                        <%- include('includes/end.ejs') %>
+<%- include('includes/end.ejs') %>
