@@ -45,8 +45,57 @@ exports.getAddCourse = (req, res, next) => {
 
 exports.postAddCourse = (req, res, next) => {
     const courseNumber = req.body.courseNumber;
+    const courseName = req.body.courseName;
+    const passRate =  req.body.passRate;
+    const subjectArea = req.body.subjectArea;
+    const registered = req.body.registered;
+    const totalHour = req.body.totalHour;
+    const effort = req.body.effort;
+    const cLength = req.body.cLength;
+    const remember = req.body.remember;
+    const understand = req.body.understand;
+    const apply = req.body.apply;
+    const analyze = req.body.analyze;
+    const evaluate = req.body.evaluate;
+    const create = req.body.create;
+    const cBloom = req.body.cBloom;
+    const chapter = req.body.chapter;
+    const video = req.body.video;
+    const html = req.body.html;
+    const problem = req.body.problem;
+    const discussion = req.body.discussion;
+    const cNumCom = req.body.cNumCom;
+    const sequence = req.body.sequence;
+    const cSeqCom = req.body.cSeqCom;
+    const passLearner = req.body.passLearner;
+    const failLearner = req.body.failLearner;
+
     Course.create({
-        courseNumber: courseNumber
+        courseNumber: courseNumber,
+        courseName: courseName,
+        passRate: passRate,
+        subjectArea: subjectArea,
+        registered: registered,
+        totalHour: totalHour,
+        effort: effort,
+        cLength: cLength,
+        remember: remember,
+        understand: understand,
+        apply: apply,
+        analyze: analyze,
+        evaluate: evaluate,
+        create: create,
+        cBloom: cBloom,
+        chapter: chapter,
+        video: video,
+        html: html,
+        problem: problem,
+        discussion: discussion,
+        cNumCom: cNumCom,
+        sequence: sequence,
+        cSeqCom: cSeqCom,
+        passLearner: passLearner,
+        failLearner: failLearner
     }).then(result => {
         // console.log(result);
         console.log('Created Course!');
