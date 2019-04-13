@@ -1,6 +1,8 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">MOOCA <i class="fas fa-graduation-cap"></i> </a>
+        <a class="navbar-brand" href="/">MOOCA
+            <i class="fas fa-graduation-cap"></i>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -14,10 +16,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <%= path === '/courselists' ? 'active' : '' %>" href="/courselists">Courses</a>
-                </li>      
-                <li class="nav-item">
-                    <a class="nav-link <%= path === '/customize' ? 'active' : '' %>" href="/customize">Customize</a>
-                </li>               
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Analysis
@@ -27,6 +26,9 @@
                         <a class="dropdown-item <%= path === '/learnerAnalysis' ? 'active' : '' %>" href="/learnerAnalysis">Learners Clustering</a>
                         <a class="dropdown-item <%= path === '/relationship' ? 'active' : '' %>" href="/relationship">Relationship</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <%= path === '/recommendation' ? 'active' : '' %>" href="/recommendation">Recommendation</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <%= path === '/import' ? 'active' : '' %>" href="/import">Import</a>

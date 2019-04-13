@@ -5,34 +5,107 @@
     <body>
         <%- include('includes/navigation.ejs') %>
 
-            <div class="container">
-                <br>
-                <div class="card">
-                    <h3 class="card-header bg-light text-primary">
-                        <i class="fas fa-edit text-primary"></i> Course Design
-                        <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Description">
-                            <i class="fas fa-angle-down text-primary"></i>
-                        </a>
-                    </h3>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            Teachers and Course Designers can design their future courses. The system will show the insights and recommendations.
+            <nav id="navbar-example2" class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <h3 class="text-info">
+                        <i class="far fa-comment"></i> Recommendation</h3>
+                </a>
+                <a data-toggle="modal" data-target=".bd-example-modal-lg" title="Information">
+                    <i class="fas fa-info-circle fa-2x text-info"></i>
+                </a>
+            </nav>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="container">
+                            <h5>Teachers and Course Designers can design their future courses. The system will show the insights
+                                and recommendations.</h5>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group row">
-                                <label for="courseName" class="col-sm-2 col-form-label">Course Name</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="courseName" aria-describedby="courseName" placeholder="HTML & CSS">
-                                </div>
-                                <label for="courseName" class="col-sm-2 col-form-label">Course Number</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="courseNumber" aria-describedby="courseNumber" placeholder="CU005">
-                                </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="courseinfo-tab" data-toggle="tab" href="#courseinfo" role="tab" aria-controls="courseinfo"
+                            aria-selected="true">
+                            <i class="far fa-clock"></i> Course Length </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="courselength-tab" data-toggle="tab" href="#courselength" role="tab" aria-controls="courselength"
+                            aria-selected="false">Course Length</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="bloom-tab" data-toggle="tab" href="#bloom" role="tab" aria-controls="bloom" aria-selected="false">Bloom's Taxonomy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="components-tab" data-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="false">Components</a>
+                    </li>
+
+                </ul>
+                <div class="card-body">
+                    <!-- information -->
+                    <div>
+
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="courseinfo" role="tabpanel" aria-labelledby="courseinfo-tab">
+                                <form action="/recommendation" method="POST">
+                                    <!-- Course Length -->
+
+                                    <a data-toggle="collapse" href="#length" aria-expanded="false" aria-controls="length" title="Description" class="text-dark">
+                                        More Detail
+                                        <i class="fas fa-angle-down text-dark"></i>
+                                    </a>
+
+                                    <div class="collapse" id="length">
+                                        <div class="card card-body">
+                                            Length section is lead to Course Lenght Clustering.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="totalHour" class="col-sm-2 col-form-label">Total Hour : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" class="form-control" name="totalHour" id="totalHour" placeholder="10">
+                                        </div>
+                                        <label for="effort" class="col-sm-2 col-form-label">Effort (hrs/week) : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" class="form-control" name="effort" id="effort" placeholder="2">
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Analyze</button>
+                                </form>
                             </div>
-                            <!-- Course Length -->
-                            <h5>
+
+                            <div class="tab-pane" id="courselength" role="tabpanel" aria-labelledby="courselength-tab">
+                                ...
+                            </div>
+
+
+                            <div class="tab-pane" id="bloom" role="tabpanel" aria-labelledby="bloom-tab">
+                                ...
+                            </div>
+                            <div class="tab-pane" id="components" role="tabpanel" aria-labelledby="components-tab">
+                                ...
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- <form action="/recommendation" method="POST"> -->
+                    <!-- Course Length -->
+                    <!-- <h5>
                                 <i class="far fa-clock"></i> Length
                                 <a data-toggle="collapse" href="#length" aria-expanded="false" aria-controls="length" title="Description">
                                     <i class="fas fa-angle-down text-dark"></i>
@@ -45,17 +118,17 @@
                             </div>
                             <hr>
                             <div class="form-group row">
-                                <label for="totalHour" class="col-sm-2 col-form-label">Total Hour</label>
+                                <label for="totalHour" class="col-sm-2 col-form-label">Total Hour : </label>
                                 <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="totalHour" aria-describedby="totalHour" placeholder="10">
+                                    <input type="number" class="form-control" name="totalHour" id="totalHour" placeholder="10">
                                 </div>
-                                <label for="effort" class="col-sm-2 col-form-label">Effort(hrs/week)</label>
+                                <label for="effort" class="col-sm-2 col-form-label">Effort (hrs/week) : </label>
                                 <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="effort" aria-describedby="effort" placeholder="2">
+                                    <input type="number" class="form-control" name="effort" id="effort" placeholder="2">
                                 </div>
-                            </div>
-                            <!-- Bloom's Taxonomy -->
-                            <h5>
+                            </div> -->
+                    <!-- Bloom's Taxonomy -->
+                    <!-- <h5>
                                 <i class="fas fa-chart-line"></i> Bloom's Taxonomy related with effort (%)
                                 <a data-toggle="collapse" href="#bloom" aria-expanded="false" aria-controls="bloom" title="Description">
                                     <i class="fas fa-angle-down text-dark"></i>
@@ -96,9 +169,9 @@
                                 <div class="col-sm-4">
                                     <input type="number" step=any class="form-control" id="create" aria-describedby="create" placeholder="15">
                                 </div>
-                            </div>
-                            <!-- Times Components -->
-                            <h5>
+                            </div> -->
+                    <!-- Times Components -->
+                    <!-- <h5>
                                 <i class="fas fa-project-diagram"></i> Number of Components
                                 <a data-toggle="collapse" href="#times" aria-expanded="false" aria-controls="times" title="Description">
                                     <i class="fas fa-angle-down text-dark"></i>
@@ -136,9 +209,9 @@
                                     <input type="number" step=any class="form-control" id="problem" aria-describedby="problem" placeholder="10">
                                 </div>
 
-                            </div>
-                            <!-- Sequenc Components -->
-                            <h5>
+                            </div> -->
+                    <!-- Sequenc Components -->
+                    <!-- <h5>
                                 <i class="fas fa-sort-amount-down"></i> Sequence Components
                                 <a data-toggle="collapse" href="#sequence" aria-expanded="false" aria-controls="sequence" title="Description">
                                     <i class="fas fa-angle-down text-dark"></i>
@@ -156,16 +229,29 @@
                                     <textarea class="form-control" id="transition" aria-describedby="transition" placeholder="[Chapter, Video, Video, HTML, Problem, ...]"></textarea>
                                 </div>
 
-                            </div>
+                            </div> -->
 
 
 
-
+                    <!-- 
                             <button type="submit" class="btn btn-primary">Analyze</button>
-                        </form>
-                    </div>
+                        </form> -->
                 </div>
             </div>
 
+            <% if (recom) {%>
+                <div class="container">
+                    <%= message%>
+                    <% if (message === '[0]') { %>
+                        <h4>Your course in cluster 0</h4>
+                    <% } else if (message === '[1]') {%>
+                        <h4>Your course in cluster 1</h4>
+                    <% } else { %>
+                        <h4>Your course in cluster 2</h4>
+                    <% } %>
+                </div>
+                <% } %>
 
-            <%- include('includes/end.ejs') %>
+
+
+<%- include('includes/end.ejs') %>

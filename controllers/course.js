@@ -23,10 +23,6 @@ exports.getCourse = (req, res, next) => {
 
 };
 
-exports.getCustomize = (req, res, next) => {
-    res.render('customize', { pageTitle: 'Customize', path: '/customize' })
-};
-
 exports.getCourseAnalysis = (req, res, next) => {
     res.render('courseAnalysis', { pageTitle: 'Courses Clustering', path: '/courseAnalysis' })
 };
@@ -129,8 +125,6 @@ exports.getEditCourse = (req, res, next) => {
 
 exports.postEditCourse = (req, res, next) => {
     const cousId = req.body.courseId;
-    console.log('postedittttttttttttttt');
-    console.log(cousId);
     const updatedcourseNumber = req.body.courseNumber;
     const updatedcourseName = req.body.courseName;
     const updatedpassRate = req.body.passRate;
@@ -187,7 +181,7 @@ exports.postEditCourse = (req, res, next) => {
         })
         .then(result => {
             console.log('Updated Course!');
-            res.redirect('/courselists')
+            res.redirect('/courselists');
         })
         .catch(err => console.log(err));
 };

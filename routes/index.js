@@ -6,6 +6,8 @@ const router = express.Router();
 const indexController = require('../controllers/index');
 
 router.get('/', indexController.getIndex);
+router.get('/recommendation', indexController.getRecommendation);
+router.post('/recommendation', indexController.postRecommendation);
 router.get('/import', indexController.getImport);
 router.post('/import', indexController.postImport);
 router.get('/visualize', indexController.getVisualize);

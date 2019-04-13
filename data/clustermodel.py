@@ -26,7 +26,8 @@ def main():
     # print(model_loaded)
 
     ## K-Means Clustering
-    print('Your course is in cluster {} '.format(model_loaded.predict(data)))
+    # print('Your course is in cluster {} '.format(model_loaded.predict(data)))
+    print(model_loaded.predict(data))
 
     ## Agglomerative Clustering
     # print(data)
