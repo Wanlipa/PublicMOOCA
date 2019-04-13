@@ -9,30 +9,49 @@ exports.getRecommendation = (req, res, next) => {
 };
 
 exports.postRecommendation = (req, res, next) => {
+    const clusterType = req.body.clusterType;
     const totalHour = req.body.totalHour;
     const effort = req.body.effort;
-    console.log('Recommendation!');
-    console.log(totalHour);
-    console.log(effort);
+    const remember = req.body.remember;
+    const understand = req.body.understand;
+    const apply = req.body.apply;
+    const analyze = req.body.analyze;
+    const evaluate = req.body.evaluate;
+    const create = req.body.create;
+    const chapter = req.body.chapter;
+    const video = req.body.video;
+    const html = req.body.html;
+    const problem = req.body.problem;
+    const discussion = req.body.discussion;
+    console.log(clusterType);
 
-    const recomMode = true;
-    const myPythonScriptPath = 'data/clustermodel.py';
-
+    // Clustering Model Python   
+    var myPythonScriptPath = '';
+    var clusterArray = [];
+    // Check cluster model
+    if (clusterType == 'cLength') {
+        myPythonScriptPath = 'data/cLengthModel.py';
+        clusterArray = [effort, totalHour];
+    } else if (clusterType == 'cBloom') {
+        myPythonScriptPath = 'data/cBloomModel.py';
+        clusterArray = [remember, understand, apply, analyze, evaluate, create];
+    } else {
+        myPythonScriptPath = 'data/cNumComModel.py';
+        clusterArray = [chapter, video, html, problem, discussion];
+    }
     // Providing data from node.js to python
     const { PythonShell } = require('python-shell');
     const pyshell = new PythonShell(myPythonScriptPath);
-
-    // pyshell.send(JSON.stringify([[8, 15]]));
-    pyshell.send(JSON.stringify([[effort, totalHour]]));
+    pyshell.send(JSON.stringify([clusterArray]));
 
     pyshell.on('message', function (message) {
         // received a message sent from the Python script (a simple "print" statement)
         console.log(message);
-        // res.redirect('/recommendation');
         res.render('recommendation', {
             pageTitle: 'recommendation',
             path: '/recommendation',
-            recom: recomMode,
+            recom: true,
+            cType: clusterType,
             message: message
         });
     });
@@ -42,11 +61,8 @@ exports.postRecommendation = (req, res, next) => {
         if (err) {
             throw err;
         };
-
         console.log('finished!!!');
     });
-
-
 };
 
 exports.getImport = (req, res, next) => {

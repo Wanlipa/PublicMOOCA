@@ -29,229 +29,295 @@
             <div class="card">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <!-- Course Length -->
                     <li class="nav-item">
                         <a class="nav-link active" id="courseinfo-tab" data-toggle="tab" href="#courseinfo" role="tab" aria-controls="courseinfo"
                             aria-selected="true">
                             <i class="far fa-clock"></i> Course Length </a>
                     </li>
+                    <!-- Bloom Taxonomy -->
                     <li class="nav-item">
-                        <a class="nav-link" id="courselength-tab" data-toggle="tab" href="#courselength" role="tab" aria-controls="courselength"
-                            aria-selected="false">Course Length</a>
+                        <a class="nav-link" id="bloom-tab" data-toggle="tab" href="#bloom" role="tab" aria-controls="bloom" aria-selected="false">
+                            <i class="fas fa-chart-line"></i> Bloom's Taxonomy</a>
+                        </a>
                     </li>
+                    <!-- Number of Components -->
                     <li class="nav-item">
-                        <a class="nav-link" id="bloom-tab" data-toggle="tab" href="#bloom" role="tab" aria-controls="bloom" aria-selected="false">Bloom's Taxonomy</a>
+                        <a class="nav-link" id="components-tab" data-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="false">
+                            <i class="fas fa-project-diagram"></i> Number of Components</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="components-tab" data-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="false">Components</a>
-                    </li>
-
                 </ul>
                 <div class="card-body">
                     <!-- information -->
                     <div>
-
-
                         <!-- Tab panes -->
                         <div class="tab-content">
+                            <!-- Course Length -->
                             <div class="tab-pane active" id="courseinfo" role="tabpanel" aria-labelledby="courseinfo-tab">
                                 <form action="/recommendation" method="POST">
-                                    <!-- Course Length -->
-
                                     <a data-toggle="collapse" href="#length" aria-expanded="false" aria-controls="length" title="Description" class="text-dark">
                                         More Detail
                                         <i class="fas fa-angle-down text-dark"></i>
                                     </a>
-
                                     <div class="collapse" id="length">
                                         <div class="card card-body">
                                             Length section is lead to Course Lenght Clustering.
                                         </div>
                                     </div>
-
                                     <div class="form-group row">
-                                        <label for="totalHour" class="col-sm-2 col-form-label">Total Hour : </label>
-                                        <div class="col-sm-4">
-                                            <input type="number" class="form-control" name="totalHour" id="totalHour" placeholder="10">
-                                        </div>
                                         <label for="effort" class="col-sm-2 col-form-label">Effort (hrs/week) : </label>
                                         <div class="col-sm-4">
                                             <input type="number" class="form-control" name="effort" id="effort" placeholder="2">
                                         </div>
+                                        <label for="totalHour" class="col-sm-2 col-form-label">Total Hour : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" class="form-control" name="totalHour" id="totalHour" placeholder="10">
+                                        </div>
                                     </div>
-
+                                    <input type="hidden" value="cLength" name="clusterType">
                                     <button type="submit" class="btn btn-primary">Analyze</button>
                                 </form>
                             </div>
-
-                            <div class="tab-pane" id="courselength" role="tabpanel" aria-labelledby="courselength-tab">
-                                ...
-                            </div>
-
-
+                            <!-- Bloom Taxonomy -->
                             <div class="tab-pane" id="bloom" role="tabpanel" aria-labelledby="bloom-tab">
-                                ...
+                                <form action="/recommendation" method="POST">
+                                    <a data-toggle="collapse" href="#bloomdetail" aria-expanded="false" aria-controls="bloomdetail" title="Description" class="text-dark">
+                                        More Detail
+                                        <i class="fas fa-angle-down text-dark"></i>
+                                    </a>
+                                    <div class="collapse" id="bloomdetail">
+                                        <div class="card card-body">
+                                            Bloom's Taxonomy section is lead to Bloom's Taxonomy Clustering.
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="remember" class="col-sm-2 col-form-label">Remember : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" step=any class="form-control" name="remember" id="remember" aria-describedby="remember" placeholder="20">
+                                        </div>
+                                        <label for="analyze" class="col-sm-2 col-form-label">Analyze : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" step=any class="form-control" name="analyze" id="analyze" aria-describedby="analyze" placeholder="20">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="understand" class="col-sm-2 col-form-label">Understand : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" step=any class="form-control" name="understand" id="understand" aria-describedby="understand" placeholder="10">
+                                        </div>
+                                        <label for="evaluate" class="col-sm-2 col-form-label">Evaluate : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" step=any class="form-control" name="evaluate" id="evaluate" aria-describedby="evaluate" placeholder="15">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="apply" class="col-sm-2 col-form-label">Apply : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" step=any class="form-control" name="apply" id="apply" aria-describedby="apply" placeholder="10">
+                                        </div>
+                                        <label for="create" class="col-sm-2 col-form-label">Create : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" step=any class="form-control" name="create" id="create" aria-describedby="create" placeholder="15">
+                                        </div>
+                                    </div>
+                                    <input type="hidden" value="cBloom" name="clusterType">
+                                    <button type="submit" class="btn btn-primary">Analyze</button>
+                                </form>
                             </div>
+                            <!-- Number of Components -->
                             <div class="tab-pane" id="components" role="tabpanel" aria-labelledby="components-tab">
-                                ...
+                                <form action="/recommendation" method="POST">
+                                    <a data-toggle="collapse" href="#numcom" aria-expanded="false" aria-controls="numcom" title="Description" class="text-dark">
+                                        More Detail
+                                        <i class="fas fa-angle-down text-dark"></i>
+                                    </a>
+                                    </h5>
+                                    <div class="collapse" id="numcom">
+                                        <div class="card card-body">
+                                            Number of Components Clustering.
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="chapter" class="col-sm-2 col-form-label">Chapter : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" step=any class="form-control" name="chapter" id="chapter" aria-describedby="chapter" placeholder="12">
+                                        </div>
+                                        <label for="problem" class="col-sm-2 col-form-label">Problem : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" step=any class="form-control" name="problem" id="problem" aria-describedby="problem" placeholder="10">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="video" class="col-sm-2 col-form-label">Video : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" step=any class="form-control" name="video" id="video" aria-describedby="video" placeholder="115">
+                                        </div>
+                                        <label for="discussion" class="col-sm-2 col-form-label">Discussion : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" step=any class="form-control" name="discussion" id="discussion" aria-describedby="discussion" placeholder="5">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="html" class="col-sm-2 col-form-label">HTML : </label>
+                                        <div class="col-sm-4">
+                                            <input type="number" step=any class="form-control" name="html" id="html" aria-describedby="html" placeholder="50">
+                                        </div>
+                                    </div>
+                                    <input type="hidden" value="cNumCom" name="clusterType">
+                                    <button type="submit" class="btn btn-primary">Analyze</button>
+                                </form>
                             </div>
-
-
                         </div>
                     </div>
-
-
-
-
-
-                    <!-- <form action="/recommendation" method="POST"> -->
-                    <!-- Course Length -->
-                    <!-- <h5>
-                                <i class="far fa-clock"></i> Length
-                                <a data-toggle="collapse" href="#length" aria-expanded="false" aria-controls="length" title="Description">
-                                    <i class="fas fa-angle-down text-dark"></i>
-                                </a>
-                            </h5>
-                            <div class="collapse" id="length">
-                                <div class="card card-body">
-                                    Length section is lead to Course Lenght Clustering.
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <label for="totalHour" class="col-sm-2 col-form-label">Total Hour : </label>
-                                <div class="col-sm-4">
-                                    <input type="number" class="form-control" name="totalHour" id="totalHour" placeholder="10">
-                                </div>
-                                <label for="effort" class="col-sm-2 col-form-label">Effort (hrs/week) : </label>
-                                <div class="col-sm-4">
-                                    <input type="number" class="form-control" name="effort" id="effort" placeholder="2">
-                                </div>
-                            </div> -->
-                    <!-- Bloom's Taxonomy -->
-                    <!-- <h5>
-                                <i class="fas fa-chart-line"></i> Bloom's Taxonomy related with effort (%)
-                                <a data-toggle="collapse" href="#bloom" aria-expanded="false" aria-controls="bloom" title="Description">
-                                    <i class="fas fa-angle-down text-dark"></i>
-                                </a>
-                            </h5>
-                            <div class="collapse" id="bloom">
-                                <div class="card card-body">
-                                    Bloom's Taxonomy section is lead to Bloom's Taxonomy Clustering.
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <label for="remember" class="col-sm-2 col-form-label">Remember</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="remember" aria-describedby="remember" placeholder="20">
-                                </div>
-                                <label for="analyze" class="col-sm-2 col-form-label">Analyze</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="analyze" aria-describedby="analyze" placeholder="20">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="understand" class="col-sm-2 col-form-label">Understand</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="understand" aria-describedby="understand" placeholder="10">
-                                </div>
-                                <label for="evaluate" class="col-sm-2 col-form-label">Evaluate</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="evaluate" aria-describedby="evaluate" placeholder="15">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="apply" class="col-sm-2 col-form-label">Apply</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="apply" aria-describedby="apply" placeholder="10">
-                                </div>
-                                <label for="create" class="col-sm-2 col-form-label">Create</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="create" aria-describedby="create" placeholder="15">
-                                </div>
-                            </div> -->
-                    <!-- Times Components -->
-                    <!-- <h5>
-                                <i class="fas fa-project-diagram"></i> Number of Components
-                                <a data-toggle="collapse" href="#times" aria-expanded="false" aria-controls="times" title="Description">
-                                    <i class="fas fa-angle-down text-dark"></i>
-                                </a>
-                            </h5>
-                            <div class="collapse" id="times">
-                                <div class="card card-body">
-                                    Number of Components section is lead to Times Components Clustering.
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <label for="chapter" class="col-sm-2 col-form-label">Chapter</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="chapter" aria-describedby="chapter" placeholder="12">
-                                </div>
-                                <label for="video" class="col-sm-2 col-form-label">Video</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="video" aria-describedby="video" placeholder="115">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="html" class="col-sm-2 col-form-label">HTML</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="html" aria-describedby="html" placeholder="50">
-                                </div>
-                                <label for="discussion" class="col-sm-2 col-form-label">Discussion</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="discussion" aria-describedby="discussion" placeholder="5">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="problem" class="col-sm-2 col-form-label">Problem</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" id="problem" aria-describedby="problem" placeholder="10">
-                                </div>
-
-                            </div> -->
-                    <!-- Sequenc Components -->
-                    <!-- <h5>
-                                <i class="fas fa-sort-amount-down"></i> Sequence Components
-                                <a data-toggle="collapse" href="#sequence" aria-expanded="false" aria-controls="sequence" title="Description">
-                                    <i class="fas fa-angle-down text-dark"></i>
-                                </a>
-                            </h5>
-                            <div class="collapse" id="sequence">
-                                <div class="card card-body">
-                                    Sequence Components section is lead to Sequence Components Clustering.
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <label for="transition" class="col-sm-2 col-form-label">Transition</label>
-                                <div class="col-sm-10">
-                                    <textarea class="form-control" id="transition" aria-describedby="transition" placeholder="[Chapter, Video, Video, HTML, Problem, ...]"></textarea>
-                                </div>
-
-                            </div> -->
-
-
-
-                    <!-- 
-                            <button type="submit" class="btn btn-primary">Analyze</button>
-                        </form> -->
                 </div>
             </div>
 
             <% if (recom) {%>
                 <div class="container">
-                    <%= message%>
-                    <% if (message === '[0]') { %>
-                        <h4>Your course in cluster 0</h4>
-                    <% } else if (message === '[1]') {%>
-                        <h4>Your course in cluster 1</h4>
-                    <% } else { %>
-                        <h4>Your course in cluster 2</h4>
-                    <% } %>
+                    <br>
+                    <!-- <%= message%>
+                        <%= cType%> -->
+                            <div class="card">
+                                <% if (message === '[0]') { %>
+                                    <% if (cType === 'cLength') { %>
+                                        <div class="card-header bg-info text-light">
+                                            <h4>Course Length Clustering</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Your course is in cluster C_L3: Short Courses</h5>
+                                            <p class="card-text">For recommendation, you should consider customizing your courses into Medium
+                                                Courses by increasing effort and total hour.</p>
+                                            <a href="/courseAnalysis" class="btn btn-outline-info" target="_blank">Course Clustering</a>
+                                            <a href="/relationship" class="btn btn-outline-info" target="_blank">Relationship</a>
+                                        </div>
+                                        <% } else if (cType === 'cBloom') { %>
+                                            <div class="card-header bg-info text-light">
+                                                <h4>Bloom's Taxonomy Clustering</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Your course is in cluster C_B4: Applying-focus</h5>
+                                                <p class="card-text">For recommendation, you are already in the good cluster.
+                                                </p>
+                                                <a href="/courseAnalysis" class="btn btn-outline-info" target="_blank">Course Clustering</a>
+                                                <a href="/relationship" class="btn btn-outline-info" target="_blank">Relationship</a>
+                                            </div>
+                                            <% } else {%>
+                                                <div class="card-header bg-info text-light">
+                                                    <h4>Number of Components Clustering</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Your course is in cluster C_N1: Video-focus</h5>
+                                                    <p class="card-text">For recommendation, you should generate courses with Video and HTML-focus.
+                                                    </p>
+                                                    <a href="/courseAnalysis" class="btn btn-outline-info" target="_blank">Course Clustering</a>
+                                                    <a href="/relationship" class="btn btn-outline-info" target="_blank">Relationship</a>
+                                                </div>
+                                                <% } %>
+                                                    <% } else if (message === '[1]') {%>
+                                                        <% if (cType === 'cLength') { %>
+                                                            <div class="card-header bg-info text-light">
+                                                                <h4>Course Length Clustering</h4>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Your course is in cluster C_L1: Long Courses</h5>
+                                                                <p class="card-text">For recommendation, you should consider customizing your
+                                                                    courses into Medium Courses by decreasing effort and
+                                                                    total hour.</p>
+                                                                <a href="/courseAnalysis" class="btn btn-outline-info" target="_blank">Course Clustering</a>
+                                                                <a href="/relationship" class="btn btn-outline-info" target="_blank">Relationship</a>
+                                                            </div>
+                                                            <% } else if (cType === 'cBloom') { %>
+                                                                <div class="card-header bg-info text-light">
+                                                                    <h4>Bloom's Taxonomy Clustering</h4>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">Your course is in cluster C_B1: Understanding-focus</h5>
+                                                                    <p class="card-text">For recommendation, you should concentrate on creating
+                                                                        courses in the group of Applying-focus.
+                                                                    </p>
+                                                                    <a href="/courseAnalysis" class="btn btn-outline-info" target="_blank">Course Clustering</a>
+                                                                    <a href="/relationship" class="btn btn-outline-info" target="_blank">Relationship</a>
+                                                                </div>
+                                                                <% } else {%>
+                                                                    <div class="card-header bg-info text-light">
+                                                                        <h4>Number of Components Clustering</h4>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title">Your course is in cluster C_N2: Video and HTML-focus</h5>
+                                                                        <p class="card-text">For recommendation, you are already in the good cluster.
+                                                                        </p>
+                                                                        <a href="/courseAnalysis" class="btn btn-outline-info" target="_blank">Course Clustering</a>
+                                                                        <a href="/relationship" class="btn btn-outline-info" target="_blank">Relationship</a>
+                                                                    </div>
+                                                                    <% } %>
+                                                                        <% } else if (message === '[2]') {%>
+                                                                            <% if (cType === 'cLength') { %>
+                                                                                <div class="card-header bg-info text-light">
+                                                                                    <h4>Course Length Clustering</h4>
+                                                                                </div>
+                                                                                <div class="card-body">
+                                                                                    <h5 class="card-title">Your course is in cluster C_L2: Medium
+                                                                                        Courses
+                                                                                    </h5>
+                                                                                    <p class="card-text">For recommendation, you are already in
+                                                                                        the good cluster.
+                                                                                    </p>
+                                                                                    <a href="/courseAnalysis" class="btn btn-outline-info" target="_blank">Course Clustering</a>
+                                                                                    <a href="/relationship" class="btn btn-outline-info" target="_blank">Relationship</a>
+                                                                                </div>
+                                                                                <% } else if (cType === 'cBloom') { %>
+                                                                                    <div class="card-header bg-info text-light">
+                                                                                        <h4>Bloom's Taxonomy Clustering</h4>
+                                                                                    </div>
+                                                                                    <div class="card-body">
+                                                                                        <h5 class="card-title">Your course is in cluster C_B2: Understanding,
+                                                                                            Applying, and Analyzing-focus</h5>
+                                                                                        <p class="card-text">For recommendation, you should concentrate
+                                                                                            on creating courses in the group
+                                                                                            of Applying-focus.
+                                                                                        </p>
+                                                                                        <a href="/courseAnalysis" class="btn btn-outline-info" target="_blank">Course Clustering</a>
+                                                                                        <a href="/relationship" class="btn btn-outline-info" target="_blank">Relationship</a>
+                                                                                    </div>
+                                                                                    <% } else {%>
+                                                                                        <% } %>
+                                                                                            <% } else { %>
+                                                                                                <div class="card-header bg-info text-light">
+                                                                                                    <h4>Bloom's Taxonomy Clustering</h4>
+                                                                                                </div>
+                                                                                                <div class="card-body">
+                                                                                                    <h5 class="card-title">Your course is in cluster
+                                                                                                        C_B3: Remembering,
+                                                                                                        Understanding, and
+                                                                                                        Creating-focus
+                                                                                                    </h5>
+                                                                                                    <p class="card-text">For recommendation, you
+                                                                                                        should avoid the
+                                                                                                        courses which focus
+                                                                                                        the group of Remembering,
+                                                                                                        Understanding, and
+                                                                                                        Creating-focus because
+                                                                                                        it presents the lowest
+                                                                                                        percent of the passing
+                                                                                                        learners. The course
+                                                                                                        design should design
+                                                                                                        the Bloom’s taxonomy
+                                                                                                        thinking skill step-by-step.
+                                                                                                        Consequently, learners
+                                                                                                        can’t keep up and
+                                                                                                        do not have enough
+                                                                                                        knowledge to focus
+                                                                                                        on Creating skill
+                                                                                                        that presents the
+                                                                                                        lowest percent of
+                                                                                                        passing learners.
+                                                                                                    </p>
+                                                                                                    <a href="/courseAnalysis" class="btn btn-outline-info" target="_blank">Course Clustering</a>
+                                                                                                    <a href="/relationship" class="btn btn-outline-info" target="_blank">Relationship</a>
+                                                                                                </div>
+                                                                                                <% } %>
+                            </div>
                 </div>
                 <% } %>
 
-
-
-<%- include('includes/end.ejs') %>
+                    <%- include('includes/end.ejs') %>

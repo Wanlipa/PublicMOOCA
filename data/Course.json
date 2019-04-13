@@ -21,9 +21,9 @@
         {
             "name": "Number of Components",
             "children": [
-                { "name": "C_N1", "size": 32 },
-                { "name": "C_N2", "size": 39 },
-                { "name": "C_N3", "size": 29 }
+                { "name": "C_N1", "size": 54 },
+                { "name": "C_N2", "size": 46 }
+                
             ]
         },
         {
