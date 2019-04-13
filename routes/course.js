@@ -15,4 +15,5 @@ router.get('/add-course', courseController.getAddCourse);
 router.post('/add-course', courseController.postAddCourse);
 router.get('/edit-course/:courseId', courseController.getEditCourse);
 router.post('/edit-course', courseController.postEditCourse);
+router.post('/delete-course', courseController.postDeleteCourse);
 module.exports = router;

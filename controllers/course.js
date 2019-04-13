@@ -191,3 +191,16 @@ exports.postEditCourse = (req, res, next) => {
         })
         .catch(err => console.log(err));
 };
+
+exports.postDeleteCourse = (req, res, next) => {
+    const cousId = req.body.courseId;
+    Course.findById(cousId)
+        .then(course => {
+            return course.destroy();
+        })
+        .then(result => {
+            console.log('Deleted!');
+            res.redirect('/courselists');
+        })
+        .catch(err => console.log(err));
+};
