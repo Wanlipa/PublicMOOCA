@@ -77,14 +77,14 @@
                                         </div>
                                         <hr>
                                         <div class="form-group row">
-                                            <label for="totalHour" class="col-sm-2 col-form-label">Total Hour : </label>
-                                            <div class="col-sm-4">
-                                                <input type="number" class="form-control" name="totalHour" id="totalHour" placeholder="10" value="<% if (editing) { %><%=course.totalHour%><% } %>">
-                                            </div>
                                             <label for="effort" class="col-sm-2 col-form-label">Effort (hrs/week) : </label>
                                             <div class="col-sm-4">
                                                 <input type="number" class="form-control" name="effort" id="effort" placeholder="2" value="<% if (editing) { %><%=course.effort%><% } %>">
                                             </div>
+                                            <label for="totalHour" class="col-sm-2 col-form-label">Total Hour : </label>
+                                            <div class="col-sm-4">
+                                                <input type="number" class="form-control" name="totalHour" id="totalHour" placeholder="10" value="<% if (editing) { %><%=course.totalHour%><% } %>">
+                                            </div>                                            
                                         </div>
                                         <div class="form-group row">
                                             <label for="cLength" class="col-sm-2 col-form-label">Length Cluster: </label>
