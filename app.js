@@ -9,7 +9,15 @@ const errorController = require('./controllers/error');
 // Database
 const sequelize = require('./util/database');
 
-// Models
+// set up file path
+const fileStorage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'data/CSV')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname)
+    }
+});
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -22,7 +30,7 @@ const courseRoutes = require('./routes/course');
 
 // Middleware set body parser to get image
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(multer({dest: '/import'}).single('import'));
+app.use(multer({ storage: fileStorage }).single('myFile'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/data',express.static(path.join(__dirname, 'data')));
 

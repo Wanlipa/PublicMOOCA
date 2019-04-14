@@ -11,236 +11,242 @@
         <%- include('includes/navigation.ejs') %>
             <div class="container">
                 <div class="card">
-                    <h3 class="card-header bg-light text-success">
-                        <i class="fas fa-plus-circle text-success"></i> Add Course
-                    </h3>
-                    <div class="card-body">
-                        <form action="/<% if (editing) { %>edit-course<% } else { %>add-course<% } %>" method="POST">
-                            <!-- Course Info -->
-                            <h5>
-                                <i class="fas fa-book"></i> Course Info
-                                <a data-toggle="collapse" href="#courseinfo" aria-expanded="false" aria-controls="courseinfo" title="Description">
-                                    <i class="fas fa-angle-down text-dark"></i>
-                                </a>
-                            </h5>
-                            <div class="collapse" id="courseinfo">
-                                <div class="card card-body">
-                                    courseinfo
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <label for="courseNumber" class="col-sm-2 col-form-label">Course Number : </label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="courseNumber" id="courseNumber" placeholder="CU005" value="<% if (editing) { %><%=course.courseNumber%><% } %>">
-                                </div>
-                                <label for="courseName" class="col-sm-2 col-form-label">Course Name : </label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="courseName" id="courseName" placeholder="HTML & CSS" value="<% if (editing) { %><%=course.courseName%><% } %>">
-                                </div>
-                            </div>
+                    <% if (editing) { %> <h3 class="card-header bg-light text-warning">
+                            <i class="fas fa-edit fa-lg text-warning"></i> Update Course
+                        </h3>
+                        <%} else {%>
+                            <h3 class="card-header bg-light text-success">
+                                <i class="fas fa-plus-circle text-success"></i> Add Course
+                            </h3>
+                            <%}%>
 
-                            <div class="form-group row">
-                                <label for="passRate" class="col-sm-2 col-form-label">Passing Criteria : </label>
-                                <div class="col-sm-4">
-                                    <input type="number" class="form-control" name="passRate" id="passRate" placeholder="50" value="<% if (editing) { %><%=course.passRate%><% } %>">
-                                </div>
-                                <label for="subjectArea" class="col-sm-2 col-form-label">Subject Area : </label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="subjectArea" id="subjectArea" placeholder="Technology" value="<% if (editing) { %><%=course.subjectArea%><% } %>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="registered" class="col-sm-2 col-form-label">Registered Learners: </label>
-                                <div class="col-sm-4">
-                                    <input type="number" class="form-control" name="registered" id="registered" placeholder="1203" value="<% if (editing) { %><%=course.registered%><% } %>">
-                                </div>
-                            </div>
+                                <div class="card-body">
+                                    <form action="/<% if (editing) { %>edit-course<% } else { %>add-course<% } %>" method="POST">
+                                        <!-- Course Info -->
+                                        <h5>
+                                            <i class="fas fa-book"></i> Course Info
+                                            <a data-toggle="collapse" href="#courseinfo" aria-expanded="false" aria-controls="courseinfo" title="Description">
+                                                <i class="fas fa-angle-down text-dark"></i>
+                                            </a>
+                                        </h5>
+                                        <div class="collapse" id="courseinfo">
+                                            <div class="card card-body">
+                                                courseinfo
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <label for="courseNumber" class="col-sm-2 col-form-label">Course Number : </label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" name="courseNumber" id="courseNumber" placeholder="CU005" value="<% if (editing) { %><%=course.courseNumber%><% } %>">
+                                            </div>
+                                            <label for="courseName" class="col-sm-2 col-form-label">Course Name : </label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" name="courseName" id="courseName" placeholder="HTML & CSS" value="<% if (editing) { %><%=course.courseName%><% } %>">
+                                            </div>
+                                        </div>
 
-                            <!-- Course Length -->
-                            <h5>
-                                <i class="far fa-clock"></i> Length
-                                <a data-toggle="collapse" href="#length" aria-expanded="false" aria-controls="length" title="Description">
-                                    <i class="fas fa-angle-down text-dark"></i>
-                                </a>
-                            </h5>
-                            <div class="collapse" id="length">
-                                <div class="card card-body">
-                                    Length section is lead to Course Lenght Clustering.
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <label for="totalHour" class="col-sm-2 col-form-label">Total Hour : </label>
-                                <div class="col-sm-4">
-                                    <input type="number" class="form-control" name="totalHour" id="totalHour" placeholder="10" value="<% if (editing) { %><%=course.totalHour%><% } %>">
-                                </div>
-                                <label for="effort" class="col-sm-2 col-form-label">Effort (hrs/week) : </label>
-                                <div class="col-sm-4">
-                                    <input type="number" class="form-control" name="effort" id="effort" placeholder="2" value="<% if (editing) { %><%=course.effort%><% } %>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="cLength" class="col-sm-2 col-form-label">Length Cluster: </label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="cLength" id="cLength" placeholder="C_L3" value="<% if (editing) { %><%=course.cLength%><% } %>">
-                                </div>
-                            </div>
-                            <!-- Bloom's Taxonomy -->
-                            <h5>
-                                <i class="fas fa-chart-line"></i> Bloom's Taxonomy related with effort (%)
-                                <a data-toggle="collapse" href="#bloom" aria-expanded="false" aria-controls="bloom" title="Description">
-                                    <i class="fas fa-angle-down text-dark"></i>
-                                </a>
-                            </h5>
-                            <div class="collapse" id="bloom">
-                                <div class="card card-body">
-                                    Bloom's Taxonomy section is lead to Bloom's Taxonomy Clustering.
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <label for="remember" class="col-sm-2 col-form-label">Remember</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" name="remember" id="remember" placeholder="20" value="<% if (editing) { %><%=course.remember%><% } %>">
-                                </div>
-                                <label for="analyze" class="col-sm-2 col-form-label">Analyze</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" name="analyze" id="analyze" placeholder="20" value="<% if (editing) { %><%=course.analyze%><% } %>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="understand" class="col-sm-2 col-form-label">Understand</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" name="understand" id="understand" placeholder="10" value="<% if (editing) { %><%=course.understand%><% } %>">
-                                </div>
-                                <label for="evaluate" class="col-sm-2 col-form-label">Evaluate</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" name="evaluate" id="evaluate" placeholder="15" value="<% if (editing) { %><%=course.evaluate%><% } %>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="apply" class="col-sm-2 col-form-label">Apply</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" name="apply" id="apply" placeholder="10" value="<% if (editing) { %><%=course.apply%><% } %>">
-                                </div>
-                                <label for="create" class="col-sm-2 col-form-label">Create</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" name="create" id="create" placeholder="15" value="<% if (editing) { %><%=course.create%><% } %>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="cBloom" class="col-sm-2 col-form-label">Bloom Cluster</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="cBloom" id="cBloom" placeholder="C_B1" value="<% if (editing) { %><%=course.cBloom%><% } %>">
-                                </div>
+                                        <div class="form-group row">
+                                            <label for="passRate" class="col-sm-2 col-form-label">Passing Criteria : </label>
+                                            <div class="col-sm-4">
+                                                <input type="number" class="form-control" name="passRate" id="passRate" placeholder="50" value="<% if (editing) { %><%=course.passRate%><% } %>">
+                                            </div>
+                                            <label for="subjectArea" class="col-sm-2 col-form-label">Subject Area : </label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" name="subjectArea" id="subjectArea" placeholder="Technology" value="<% if (editing) { %><%=course.subjectArea%><% } %>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="registered" class="col-sm-2 col-form-label">Registered Learners: </label>
+                                            <div class="col-sm-4">
+                                                <input type="number" class="form-control" name="registered" id="registered" placeholder="1203" value="<% if (editing) { %><%=course.registered%><% } %>">
+                                            </div>
+                                        </div>
 
-                            </div>
-                            <!-- Number of Components -->
-                            <h5>
-                                <i class="fas fa-project-diagram"></i> Number of Components
-                                <a data-toggle="collapse" href="#times" aria-expanded="false" aria-controls="times" title="Description">
-                                    <i class="fas fa-angle-down text-dark"></i>
-                                </a>
-                            </h5>
-                            <div class="collapse" id="times">
-                                <div class="card card-body">
-                                    Number of Components section is lead to Times Components Clustering.
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <label for="chapter" class="col-sm-2 col-form-label">Chapter</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" name="chapter" id="chapter" placeholder="12" value="<% if (editing) { %><%=course.chapter%><% } %>">
-                                </div>
-                                <label for="video" class="col-sm-2 col-form-label">Video</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" name="video" id="video" placeholder="115" value="<% if (editing) { %><%=course.video%><% } %>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="html" class="col-sm-2 col-form-label">HTML</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" name="html" id="html" placeholder="50" value="<% if (editing) { %><%=course.html%><% } %>">
-                                </div>
-                                <label for="discussion" class="col-sm-2 col-form-label">Discussion</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" name="discussion" id="discussion" placeholder="5" value="<% if (editing) { %><%=course.discussion%><% } %>">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="problem" class="col-sm-2 col-form-label">Problem</label>
-                                <div class="col-sm-4">
-                                    <input type="number" step=any class="form-control" name="problem" id="problem" placeholder="10" value="<% if (editing) { %><%=course.problem%><% } %>">
-                                </div>
-                                <label for="cNumCom" class="col-sm-2 col-form-label">Num Com Cluster</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="cNumCom" id="cNumCom" placeholder="C_N1" value="<% if (editing) { %><%=course.cNumCom%><% } %>">
-                                </div>
-                            </div>
-                            <!-- Sequence Components -->
-                            <h5>
-                                <i class="fas fa-sort-amount-down"></i> Sequence Components
-                                <a data-toggle="collapse" href="#sequence" aria-expanded="false" aria-controls="sequence" title="Description">
-                                    <i class="fas fa-angle-down text-dark"></i>
-                                </a>
-                            </h5>
-                            <div class="collapse" id="sequence">
-                                <div class="card card-body">
-                                    Sequence Components section is lead to Sequence Components Clustering.
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <label for="sequence" class="col-sm-2 col-form-label">Sequence</label>
-                                <div class="col-sm-4">
-                                    <input class="form-control" name="sequence" id="sequence" placeholder="[Chapter, Video, Video, HTML, Problem, ...]" value="<% if (editing) { %><%=course.sequence%><% } %>">
-                                </div>
-                                <label for="cSeqCom" class="col-sm-2 col-form-label">Num Com Cluster</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="cSeqCom" id="cSeqCom" placeholder="C_S1" value="<% if (editing) { %><%=course.cSeqCom%><% } %>">
-                                </div>
-                            </div>
+                                        <!-- Course Length -->
+                                        <h5>
+                                            <i class="far fa-clock"></i> Length
+                                            <a data-toggle="collapse" href="#length" aria-expanded="false" aria-controls="length" title="Description">
+                                                <i class="fas fa-angle-down text-dark"></i>
+                                            </a>
+                                        </h5>
+                                        <div class="collapse" id="length">
+                                            <div class="card card-body">
+                                                Length section is lead to Course Lenght Clustering.
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <label for="totalHour" class="col-sm-2 col-form-label">Total Hour : </label>
+                                            <div class="col-sm-4">
+                                                <input type="number" class="form-control" name="totalHour" id="totalHour" placeholder="10" value="<% if (editing) { %><%=course.totalHour%><% } %>">
+                                            </div>
+                                            <label for="effort" class="col-sm-2 col-form-label">Effort (hrs/week) : </label>
+                                            <div class="col-sm-4">
+                                                <input type="number" class="form-control" name="effort" id="effort" placeholder="2" value="<% if (editing) { %><%=course.effort%><% } %>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="cLength" class="col-sm-2 col-form-label">Length Cluster: </label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" name="cLength" id="cLength" placeholder="C_L3" value="<% if (editing) { %><%=course.cLength%><% } %>">
+                                            </div>
+                                        </div>
+                                        <!-- Bloom's Taxonomy -->
+                                        <h5>
+                                            <i class="fas fa-chart-line"></i> Bloom's Taxonomy related with effort (%)
+                                            <a data-toggle="collapse" href="#bloom" aria-expanded="false" aria-controls="bloom" title="Description">
+                                                <i class="fas fa-angle-down text-dark"></i>
+                                            </a>
+                                        </h5>
+                                        <div class="collapse" id="bloom">
+                                            <div class="card card-body">
+                                                Bloom's Taxonomy section is lead to Bloom's Taxonomy Clustering.
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <label for="remember" class="col-sm-2 col-form-label">Remember</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step=any class="form-control" name="remember" id="remember" placeholder="20" value="<% if (editing) { %><%=course.remember%><% } %>">
+                                            </div>
+                                            <label for="analyze" class="col-sm-2 col-form-label">Analyze</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step=any class="form-control" name="analyze" id="analyze" placeholder="20" value="<% if (editing) { %><%=course.analyze%><% } %>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="understand" class="col-sm-2 col-form-label">Understand</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step=any class="form-control" name="understand" id="understand" placeholder="10" value="<% if (editing) { %><%=course.understand%><% } %>">
+                                            </div>
+                                            <label for="evaluate" class="col-sm-2 col-form-label">Evaluate</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step=any class="form-control" name="evaluate" id="evaluate" placeholder="15" value="<% if (editing) { %><%=course.evaluate%><% } %>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="apply" class="col-sm-2 col-form-label">Apply</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step=any class="form-control" name="apply" id="apply" placeholder="10" value="<% if (editing) { %><%=course.apply%><% } %>">
+                                            </div>
+                                            <label for="create" class="col-sm-2 col-form-label">Create</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step=any class="form-control" name="create" id="create" placeholder="15" value="<% if (editing) { %><%=course.create%><% } %>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="cBloom" class="col-sm-2 col-form-label">Bloom Cluster</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" name="cBloom" id="cBloom" placeholder="C_B1" value="<% if (editing) { %><%=course.cBloom%><% } %>">
+                                            </div>
 
-                            <!-- Learners Performance -->
-                            <h5>
-                                <i class="fas fa-users"></i> Learners Performance
-                                <a data-toggle="collapse" href="#learner" aria-expanded="false" aria-controls="sequence" title="Description">
-                                    <i class="fas fa-angle-down text-dark"></i>
-                                </a>
-                            </h5>
-                            <div class="collapse" id="learner">
-                                <div class="card card-body">
-                                    Learners.
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <label for="passLearner" class="col-sm-2 col-form-label">Pass Learner</label>
-                                <div class="col-sm-4">
-                                    <input type="number" class="form-control" name="passLearner" id="passLearner" placeholder="154" value="<% if (editing) { %><%=course.passLearner%><% } %>">
-                                </div>
-                                <label for="failLearner" class="col-sm-2 col-form-label">Fail Learners</label>
-                                <div class="col-sm-4">
-                                    <input type="number" class="form-control" name="failLearner" id="failLearner" placeholder="1049" value="<% if (editing) { %><%=course.failLearner%><% } %>">
-                                </div>
-                            </div>
+                                        </div>
+                                        <!-- Number of Components -->
+                                        <h5>
+                                            <i class="fas fa-project-diagram"></i> Number of Components
+                                            <a data-toggle="collapse" href="#times" aria-expanded="false" aria-controls="times" title="Description">
+                                                <i class="fas fa-angle-down text-dark"></i>
+                                            </a>
+                                        </h5>
+                                        <div class="collapse" id="times">
+                                            <div class="card card-body">
+                                                Number of Components section is lead to Times Components Clustering.
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <label for="chapter" class="col-sm-2 col-form-label">Chapter</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step=any class="form-control" name="chapter" id="chapter" placeholder="12" value="<% if (editing) { %><%=course.chapter%><% } %>">
+                                            </div>
+                                            <label for="video" class="col-sm-2 col-form-label">Video</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step=any class="form-control" name="video" id="video" placeholder="115" value="<% if (editing) { %><%=course.video%><% } %>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="html" class="col-sm-2 col-form-label">HTML</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step=any class="form-control" name="html" id="html" placeholder="50" value="<% if (editing) { %><%=course.html%><% } %>">
+                                            </div>
+                                            <label for="discussion" class="col-sm-2 col-form-label">Discussion</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step=any class="form-control" name="discussion" id="discussion" placeholder="5" value="<% if (editing) { %><%=course.discussion%><% } %>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="problem" class="col-sm-2 col-form-label">Problem</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step=any class="form-control" name="problem" id="problem" placeholder="10" value="<% if (editing) { %><%=course.problem%><% } %>">
+                                            </div>
+                                            <label for="cNumCom" class="col-sm-2 col-form-label">Num Com Cluster</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" name="cNumCom" id="cNumCom" placeholder="C_N1" value="<% if (editing) { %><%=course.cNumCom%><% } %>">
+                                            </div>
+                                        </div>
+                                        <!-- Sequence Components -->
+                                        <h5>
+                                            <i class="fas fa-sort-amount-down"></i> Sequence Components
+                                            <a data-toggle="collapse" href="#sequence" aria-expanded="false" aria-controls="sequence" title="Description">
+                                                <i class="fas fa-angle-down text-dark"></i>
+                                            </a>
+                                        </h5>
+                                        <div class="collapse" id="sequence">
+                                            <div class="card card-body">
+                                                Sequence Components section is lead to Sequence Components Clustering.
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <label for="sequence" class="col-sm-2 col-form-label">Sequence</label>
+                                            <div class="col-sm-4">
+                                                <input class="form-control" name="sequence" id="sequence" placeholder="[Chapter, Video, Video, HTML, Problem, ...]" value="<% if (editing) { %><%=course.sequence%><% } %>">
+                                            </div>
+                                            <label for="cSeqCom" class="col-sm-2 col-form-label">Num Com Cluster</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" name="cSeqCom" id="cSeqCom" placeholder="C_S1" value="<% if (editing) { %><%=course.cSeqCom%><% } %>">
+                                            </div>
+                                        </div>
 
-                            <div id="button">
-                                <!-- Submit button -->
-                                <% if (editing) { %>
-                                    <input type="hidden" value="<%=course.id%>" name="courseId">
-                                <% } %>
-                                <button class="btn btn-outline-success btn-lg" type="submit">
-                                    <% if (editing) { %> Update Course
-                                    <%} else {%> Add Course
-                                    <%}%>
-                                </button>
-                            </div>
+                                        <!-- Learners Performance -->
+                                        <h5>
+                                            <i class="fas fa-users"></i> Learners Performance
+                                            <a data-toggle="collapse" href="#learner" aria-expanded="false" aria-controls="sequence" title="Description">
+                                                <i class="fas fa-angle-down text-dark"></i>
+                                            </a>
+                                        </h5>
+                                        <div class="collapse" id="learner">
+                                            <div class="card card-body">
+                                                Learners.
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <label for="passLearner" class="col-sm-2 col-form-label">Pass Learner</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" class="form-control" name="passLearner" id="passLearner" placeholder="154" value="<% if (editing) { %><%=course.passLearner%><% } %>">
+                                            </div>
+                                            <label for="failLearner" class="col-sm-2 col-form-label">Fail Learners</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" class="form-control" name="failLearner" id="failLearner" placeholder="1049" value="<% if (editing) { %><%=course.failLearner%><% } %>">
+                                            </div>
+                                        </div>
 
-                        </form>
-                    </div>
+                                        <div id="button">
+                                            <!-- Submit button -->
+                                            <% if (editing) { %>
+                                                <input type="hidden" value="<%=course.id%>" name="courseId">
+                                                <% } %>
+                                                    
+                                                        <% if (editing) { %> <button class="btn btn-outline-warning btn-lg" type="submit"> Update Course </button>
+                                                            <%} else {%> <button class="btn btn-outline-success btn-lg" type="submit">Add Course </button> 
+                                                                <%}%>
+                                                    
+                                        </div>
+
+                                    </form>
+                                </div>
                 </div>
             </div>
             <%- include('includes/end.ejs') %>

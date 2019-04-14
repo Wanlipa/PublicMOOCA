@@ -50,17 +50,22 @@
 
                                 <td>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <a href="/course/<%= course.id %>" title="Details">
                                                 <i class="fas fa-chart-pie fa-lg text-info"></i>
                                             </a>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
+                                            <a href="/import" title="import">
+                                                <i class="fas fa-upload text-success"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
                                             <a href="/edit-course/<%= course.id %>?edit=true" title="Edit">
                                                 <i class="fas fa-edit fa-lg text-warning"></i>
                                             </a>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <form action="/delete-course" method="POST">
                                                 <input type="hidden" value="<%= course.id %>" name="courseId">
                                                 <button class="btn bg-light" type="submit" title="Delete">
@@ -81,4 +86,4 @@
                     <h1>No Course Found!</h1>
                     <% } %>
 
-<%- include('includes/end.ejs') %>
+                        <%- include('includes/end.ejs') %>
