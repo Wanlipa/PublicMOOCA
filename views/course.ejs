@@ -354,10 +354,13 @@
 
           var layout = {
             xaxis: {
+              title: 'Index of Component',
               range: [-5.85, 112.07]
             },
             yaxis: {
-              range: [0, 2]
+              title: 'Axis',
+              range: [0, 2],
+              tickmode: 'linear'
             },
             title: '<%=course.courseName%>'
           };
@@ -375,7 +378,6 @@
             x: unpack(rows, 'name'),
             y: unpack(rows, 'not attempted'),
             name: 'Not Attempted',
-            text: unpack(rows, 'text'),
             type: 'bar',
             marker: { color: 'red' }
           };
@@ -384,14 +386,32 @@
             x: unpack(rows, 'name'),
             y: unpack(rows, 'attempted'),
             name: 'Attempted',
-            text: unpack(rows, 'text'),
             type: 'bar',
             marker: { color: 'green' }
           };
 
-          var data2 = [learner1, learner2];
+          var summary = {
+            x: unpack(rows, 'name'),
+            y: unpack(rows, 'summary'),
+            name: 'Summary',
+            text: unpack(rows, 'text'),
+            type: 'bar',
+            marker: { color: 'gray' }
+          };
 
-          var layout = { barmode: 'stack' };
+          var data2 = [learner1, learner2, summary];
+
+          var layout = {
+            barmode: 'stack',
+            xaxis: {
+              title: 'Assignments/Tests',
+              
+            },
+            yaxis: { 
+              title: 'Learners Engagement',
+              
+            }
+          };
 
           Plotly.newPlot('learners', data2, layout);
         });

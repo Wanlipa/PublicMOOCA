@@ -1,4 +1,4 @@
-name,type,indx,indy,coursenumber,text,attempted,not attempted,attempted %,not attempted %,score average,score std,score max,score min
-แบบทดสอบก่อนเรียน,Multiple Choice Problem,8,1,cu003,Attempt %: 47.6<br>Not Attempt %: 52.4<br>Average: 0.57<br>Std: 0.21<br>Max: 1<br>Min: 0.17,109,120,47.6,52.4,0.57,0.21,1,0.17
-กิจกรรมท้ายบทเรียน,Checkbox Problem,47,1,cu003,Attempt %: 24.45<br>Not Attempt %: 75.55<br>Average: 0.78<br>Std: 0.23<br>Max: 1<br>Min: 0.2,56,173,24.45,75.55,0.78,0.23,1,0.2
-แบบทดสอบหลังเรียน,Multiple Choice Problem,53,1,cu003,Attempt %: 37.99<br>Not Attempt %: 62.01<br>Average: 0.84<br>Std: 0.18<br>Max: 1<br>Min: 0.07,87,142,37.99,62.01,0.84,0.18,1,0.07
+name,type,indx,indy,coursenumber,text,attempted,not attempted,attempted %,not attempted %,score average,score std,score max,score min,summary
+แบบทดสอบก่อนเรียน,Multiple Choice Problem,8,1,cu003,Attempt %: 47.6<br>Not Attempt %: 52.4<br>Average: 0.57<br>Std: 0.21<br>Max: 1<br>Min: 0.17,109,120,47.6,52.4,0.57,0.21,1,0.17,1
+กิจกรรมท้ายบทเรียน,Checkbox Problem,47,1,cu003,Attempt %: 24.45<br>Not Attempt %: 75.55<br>Average: 0.78<br>Std: 0.23<br>Max: 1<br>Min: 0.2,56,173,24.45,75.55,0.78,0.23,1,0.2,1
+แบบทดสอบหลังเรียน,Multiple Choice Problem,53,1,cu003,Attempt %: 37.99<br>Not Attempt %: 62.01<br>Average: 0.84<br>Std: 0.18<br>Max: 1<br>Min: 0.07,87,142,37.99,62.01,0.84,0.18,1,0.07,1

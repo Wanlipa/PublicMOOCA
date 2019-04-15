@@ -1,0 +1,11 @@
+name,type,indx,indy,coursenumber,text,attempted,not attempted,attempted %,not attempted %,score average,score std,score max,score min,summary
+ประเมินตนเองก่อนเรียน 1,Multiple Choice Problem,7,1,stou007,Attempt %: 29.42<br>Not Attempt %: 70.58<br>Average: 0.72<br>Std: 0.18<br>Max: 1<br>Min: 0.12,188,451,29.42,70.58,0.72,0.18,1,0.12,1
+ประเมินตนเองหลังเรียน 1,Multiple Choice Problem,15,1,stou007,Attempt %: 15.18<br>Not Attempt %: 84.82<br>Average: 0.74<br>Std: 0.22<br>Max: 1<br>Min: 0.14,97,542,15.18,84.82,0.74,0.22,1,0.14,1
+แบบประเมินตนเองก่อนเรียน 2,Multiple Choice Problem,17,1,stou007,Attempt %: 12.83<br>Not Attempt %: 87.17<br>Average: 0.47<br>Std: 0.27<br>Max: 1<br>Min: 0,82,557,12.83,87.17,0.47,0.27,1,0,1
+แบบประเมินตนเองหลังเรียน 2,Multiple Choice Problem,26,1,stou007,Attempt %: 10.49<br>Not Attempt %: 89.51<br>Average: 0.64<br>Std: 0.24<br>Max: 1<br>Min: 0.25,67,572,10.49,89.51,0.64,0.24,1,0.25,1
+แบบประเมินตนเองก่อนเรียน 3,Multiple Choice Problem,29,1,stou007,Attempt %: 10.17<br>Not Attempt %: 89.83<br>Average: 0.7<br>Std: 0.24<br>Max: 1<br>Min: 0,65,574,10.17,89.83,0.7,0.24,1,0,1
+แบบประเมินตนเองหลังเรียน 3,Multiple Choice Problem,38,1,stou007,Attempt %: 9.7<br>Not Attempt %: 90.3<br>Average: 0.76<br>Std: 0.22<br>Max: 1<br>Min: 0.25,62,577,9.7,90.3,0.76,0.22,1,0.25,1
+แบบประเมินตนเองก่อนเรียน 4,Multiple Choice Problem,40,1,stou007,Attempt %: 9.55<br>Not Attempt %: 90.45<br>Average: 0.64<br>Std: 0.27<br>Max: 1<br>Min: 0.12,61,578,9.55,90.45,0.64,0.27,1,0.12,1
+แบบประเมินตนเองหลังเรียน 4,Multiple Choice Problem,48,1,stou007,Attempt %: 8.45<br>Not Attempt %: 91.55<br>Average: 0.77<br>Std: 0.24<br>Max: 1<br>Min: 0.12,54,585,8.45,91.55,0.77,0.24,1,0.12,1
+แบบประเมินตนเองก่อนเรียน 5,Multiple Choice Problem,50,1,stou007,Attempt %: 8.61<br>Not Attempt %: 91.39<br>Average: 0.66<br>Std: 0.25<br>Max: 1<br>Min: 0.25,55,584,8.61,91.39,0.66,0.25,1,0.25,1
+แบบประเมินตนเองหลังเรียน 5,Multiple Choice Problem,56,1,stou007,Attempt %: 8.61<br>Not Attempt %: 91.39<br>Average: 0.7<br>Std: 0.3<br>Max: 1<br>Min: 0.14,55,584,8.61,91.39,0.7,0.3,1,0.14,1

@@ -1,0 +1,18 @@
+name,type,indx,indy,coursenumber,text,attempted,not attempted,attempted %,not attempted %,score average,score std,score max,score min,summary
+แบบทดสอบความรู้เบื้องต้นก่อนเรียน บทที่ 1-7,Numerical Input Problem,7,1,ku002,Attempt %: 0<br>Not Attempt %: 100<br>Average: 0<br>Std: 0<br>Max: 0<br>Min: 0,0,560,0,100,0,0,0,0,1
+แบบฝึกหัดท้ายบทที่ 1 (หลักการวัดและเลขนัยสำคัญ),Numerical Input Problem,14,1,ku002,Attempt %: 6.07<br>Not Attempt %: 93.93<br>Average: 0.92<br>Std: 0.13<br>Max: 1<br>Min: 0.5,34,526,6.07,93.93,0.92,0.13,1,0.5,1
+แบบฝึกหัดท้ายบทที่ 2,Numerical Input Problem,39,1,ku002,Attempt %: 4.82<br>Not Attempt %: 95.18<br>Average: 0.84<br>Std: 0.27<br>Max: 1<br>Min: 0,27,533,4.82,95.18,0.84,0.27,1,0,1
+แบบฝึกหัดท้ายบทที่ 3,Numerical Input Problem,53,1,ku002,Attempt %: 3.75<br>Not Attempt %: 96.25<br>Average: 0.88<br>Std: 0.18<br>Max: 1<br>Min: 0.5,21,539,3.75,96.25,0.88,0.18,1,0.5,1
+แบบฝึกหัดท้ายบทที่ 4,Numerical Input Problem,78,1,ku002,Attempt %: 3.39<br>Not Attempt %: 96.61<br>Average: 0.9<br>Std: 0.16<br>Max: 1<br>Min: 0.55,19,541,3.39,96.61,0.9,0.16,1,0.55,1
+แบบฝึกหัดท้ายบทที่ 5 (แรงและกฎการเคลื่อนที่ของนิวตัน),Numerical Input Problem,99,1,ku002,Attempt %: 3.39<br>Not Attempt %: 96.61<br>Average: 0.86<br>Std: 0.23<br>Max: 1<br>Min: 0.2,19,541,3.39,96.61,0.86,0.23,1,0.2,1
+แบบฝึกหัดท้ายบทที่ 6 (งานและพลังงาน),Numerical Input Problem,118,1,ku002,Attempt %: 2.86<br>Not Attempt %: 97.14<br>Average: 0.88<br>Std: 0.18<br>Max: 1<br>Min: 0.5,16,544,2.86,97.14,0.88,0.18,1,0.5,1
+แบบฝึกหัดท้ายบทที่ 7 (โมเมนตัมและการชน),Numerical Input Problem,131,1,ku002,Attempt %: 2.86<br>Not Attempt %: 97.14<br>Average: 0.8<br>Std: 0.27<br>Max: 1<br>Min: 0.2,16,544,2.86,97.14,0.8,0.27,1,0.2,1
+แบบทดสอบความรู้หลังเรียน บทที่ 1-7,Numerical Input Problem,135,1,ku002,Attempt %: 2.68<br>Not Attempt %: 97.32<br>Average: 0.9<br>Std: 0.16<br>Max: 1<br>Min: 0.6,15,545,2.68,97.32,0.9,0.16,1,0.6,1
+แบบทดสอบความรู้ก่อนเรียน บทที่ 8-13,Numerical Input Problem,138,1,ku002,Attempt %: 0<br>Not Attempt %: 100<br>Average: 0<br>Std: 0<br>Max: 0<br>Min: 0,0,560,0,100,0,0,0,0,1
+แบบฝึกหัดท้ายบทที่ 8 (วัตถุแข็งเกร็ง),Multiple Choice Problem,173,1,ku002,Attempt %: 3.04<br>Not Attempt %: 96.96<br>Average: 0.69<br>Std: 0.29<br>Max: 1<br>Min: 0.13,17,543,3.04,96.96,0.69,0.29,1,0.13,1
+แบบฝึกหัดท้ายบทที่ 9,Numerical Input Problem,197,1,ku002,Attempt %: 30.71<br>Not Attempt %: 69.29<br>Average: 0.81<br>Std: 0.17<br>Max: 1<br>Min: 0,172,388,30.71,69.29,0.81,0.17,1,0,1
+แบบฝึกหัดท้ายบทที่ 10 (พร้อมเฉลย),Numerical Input Problem,205,1,ku002,Attempt %: 28.39<br>Not Attempt %: 71.61<br>Average: 0.84<br>Std: 0.26<br>Max: 1<br>Min: 0,159,401,28.39,71.61,0.84,0.26,1,0,1
+แบบฝึกหัดท้ายบทที่ 11,Numerical Input Problem,235,1,ku002,Attempt %: 28.21<br>Not Attempt %: 71.79<br>Average: 0.85<br>Std: 0.18<br>Max: 1<br>Min: 0,158,402,28.21,71.79,0.85,0.18,1,0,1
+แบบฝึกหัดท้ายบทที่ 12,Numerical Input Problem,253,1,ku002,Attempt %: 27.14<br>Not Attempt %: 72.86<br>Average: 0.83<br>Std: 0.19<br>Max: 1<br>Min: 0,152,408,27.14,72.86,0.83,0.19,1,0,1
+แบบฝึกหัดท้ายบทที่ 13 (อุณหพลศาสตร์),Numerical Input Problem,276,1,ku002,Attempt %: 3.04<br>Not Attempt %: 96.96<br>Average: 0.81<br>Std: 0.21<br>Max: 1<br>Min: 0.5,17,543,3.04,96.96,0.81,0.21,1,0.5,1
+แบบทดสอบความรู้หลังเรียนบทที่ 8 - 13,Multiple Choice Problem,280,1,ku002,Attempt %: 2.86<br>Not Attempt %: 97.14<br>Average: 0.77<br>Std: 0.22<br>Max: 1<br>Min: 0.3,16,544,2.86,97.14,0.77,0.22,1,0.3,1

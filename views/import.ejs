@@ -21,11 +21,161 @@
                                     <input type="file" class="form-control" name="myFile" id="myFile" aria-describedby="myFile">
                                 </div>
                             </div>
+                            <p class="text-danger">* Upload 2 CSV files which have the format below.</p>
                             <button type="submit" class="btn btn-outline-success">Upload</button>
+
                         </form>
                     </div>
                 </div>
             </div>
 
+            <!-- CSV Format Example -->
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header " id="headingOne">
+                        <h5 class="mb-0 ">
+                            <button class="btn btn-link text-dark font-weight-bold" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                1. Course Structure CSV Format
+                                <i class="fas fa-angle-down"></i>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <!-- Format Course Structure -->
+                            <h5>Example filename: cu005.csv</h5>
+                            <table class="table table-hover">
+                                <thead style="text-align: center" class=" bg-dark text-light">
+                                    <tr>
+                                        <th scope="col">chapter_name</th>
+                                        <th scope="col">chapter_indx</th>
+                                        <th scope="col">chapter_indy</th>
+                                        <th scope="col">video_name</th>
+                                        <th scope="col">video_indx</th>
+                                        <th scope="col">video_indy</th>
+                                        <th scope="col">html_name</th>
+                                        <th scope="col">html_indx</th>
+                                        <th scope="col">html_indy</th>
+                                        <th scope="col">discussion_name</th>
+                                        <th scope="col">discussion_indx</th>
+                                        <th scope="col">discussion_indy</th>
+                                        <th scope="col">problem_name</th>
+                                        <th scope="col">problem_indx</th>
+                                        <th scope="col">problem_indy</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="text-align: center">
+                                    <tr>
+                                        <td>แนะนำ THAI MOOC</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>"Name: แนะนำ THAI MOOC Video Length: 105 sec"</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>เนื้อหาวิชา</td>
+                                        <td>5</td>
+                                        <td>1</td>
+                                        <td>Hello World</td>
+                                        <td>13</td>
+                                        <td>1</td>
+                                        <td>"Name: แบบทดสอบก่อนเรียน Problem Type: Multiple Choice Problem"</td>
+                                        <td>7</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>เริ่มต้นก่อนเรียนรู้</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>"Name: แนะนำบทเรียน Video Length: 100 sec"</td>
+                                        <td>4</td>
+                                        <td>1</td>
+                                        <td>Hello World</td>
+                                        <td>13</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>"Name: Exercise 1 : แบบทดสอบหลังเรียนที่ 1 Problem Type: Multiple Choice Problem"</td>
+                                        <td>35</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed text-dark font-weight-bold" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                2. Problems and Learners Engagement CSV Format
+                                <i class="fas fa-angle-down"></i>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            <!-- Format problems with learners engagement -->
+                            <h5>Example filename: cu005_problemAttempt.csv</h5>
+                            <table class="table table-hover">
+                                <thead style="text-align: center" class=" bg-dark text-light">
+                                    <tr>
+                                        <th scope="col">name</th>
+                                        <th scope="col">type</th>
+                                        <th scope="col">text</th>
+                                        <th scope="col">attempted</th>
+                                        <th scope="col">not attempted</th>
+                                        <th scope="col">attempted %</th>
+                                        <th scope="col">not attempted %</th>
+                                        <th scope="col">score average</th>
+                                        <th scope="col">score std</th>
+                                        <th scope="col">score max</th>
+                                        <th scope="col">score min</th>
+                                        <th scope="col">summary</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="text-align: center">
+                                    <tr>
+                                        <td>แบบทดสอบก่อนเรียน</td>
+                                        <td>Multiple Choice Problem</td>
+                                        <td>Attempt %: 44.89
+                                            <br>Not Attempt %: 55.11
+                                            <br>Average: 0.56
+                                            <br>Std: 0.32
+                                            <br>Max: 1
+                                            <br>Min: 0</td>
+                                        <td>540</td>
+                                        <td>663</td>
+                                        <td>44.89</td>
+                                        <td>55.11</td>
+                                        <td>0.56</td>
+                                        <td>0.32</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                            <td>Exercise 1 : แบบทดสอบหลังเรียนที่ 1</td>
+                                            <td>Multiple Choice Problem</td>
+                                            <td>Attempt %: 20.53<br>Not Attempt %: 79.47<br>Average: 0.56<br>Std: 0.38<br>Max: 1<br>Min: 0</td>
+                                            <td>247</td>
+                                            <td>956</td>
+                                            <td>20.53</td>
+                                            <td>79.47</td>
+                                            <td>0.56</td>
+                                            <td>0.38</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <%- include('includes/end.ejs') %>
