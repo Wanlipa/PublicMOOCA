@@ -11,14 +11,14 @@
 
       <nav id="navbar-example2" class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-          <h3 class="text-default">
-            <i class="fas fa-chart-pie text-default"></i> Course Visualization</h3>
+          <h3 class="text-info">
+            <i class="fas fa-chart-pie text-info"></i> Course Visualization</h3>
         </a>
 
         <ul class="nav nav-pills">
           <li class="nav-item">
             <a class="nav-link" href="#cs" title="Course Structure">
-              <i class="fas fa-chalkboard-teacher fa-2x text-info"></i>
+              <i class="fas fa-chalkboard-teacher fa-2x text-dark"></i>
             </a>
           </li>
           <li class="nav-item">
@@ -37,8 +37,8 @@
         <br>
         <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
 
-          <h4 id="cs" class="text-info">
-            <i class="fas fa-chalkboard-teacher fa-1x text-info"></i> Course Structure</h4>
+          <h4 id="cs" class="text-dark">
+            <i class="fas fa-chalkboard-teacher fa-1x text-dark"></i> Course Structure</h4>
           <div id="structure"></div>
 
           <h4 id="le" class="text-success">
@@ -54,17 +54,21 @@
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" id="courseinfo-tab" data-toggle="tab" href="#courseinfo" role="tab" aria-controls="courseinfo"
-                  aria-selected="true">Course Information</a>
+                  aria-selected="true">
+                  <i class="fas fa-book-open"></i> Course Information</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="courselength-tab" data-toggle="tab" href="#courselength" role="tab" aria-controls="courselength"
-                  aria-selected="false">Course Metadata</a>
+                  aria-selected="false">
+                  <i class="fas fa-database"></i> Course Metadata</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="analysis-tab" data-toggle="tab" href="#analysis" role="tab" aria-controls="analysis" aria-selected="false">Analysis & Recommendation</a>
+                <a class="nav-link" id="analysis-tab" data-toggle="tab" href="#analysis" role="tab" aria-controls="analysis" aria-selected="false">
+                  <i class="far fa-comment"></i> Analysis & Recommendation</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="learner-tab" data-toggle="tab" href="#learner" role="tab" aria-controls="learner" aria-selected="false">Learners</a>
+                <a class="nav-link" id="learner-tab" data-toggle="tab" href="#learner" role="tab" aria-controls="learner" aria-selected="false">
+                  <i class="fas fa-user-graduate"></i> Learners</a>
               </li>
             </ul>
 
@@ -91,8 +95,6 @@
                   <li class="list-group-item">
                     <b>Registered Learners: </b>
                     <%= course.registered %>
-                  </li>
-                  <li class="list-group-item">
                   </li>
                 </ul>
               </div>
@@ -179,16 +181,9 @@
               </div>
 
               <div class="tab-pane" id="analysis" role="tabpanel" aria-labelledby="analysis-tab">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <!-- Large modal -->
-                    <a class="text-success" data-toggle="modal" data-target=".bd-example-modal-lg">
-                      <i class="fas fa-info-circle fa-lg text-success"></i> Cluster Name
-                    </a>
-                  </li>
-                </ul>
+
                 <!-- Table Clustering -->
-                <table class="table">
+                <table class="table table-hover">
                   <thead style="text-align: center" class=" bg-info text-light">
                     <tr>
                       <th scope="col">Dimension</th>
@@ -201,37 +196,83 @@
                   <tbody style="text-align: center">
                     <tr>
                       <th scope="row">Course Length & Effort</th>
-                      <td>
-                        <%= course.cLength %>
-                      </td>
-                      <td>name</td>
-                      <td>rec</td>
+                      <% if (course.cLength === '[0]') { %>
+                      <td>C_L3</td>
+                      <td>Short Courses</td>
+                      <td>You should consider customizing your courses into Medium Courses
+                          by increasing effort and total hour.</td>
+                      <% } else if (course.cLength === '[1]') {%>
+                      <td>C_L1</td>
+                      <td>Long Courses </td>
+                      <td>You should consider customizing your courses
+                          into Medium Courses by decreasing effort and total hour.</td>
+                      <% } else {%>
+                      <td>C_L2</td>
+                      <td>Medium Courses</td>
+                      <td>You are already in the good cluster.</td>
+                      <% } %>
                     </tr>
                     <tr>
                       <th scope="row">Bloom's Taxonomy</th>
-                      <td>
-                        <%= course.cBloom %>
-                      </td>
-                      <td>name</td>
-                      <td>rec</td>
+                      <% if (course.cBloom === '[0]') { %>
+                        <td>C_B4</td>
+                        <td>Applying-focus</td>
+                        <td>You are already in the good cluster.</td>
+                        <% } else if (course.cBloom === '[1]') {%>
+                        <td>C_B1</td>
+                        <td>Understanding-focus</td>
+                        <td>You should concentrate on creating courses
+                            in the group of Applying-focus.</td>
+                        <% } else if (course.cBloom === '[2]') {%>
+                        <td>C_B2</td>
+                        <td>Understanding, Applying, and Analyzing-focus</td>
+                        <td>You should concentrate on creating courses in the group of Applying-focus.</td>
+                        <% } else {%>
+                        <td>C_B3</td>
+                        <td>Remembering, Understanding, and Creating-focus</td>
+                        <td>You should avoid the courses which focus
+                            the group of Remembering,
+                            Understanding, and Creating-focus
+                            because it presents the lowest
+                            percent of the passing learners.
+                            The course design should
+                            design the Bloom’s taxonomy
+                            thinking skill step-by-step.
+                            Consequently, learners can’t
+                            keep up and do not have enough
+                            knowledge to focus on Creating
+                            skill that presents the lowest
+                            percent of passing learners.</td>
+                        <% } %>
                     </tr>
                     <tr>
                       <th scope="row">Number of Conponents</th>
-                      <td>
-                        <%= course.cNumCom %>
-                      </td>
-                      <td>name</td>
-                      <td>rec</td>
+                      <% if (course.cNumCom === '[0]') { %>
+                        <td>C_N1</td>
+                        <td>Video-focus</td>
+                        <td>You should generate courses with Video and HTML-focus.</td>                        
+                        <% } else {%>
+                        <td>C_N2</td>
+                        <td>Video and HTML-focus</td>
+                        <td>You are already in the good cluster.</td>
+                        <% } %>
                     </tr>
-
-
-
-
                   </tbody>
                 </table>
-
-
-
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h5>Please, analyze your course then you will get the suggestions 
+                            <a href="/analyzeCourse/<%= course.id %>" class="btn btn-outline-primary" target="_blank">Analyze Course</a></h5>
+                    </li>
+                    <li class="list-group-item">
+                        <h5>For more details, course clustering and the relationship between course structure and learner demonstrate in the following button.
+                        <a href="/courseAnalysis" class="btn btn-outline-success" target="_blank">Course Clustering</a>
+                        <a href="/relationship" class="btn btn-outline-success" target="_blank">Relationship</a></h5>
+                    </li>
+  
+                  </ul>
+                
+                
               </div>
               <div class="tab-pane" id="learner" role="tabpanel" aria-labelledby="learner-tab">
                 <ul class="list-group">
@@ -248,79 +289,8 @@
               </div>
             </div>
           </div>
-
         </div>
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <!-- Table Learners -->
-              <table class="table">
-                <thead style="text-align: center" class=" bg-success text-light">
-                  <tr>
-                    <th scope="col">Cluster Dimension</th>
-                    <th scope="col">Cluster</th>
-                    <th scope="col">Cluster Name</th>
 
-                  </tr>
-                </thead>
-                <tbody style="text-align: center">
-                  <tr>
-                    <th scope="row" rowspan="3">Course Length</th>
-                    <td>C_L1</td>
-                    <td>Long Courses</td>
-                  </tr>
-                  <tr>
-                    <td>C_L2</td>
-                    <td>Medium Courses</td>
-                  </tr>
-                  <tr>
-                    <td>C_L3</td>
-                    <td>Short Courses</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" rowspan="4">Bloom's Taxonomy</th>
-                    <td>C_B1</td>
-                    <td>Understanding-focus</td>
-                  </tr>
-                  <tr>
-                    <td>C_B2</td>
-                    <td>Understanding, Applying, and Analyzing-focus</td>
-                  </tr>
-                  <tr>
-                    <td>C_B3</td>
-                    <td>Remembering, Understanding, and Creating-focus</td>
-                  </tr>
-                  <tr>
-                    <td>C_B4</td>
-                    <td>Applying-focus</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" rowspan="2">Number of Components</th>
-                    <td>C_N1</td>
-                    <td>Video-focus</td>
-                  </tr>
-                  <tr>
-                    <td>C_N2</td>
-                    <td>Video and HTML-focus</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" rowspan="3">Sequence Components</th>
-                    <td>C_S1</td>
-                    <td>discussion-chapter and video-video focus</td>
-                  </tr>
-                  <tr>
-                    <td>C_S2</td>
-                    <td>chapter-html and problem-chapter focus</td>
-                  </tr>
-                  <tr>
-                    <td>C_S3</td>
-                    <td>discussion-html and video-html focus</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
 
       </div>
 
