@@ -1,5 +1,9 @@
 <%- include('includes/head.ejs') %>
-
+  <style>
+    #metadata {
+      text-decoration: underline;
+    }
+  </style>
   </head>
 
   <body>
@@ -54,16 +58,10 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="courselength-tab" data-toggle="tab" href="#courselength" role="tab" aria-controls="courselength"
-                  aria-selected="false">Course Length</a>
+                  aria-selected="false">Course Metadata</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="bloom-tab" data-toggle="tab" href="#bloom" role="tab" aria-controls="bloom" aria-selected="false">Bloom's Taxonomy</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="components-tab" data-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="false">Components</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="analysis-tab" data-toggle="tab" href="#analysis" role="tab" aria-controls="analysis" aria-selected="false">Analysis</a>
+                <a class="nav-link" id="analysis-tab" data-toggle="tab" href="#analysis" role="tab" aria-controls="analysis" aria-selected="false">Analysis & Recommendation</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="learner-tab" data-toggle="tab" href="#learner" role="tab" aria-controls="learner" aria-selected="false">Learners</a>
@@ -101,76 +99,85 @@
 
               <div class="tab-pane" id="courselength" role="tabpanel" aria-labelledby="courselength-tab">
                 <ul class="list-group">
+
                   <li class="list-group-item">
-                    <b>Total Hours: </b>
-                    <%= course.totalHour %> Hours
+                    <h5 id="metadata">Course Length</h5>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <b>Total Hours: </b>
+                        <%= course.totalHour %> Hours
+                      </div>
+                      <div class="col-md-6">
+                        <b>Effort: </b>
+                        <%= course.effort %> Hours/Week
+                      </div>
+                    </div>
                   </li>
                   <li class="list-group-item">
-                    <b>Effort: </b>
-                    <%= course.effort %> Hours/Week
+                    <h5 id="metadata">Bloom's Taxonomy</h5>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <b>remember: </b>
+                        <%= course.remember %> %
+                      </div>
+                      <div class="col-md-6">
+                        <b>analyze: </b>
+                        <%= course.analyze %> %
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <b>understand: </b>
+                        <%= course.understand %> %
+                      </div>
+                      <div class="col-md-6">
+                        <b>evaluate: </b>
+                        <%= course.evaluate %> %
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <b>apply: </b>
+                        <%= course.apply %> %
+                      </div>
+                      <div class="col-md-6">
+                        <b>create: </b>
+                        <%= course.create %> %
+                      </div>
+                    </div>
                   </li>
                   <li class="list-group-item">
+                    <h5 id="metadata">Components</h5>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <b>Chapter: </b>
+                        <%= course.chapter %> %
+                      </div>
+                      <div class="col-md-6">
+                        <b>Discussion: </b>
+                        <%= course.discussion %> %
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <b>Video: </b>
+                        <%= course.video %> %
+                      </div>
+                      <div class="col-md-6">
+                        <b>Problem: </b>
+                        <%= course.problem %> %
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <b>HTML: </b>
+                        <%= course.html %> %
+                      </div>
+                    </div>
                   </li>
                 </ul>
               </div>
 
-
-              <div class="tab-pane" id="bloom" role="tabpanel" aria-labelledby="bloom-tab">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <b>remember: </b>
-                    <%= course.remember %> %
-                  </li>
-                  <li class="list-group-item">
-                    <b>understand: </b>
-                    <%= course.understand %> %
-                  </li>
-                  <li class="list-group-item">
-                    <b>apply: </b>
-                    <%= course.apply %> %
-                  </li>
-                  <li class="list-group-item">
-                    <b>analyze: </b>
-                    <%= course.analyze %> %
-                  </li>
-                  <li class="list-group-item">
-                    <b>evaluate: </b>
-                    <%= course.evaluate %> %
-                  </li>
-                  <li class="list-group-item">
-                    <b>create: </b>
-                    <%= course.create %> %
-                  </li>
-                  <li class="list-group-item">
-
-                </ul>
-              </div>
-              <div class="tab-pane" id="components" role="tabpanel" aria-labelledby="components-tab">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <b>Chapter: </b>
-                    <%= course.chapter %> %
-                  </li>
-                  <li class="list-group-item">
-                    <b>Video: </b>
-                    <%= course.video %> %
-                  </li>
-                  <li class="list-group-item">
-                    <b>HTML: </b>
-                    <%= course.html %> %
-                  </li>
-                  <li class="list-group-item">
-                    <b>Discussion: </b>
-                    <%= course.discussion %> %
-                  </li>
-                  <li class="list-group-item">
-                    <b>Problem: </b>
-                    <%= course.problem %> %
-                  </li>
-                  <li class="list-group-item">
-
-                </ul>
-              </div>
               <div class="tab-pane" id="analysis" role="tabpanel" aria-labelledby="analysis-tab">
                 <ul class="list-group">
                   <li class="list-group-item">
@@ -179,25 +186,51 @@
                       <i class="fas fa-info-circle fa-lg text-success"></i> Cluster Name
                     </a>
                   </li>
-                  <li class="list-group-item">
-                    <b>Course Length Clustering: </b>
-                    <%= course.cLength %>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Course Bloom's Taxonomy Clustering: </b>
-                    <%= course.cBloom %>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Number of Conponents Clustering: </b>
-                    <%= course.cNumCom %>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Sequence Conponents Clustering: </b>
-                    <%= course.cSeqCom %>
-                  </li>
-                  <li class="list-group-item">
-                  </li>
                 </ul>
+                <!-- Table Clustering -->
+                <table class="table">
+                  <thead style="text-align: center" class=" bg-info text-light">
+                    <tr>
+                      <th scope="col">Dimension</th>
+                      <th scope="col">Cluster</th>
+                      <th scope="col">Cluster Name</th>
+                      <th scope="col">Recommendation</th>
+
+                    </tr>
+                  </thead>
+                  <tbody style="text-align: center">
+                    <tr>
+                      <th scope="row">Course Length & Effort</th>
+                      <td>
+                        <%= course.cLength %>
+                      </td>
+                      <td>name</td>
+                      <td>rec</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Bloom's Taxonomy</th>
+                      <td>
+                        <%= course.cBloom %>
+                      </td>
+                      <td>name</td>
+                      <td>rec</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Number of Conponents</th>
+                      <td>
+                        <%= course.cNumCom %>
+                      </td>
+                      <td>name</td>
+                      <td>rec</td>
+                    </tr>
+
+
+
+
+                  </tbody>
+                </table>
+
+
 
               </div>
               <div class="tab-pane" id="learner" role="tabpanel" aria-labelledby="learner-tab">
@@ -405,11 +438,11 @@
             barmode: 'stack',
             xaxis: {
               title: 'Assignments/Tests',
-              
+
             },
-            yaxis: { 
+            yaxis: {
               title: 'Learners Engagement',
-              
+
             }
           };
 

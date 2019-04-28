@@ -22,8 +22,7 @@
                         <tr>
                             <th scope="col">Course Number</th>
                             <th scope="col">Course Name</th>
-                            <th scope="col">Subject Area</th>
-                            <th scope="col">Passing Criteria (%)</th>
+                            <th scope="col">Subject Area</th>                            
                             <th scope="col">Registered Learners</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -40,22 +39,24 @@
                                 </td>
                                 <td>
                                     <%= course.subjectArea %>
-                                </td>
-                                <td>
-                                    <%= course.passRate %>
-                                </td>
+                                </td>                                
                                 <td>
                                     <%= course.registered %>
                                 </td>
 
                                 <td>
                                     <div class="row">
-                                        <div class="col-md-3">
-                                            <a href="/course/<%= course.id %>" title="Details">
+                                        <div class="col-md-2">
+                                            <a href="/course/<%= course.id %>" title="Visualization & Recommendation">
                                                 <i class="fas fa-chart-pie fa-lg text-info"></i>
                                             </a>
-                                        </div>
-                                        <div class="col-md-3">
+                                        </div>   
+                                        <div class="col-md-2">
+                                            <a href="/analyzeCourse/<%= course.id %>" title="Analyze Course">
+                                                <i class="fas fa-search fa-lg text-primary"></i>                                                
+                                            </a>
+                                        </div>                                     
+                                        <div class="col-md-2">
                                             <a href="/import" title="import">
                                                 <i class="fas fa-upload text-success"></i>
                                             </a>

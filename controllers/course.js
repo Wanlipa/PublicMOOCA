@@ -198,3 +198,102 @@ exports.postDeleteCourse = (req, res, next) => {
         })
         .catch(err => console.log(err));
 };
+
+
+exports.getAnalyzeCourse = (req, res, next) => {
+    const cousId = req.params.courseId;
+    Course.findById(cousId)
+        .then(course => {
+            if (!course) {
+                return res.redirect('/');
+            }
+            res.render('analyzeCourse', {
+                pageTitle: 'Analyze Course',
+                path: '/analyzeCourse',
+                course: course,
+                recom: false
+            });
+        }).catch(err => console.log(err));
+};
+
+exports.postAnalyzeCourse = (req, res, next) => {
+    const cousId = req.body.courseId;
+    const clusterType = req.body.clusterType;
+    const totalHour = req.body.totalHour;
+    const effort = req.body.effort;
+    const remember = req.body.remember;
+    const understand = req.body.understand;
+    const apply = req.body.apply;
+    const analyze = req.body.analyze;
+    const evaluate = req.body.evaluate;
+    const create = req.body.create;
+    const chapter = req.body.chapter;
+    const video = req.body.video;
+    const html = req.body.html;
+    const problem = req.body.problem;
+    const discussion = req.body.discussion;
+
+    console.log(cousId);
+    console.log(clusterType);
+
+    // Clustering Model Python   
+    var myPythonScriptPath = '';
+    var clusterArray = [];
+    // Check cluster model
+    if (clusterType == 'cLength') {
+        myPythonScriptPath = 'data/cLengthModel.py';
+        clusterArray = [effort, totalHour];
+    } else if (clusterType == 'cBloom') {
+        myPythonScriptPath = 'data/cBloomModel.py';
+        clusterArray = [remember, understand, apply, analyze, evaluate, create];
+    } else {
+        myPythonScriptPath = 'data/cNumComModel.py';
+        clusterArray = [chapter, video, html, problem, discussion];
+    }
+    // Providing data from node.js to python
+    const { PythonShell } = require('python-shell');
+    const pyshell = new PythonShell(myPythonScriptPath);
+    pyshell.send(JSON.stringify([clusterArray]));
+
+    pyshell.on('message', function (message) {
+        // received a message sent from the Python script (a simple "print" statement)
+        console.log(message);
+
+        Course.findById(cousId)
+        .then(course => {
+            if (clusterType == 'cLength') {
+                course.cLength = message;
+                return course.save();
+            } else if (clusterType == 'cBloom') {
+                course.cBloom = message;
+                return course.save();
+            } else {
+                course.cNumCom = message;
+                return course.save();
+            }
+        })
+        .then(course => {
+            if (!course) {
+                return res.redirect('/');
+            }
+            res.render('analyzeCourse', {
+                pageTitle: 'Analyze Course',
+                path: '/analyzeCourse',
+                course: course,
+                message: message,
+                recom: true,
+                cType: clusterType,
+            });
+        }).catch(err => console.log(err));
+    });
+
+    // end the input stream and allow the process to exit
+    pyshell.end(function (err) {
+        if (err) {
+            throw err;
+        };
+        console.log('finished!!!');
+    });
+
+    
+};
