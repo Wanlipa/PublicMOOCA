@@ -32,7 +32,7 @@
                                         </h5>
                                         <div class="collapse" id="courseinfo">
                                             <div class="card card-body">
-                                                courseinfo
+                                                The course information can receive from your course syllabus.
                                             </div>
                                         </div>
                                         <hr>
@@ -73,7 +73,8 @@
                                         </h5>
                                         <div class="collapse" id="length">
                                             <div class="card card-body">
-                                                Length section is lead to Course Lenght Clustering.
+                                                This section leads to Course Lenght Clustering. The scale of effort presents the number of hours per week. 
+                                                Also, the total hour reveals hours. The value collects from the course syllabus.
                                             </div>
                                         </div>
                                         <hr>
@@ -87,12 +88,7 @@
                                                 <input type="number" step=any class="form-control" name="totalHour" id="totalHour" placeholder="10" value="<% if (editing) { %><%=course.totalHour%><% } %>">
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group row">
-                                            <label for="cLength" class="col-sm-2 col-form-label">Length Cluster: </label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" name="cLength" id="cLength" placeholder="C_L3" value="<% if (editing) { %><%=course.cLength%><% } %>">
-                                            </div>
-                                        </div> -->
+
                                         <!-- Bloom's Taxonomy -->
                                         <h5>
                                             <i class="fas fa-chart-line"></i> Bloom's Taxonomy related with effort (%)
@@ -102,7 +98,9 @@
                                         </h5>
                                         <div class="collapse" id="bloom">
                                             <div class="card card-body">
-                                                Bloom's Taxonomy section is lead to Bloom's Taxonomy Clustering.
+                                                This section is lead to Bloom's Taxonomy Clustering. The feature of Bloom's Taxonomy extracted from course objectives in the course syllabus.
+                                                Therefore, you have to use the program to map your course objectives with Bloom's Taxonomy dictionary. After that, you have to consider the effort of each chapter which
+                                                contain the course objective.
                                             </div>
                                         </div>
                                         <hr>
@@ -136,23 +134,18 @@
                                                 <input type="number" step=any class="form-control" name="create" id="create" placeholder="15" value="<% if (editing) { %><%=course.create%><% } %>">
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group row">
-                                            <label for="cBloom" class="col-sm-2 col-form-label">Bloom Cluster</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" name="cBloom" id="cBloom" placeholder="C_B1" value="<% if (editing) { %><%=course.cBloom%><% } %>">
-                                            </div>
 
-                                        </div> -->
                                         <!-- Number of Components -->
                                         <h5>
-                                            <i class="fas fa-project-diagram"></i> Number of Components
+                                            <i class="fas fa-project-diagram"></i> Number of Components (%)
                                             <a data-toggle="collapse" href="#times" aria-expanded="false" aria-controls="times" title="Description">
                                                 <i class="fas fa-angle-down text-dark"></i>
                                             </a>
                                         </h5>
                                         <div class="collapse" id="times">
                                             <div class="card card-body">
-                                                Number of Components section is lead to Times Components Clustering.
+                                                    This section is lead to the Number of Components Clustering. According to the Number of Components clustering, its features extracted by using OLX file.
+                                                    You have to use the program to prepare your data. Each of the components has to convert to a minute. Therefore, the value shows the percentage of the component in a minute.
                                             </div>
                                         </div>
                                         <hr>
@@ -184,35 +177,8 @@
                                             <div class="col-sm-4">
                                                 <input type="number" step=any class="form-control" name="html" id="html" placeholder="50" value="<% if (editing) { %><%=course.html%><% } %>">
                                             </div>
-                                            <!-- <label for="cNumCom" class="col-sm-2 col-form-label">Num Com Cluster</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" name="cNumCom" id="cNumCom" placeholder="C_N1" value="<% if (editing) { %><%=course.cNumCom%><% } %>">
-                                            </div> -->
                                         </div>
-                                        <!-- Sequence Components -->
-                                        <!-- <h5>
-                                            <i class="fas fa-sort-amount-down"></i> Sequence Components
-                                            <a data-toggle="collapse" href="#sequence" aria-expanded="false" aria-controls="sequence" title="Description">
-                                                <i class="fas fa-angle-down text-dark"></i>
-                                            </a>
-                                        </h5>
-                                        <div class="collapse" id="sequence">
-                                            <div class="card card-body">
-                                                Sequence Components section is lead to Sequence Components Clustering.
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="form-group row">
-                                            <label for="sequence" class="col-sm-2 col-form-label">Sequence</label>
-                                            <div class="col-sm-4">
-                                                <input class="form-control" name="sequence" id="sequence" placeholder="[Chapter, Video, Video, HTML, Problem, ...]" value="<% if (editing) { %><%=course.sequence%><% } %>">
-                                            </div>
-                                            <label for="cSeqCom" class="col-sm-2 col-form-label">Num Com Cluster</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" name="cSeqCom" id="cSeqCom" placeholder="C_S1" value="<% if (editing) { %><%=course.cSeqCom%><% } %>">
-                                            </div>
-                                        </div> -->
-
+                                       
                                         <!-- Learners Performance -->
                                         <h5>
                                             <i class="fas fa-users"></i> Learners Performance
@@ -222,7 +188,7 @@
                                         </h5>
                                         <div class="collapse" id="learner">
                                             <div class="card card-body">
-                                                Learners.
+                                                Learners data collects from database.
                                             </div>
                                         </div>
                                         <hr>
