@@ -151,9 +151,13 @@
                   <li class="list-group-item">
                     <h5 id="metadata">Components</h5>
                     <div class="row">
-                      <div class="col-md-6">
+                      <!-- <div class="col-md-6">
                         <b>Chapter: </b>
                         <%= course.chapter %> %
+                      </div> -->
+                      <div class="col-md-6">
+                        <b>Video: </b>
+                        <%= course.video %> %
                       </div>
                       <div class="col-md-6">
                         <b>Discussion: </b>
@@ -162,20 +166,15 @@
                     </div>
                     <div class="row">
                       <div class="col-md-6">
-                        <b>Video: </b>
-                        <%= course.video %> %
+                        <b>HTML: </b>
+                        <%= course.html %> %
                       </div>
                       <div class="col-md-6">
                         <b>Problem: </b>
                         <%= course.problem %> %
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <b>HTML: </b>
-                        <%= course.html %> %
-                      </div>
-                    </div>
+                    
                   </li>
                 </ul>
               </div>
@@ -206,11 +205,13 @@
                       <td>Long Courses </td>
                       <td>You should consider customizing your courses
                           into Medium Courses by decreasing effort and total hour.</td>
-                      <% } else {%>
+                      <% } else if (course.cLength === '[2]'){%>
                       <td>C_L2</td>
                       <td>Medium Courses</td>
                       <td>You are already in the good cluster.</td>
-                      <% } %>
+                      <% } else {%>
+                        <td colspan="3"> NO Cluster</td>
+                      <% }%>
                     </tr>
                     <tr>
                       <th scope="row">Bloom's Taxonomy</th>
@@ -227,7 +228,7 @@
                         <td>C_B2</td>
                         <td>Understanding, Applying, and Analyzing-focus</td>
                         <td>You should concentrate on creating courses in the group of Applying-focus.</td>
-                        <% } else {%>
+                        <% } else if (course.cBloom === '[3]') {%>
                         <td>C_B3</td>
                         <td>Remembering, Understanding, and Creating-focus</td>
                         <td>You should avoid the courses which focus
@@ -243,7 +244,9 @@
                             knowledge to focus on Creating
                             skill that presents the lowest
                             percent of passing learners.</td>
-                        <% } %>
+                        <% } else {%>
+                          <td colspan="3"> NO Cluster</td>
+                        <% }%>
                     </tr>
                     <tr>
                       <th scope="row">Number of Conponents</th>
@@ -251,11 +254,13 @@
                         <td>C_N1</td>
                         <td>Video-focus</td>
                         <td>You should generate courses with Video and HTML-focus.</td>                        
-                        <% } else {%>
+                        <% } else if (course.cNumCom === '[1]') {%>
                         <td>C_N2</td>
                         <td>Video and HTML-focus</td>
                         <td>You are already in the good cluster.</td>
-                        <% } %>
+                        <% } else {%>
+                          <td colspan="3"> NO Cluster</td>
+                        <% }%>
                     </tr>
                   </tbody>
                 </table>

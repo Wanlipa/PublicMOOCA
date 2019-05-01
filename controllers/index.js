@@ -16,7 +16,7 @@ exports.postRecommendation = (req, res, next) => {
     const analyze = req.body.analyze;
     const evaluate = req.body.evaluate;
     const create = req.body.create;
-    const chapter = req.body.chapter;
+    // const chapter = req.body.chapter;
     const video = req.body.video;
     const html = req.body.html;
     const problem = req.body.problem;
@@ -35,7 +35,8 @@ exports.postRecommendation = (req, res, next) => {
         clusterArray = [remember, understand, apply, analyze, evaluate, create];
     } else {
         myPythonScriptPath = 'data/cNumComModel.py';
-        clusterArray = [chapter, video, html, problem, discussion];
+        // clusterArray = [chapter, video, html, problem, discussion];
+        clusterArray = [video, html, problem, discussion];
     }
     // Providing data from node.js to python
     const { PythonShell } = require('python-shell');

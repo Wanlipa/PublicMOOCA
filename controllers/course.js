@@ -55,7 +55,7 @@ exports.postAddCourse = (req, res, next) => {
     const evaluate = req.body.evaluate;
     const create = req.body.create;
     const cBloom = req.body.cBloom;
-    const chapter = req.body.chapter;
+    // const chapter = req.body.chapter;
     const video = req.body.video;
     const html = req.body.html;
     const problem = req.body.problem;
@@ -82,7 +82,7 @@ exports.postAddCourse = (req, res, next) => {
         evaluate: evaluate,
         create: create,
         cBloom: cBloom,
-        chapter: chapter,
+        // chapter: chapter,
         video: video,
         html: html,
         problem: problem,
@@ -140,7 +140,7 @@ exports.postEditCourse = (req, res, next) => {
     const updatedevaluate = req.body.evaluate;
     const updatedcreate = req.body.create;
     const updatedcBloom = req.body.cBloom;
-    const updatedchapter = req.body.chapter;
+    // const updatedchapter = req.body.chapter;
     const updatedvideo = req.body.video;
     const updatedhtml = req.body.html;
     const updatedproblem = req.body.problem;
@@ -167,7 +167,7 @@ exports.postEditCourse = (req, res, next) => {
             course.evaluate = updatedevaluate;
             course.create = updatedcreate;
             course.cBloom = updatedcBloom;
-            course.chapter = updatedchapter;
+            // course.chapter = updatedchapter;
             course.video = updatedvideo;
             course.html = updatedhtml;
             course.problem = updatedproblem;
@@ -227,7 +227,7 @@ exports.postAnalyzeCourse = (req, res, next) => {
     const analyze = req.body.analyze;
     const evaluate = req.body.evaluate;
     const create = req.body.create;
-    const chapter = req.body.chapter;
+    // const chapter = req.body.chapter;
     const video = req.body.video;
     const html = req.body.html;
     const problem = req.body.problem;
@@ -248,7 +248,8 @@ exports.postAnalyzeCourse = (req, res, next) => {
         clusterArray = [remember, understand, apply, analyze, evaluate, create];
     } else {
         myPythonScriptPath = 'data/cNumComModel.py';
-        clusterArray = [chapter, video, html, problem, discussion];
+        // clusterArray = [chapter, video, html, problem, discussion];
+        clusterArray = [video, html, problem, discussion];
     }
     // Providing data from node.js to python
     const { PythonShell } = require('python-shell');
