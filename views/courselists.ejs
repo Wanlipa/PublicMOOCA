@@ -85,7 +85,10 @@
                 </table>
 
                 <% } else { %>
-                    <h1>No Course Found!</h1>
+                    <div class="alert alert-danger" role="alert">
+                        <h1>No Course Found!</h1>
+                    </div>
+                   
                     <% } %>
 
                         <%- include('includes/end.ejs') %>
