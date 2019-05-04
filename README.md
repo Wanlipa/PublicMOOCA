@@ -1,4 +1,4 @@
-# MOOCA
+# MOOCA (Massive Open Online Course Analytics)
 
 Environment Setup 
 =================
