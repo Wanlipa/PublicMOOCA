@@ -10,7 +10,7 @@
   "author": "Wanlipa",
   "license": "ISC",
   "dependencies": {
-    "d3": "^5.9.1",
+    "d3": "^7.6.1",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "multer": "^1.4.1",
